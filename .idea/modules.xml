@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-<<<<<<< HEAD
-=======
-      <module fileurl="file://$PROJECT_DIR$/.idea/testProject.iml" filepath="$PROJECT_DIR$/.idea/testProject.iml" />
->>>>>>> origin/master
       <module fileurl="file://$PROJECT_DIR$/.idea/zswi.iml" filepath="$PROJECT_DIR$/.idea/zswi.iml" />
     </modules>
   </component>
