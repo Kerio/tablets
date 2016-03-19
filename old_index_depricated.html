@@ -1,8 +1,10 @@
 <?php
+    include 'locale.php';
 
-?>
+    echo "test jazyka " . $phrase['cz']['login_mail'];
+
 <!DOCTYPE html>
-<html lang="cz">
+<html lang= "cz">
     <head>
         <meta charset="utf-8">
     <!-- automatic width according device -->
@@ -19,16 +21,16 @@
         <nav class="navbar navbar-inverse">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="index.html">Kerio benefits</a>
+                    <a class="navbar-brand" href="zaklad_straky.html">Kerio benefits</a>
                 </div>
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="index.html">Home</a></li>
-                    <li><a href="#">Page 1</a></li>
+                    <li class="active"><a href="zaklad_straky.html">Home</a></li>
+                    <li><a href="index.php">test</a></li>
                     <li><a href="#">Page 2</a></li>
                     <li><a href="#">Page 3</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+                    <li><a href="old_index_depricated.html"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
                 </ul>
             </div>
         </nav>
@@ -45,7 +47,7 @@
                     <br>
                     <form name="loginform" method="POST" action="checklogin.php">
                         <div class="form-group">
-                            <label for="usr">Username:</label>
+                            <label for="usr">E-mail:</label>
                             <input type="text" class="form-control" name="usr" placeholder="Enter username">
                         </div>
                         <div class="form-group">
@@ -54,7 +56,7 @@
                         </div>
                         <div class="checkbox">
                             <label><input type="checkbox">Remember me</label>
-                            <label><a href="index.html"> Forgot password?</a></label>
+                            <label><a href="zaklad_straky.html"> Forgot password?</a></label>
                         </div>
                         <button type="submit" class="btn btn-default">Submit</button>
                     </form>
@@ -71,4 +73,5 @@
             <p>Web application Made By ZMJ group</a></p>
         </footer>
     </body>
-</html
+</html>
+
