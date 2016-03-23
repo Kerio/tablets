@@ -49,7 +49,36 @@ echo '            </div>';
 echo '        </nav>';
 
 echo '<!-- center of page -->';
-echo '';
+echo '<ul class="nav nav-tabs">';
+echo    '<li class="tab"><a data-toggle="pill" href="#benefit1">mobil</a></li>';
+echo    '<li><a data-toggle="tab" href="#benefit2">tablet</a></li>';
+echo    '<li><a data-toggle="tab" href="#benefit3">Benefit3</a></li>';
+echo '</ul>';
+echo '<div class="tab-content">';
+echo   '<div id="benefit1" class="tab-pane fade in active">';
+echo    '<h3>mobil</h3>';
+echo    '<div class="well">';
+echo        '<div class="progress">';
+echo          '<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">';
+echo                '<span class="sr-only">60% Complete</span>';
+echo            '</div>';
+echo        '</div>';
+echo        '<p>nárok na další: 21. 1. 2017<br>výše příspěvku: 14 000kč</p>';
+echo    '</div>';
+echo    '<div class="well">';
+echo    '<h3>aktuální zařízení</h3>';
+echo    '<p>název: Iphone 5S 64GB<br>zakoupeno: 21. 1. 2015<br>cena: 16 000kč<br>doplatek: 2 000kč</p>';
+echo    '</div>';
+echo  '</div>';
+
+echo  '<div id="benefit2" class="tab-pane fade">';
+echo    '<h3>tablet</h3>';
+echo  '</div>';
+
+echo  '<div id="benefit3" class="tab-pane fade">';
+echo    '<h3>benefit3</h3>';
+echo  '</div>';
+echo '</div>';
 
 echo '    <!-- footer of page -->';
 echo '    <footer class="navbar-fixed-bottom bg-1 text-center">';
