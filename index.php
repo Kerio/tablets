@@ -33,7 +33,7 @@
     echo '                <ul class="nav navbar-nav">';
     echo '                    <li><a href="zaklad_stranky.php">default page</a></li>';
     echo '                    <li><a href="user_gui.php">user GUI</a></li>';
-    echo '                    <li><a href="#">Page 3</a></li>';
+    echo '                    <li><a href="admin_gui.php">admin GUI</a></li>';
     echo '                </ul>';
     echo '     <!-- exchange language -->';
     echo '                <ul class="nav navbar-nav navbar-right">';

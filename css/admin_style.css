@@ -1,0 +1,68 @@
+/*css styles for admin page*/
+/*=========================*/
+
+html,body{
+    height: 100%;
+}
+
+/* center of page */
+#div-center{
+    background-color: ghostwhite;
+    margin-top: -20px;
+    /*margin-left: -19px;*/
+    min-height: 90%;
+}
+
+#div-table{
+    background-color: ghostwhite;
+    /*border-style: double;*/
+    min-height: 78vh;
+    padding-right: 0px;
+}
+
+tr {
+    width: 100%;
+    display: inline-table;
+}
+
+table{
+    min-height: 85vh;
+    /*border-style: dotted;*/
+}
+
+/* scrolling body*/
+tbody{
+    overflow-y: scroll;
+    height: 90%;
+    position: absolute;
+    /*border-style: groove;*/
+}
+
+/* control pane*/
+#div-control{
+    background-color: ghostwhite;
+    /*border-style: double;*/
+    min-height: 78vh;
+    padding-right: 0px;
+}
+
+/* info pane */
+#div-info{
+    background-color: ghostwhite;
+    min-height: 43vh;
+    padding: 45px;
+}
+
+/* edit pane */
+#div-edit{
+    background-color: ghostwhite;
+    min-height: 45vh;
+}
+
+#new_b{
+    padding: 20px;
+}
+
+#edit_b{
+    padding: 20px;
+}
