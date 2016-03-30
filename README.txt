@@ -1,1 +1,1 @@
-kldnfjdnvkùsjvùjknfv
+poznÃ¡mky
