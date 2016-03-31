@@ -1,7 +1,7 @@
 <?php
 //  import locales for translation website
-require '../bin/view.php';
-require '../bin/benefit.php';
+require '../control/view.php';
+require '../control/benefit.php';
 
 echo $head.
      '<body>'

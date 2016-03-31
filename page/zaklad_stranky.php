@@ -1,6 +1,6 @@
 <?php
 //  import locales for translation website
-require '../bin/view.php';
+require '../control/view.php';
 
 echo $head.
     '<body>'

@@ -1,6 +1,6 @@
 <?php
 //  import locales for translation website
-    require 'bin/locale.php';
+    require 'control/locale.php';
 
 echo '<!DOCTYPE html>
     <html lang= "\'.$phrase[$locale][\'lang\'].\'">
@@ -21,7 +21,7 @@ echo '<!DOCTYPE html>
             <nav class="navbar navbar-inverse">
                 <div class="container">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="index.php">'.$phrase[$locale]['kerio_b'].'</a>
+                        <a class="navbar-brand" href="index.php?locale='.$locale.'">'.$phrase[$locale]['kerio_b'].'</a>
                     </div>
                     <ul class="nav navbar-nav">
                         <li><a href="page/zaklad_stranky.php?locale='.$locale.'">default page</a></li>

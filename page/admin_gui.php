@@ -1,6 +1,6 @@
 <?php
 //  import locales for translation website
-require '../bin/view.php';
+require '../control/view.php';
 
 echo $head.
        '<body>'
@@ -31,8 +31,8 @@ echo '                  </tbody>
                     </div>
                     <div id="div-edit" class ="container-fluid">
                         <ul class="nav nav-tabs">
-                            <li class = "active"><a data-toggle="tab" href="#new_b">New benefit</a></li>
-                            <li><a data-toggle="tab" href="#edit_b">Edit benefit</a></li>
+                            <li class = "active"><a data-toggle="tab" href="#new_b">'.$phrase[$locale]['new_b_tab'].'</a></li>
+                            <li><a data-toggle="tab" href="#edit_b">'.$phrase[$locale]['edit_b_tab'].'</a></li>
                         </ul>
                         <div class="tab-content">
                             <div id="new_b" class="tab-pane fade in active">
