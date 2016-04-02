@@ -48,7 +48,7 @@ echo '<!DOCTYPE html>
                     <div id="form" class="col-md-6">
                         <h2>'.$phrase[$locale]['login'].'</h2>
                         <br>
-                        <form name="loginform" method="POST" action="bin/checklogin.php">
+                        <form name="loginform" method="POST" action="control/checklogin.php">
                             <div class="form-group">
                                 <label for="usr">'.$phrase[$locale]['login_mail'].'</label>
                                 <input type="text" class="form-control" name="usr" placeholder="'.$phrase[$locale]['login_mail_text'].'">

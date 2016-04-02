@@ -66,18 +66,18 @@ INSERT INTO PRODUKTY (dodavatel) VALUES (4);
 INSERT INTO PRODUKTY (dodavatel) VALUES (3);
 
 
-INSERT INTO MOBIL (ref_produkt, jmeno_produktu, cena_produktu, serial_number, imei) VALUES (1, "IPhone 5S 64GB", 15620, "1235454874asdasd", "2234870sdf");
-INSERT INTO MOBIL (ref_produkt, jmeno_produktu, cena_produktu, serial_number, imei) VALUES (2, "IPhone 4S 16GB", 9820, "asd81223has89123basd", "9-08sdf234");
-INSERT INTO MOBIL (ref_produkt, jmeno_produktu, cena_produktu, serial_number, imei) VALUES (3, "IPhone 6S 32GB", 22320, "8724has981b122890sdf", "2233409sdf");
-INSERT INTO MOBIL (ref_produkt, jmeno_produktu, cena_produktu, serial_number, imei) VALUES (4, "Samsung Galaxy S4 16GB", 11520, "1287asd8712nasd0", "ccxv98w2234");
-INSERT INTO MOBIL (ref_produkt, jmeno_produktu, cena_produktu, serial_number, imei) VALUES (5, "LG Nexus 5 16GB", 13005, "122897s89s2ns09sdf", "087fd234");
+INSERT INTO MOBIL (ref_produkt, jmeno_produktu, cena_produktu, datum_nakupu, serial_number, imei) VALUES (1, "IPhone 5S 64GB", 15620, "2015-02-03", "1235454874asdasd", "2234870sdf");
+INSERT INTO MOBIL (ref_produkt, jmeno_produktu, cena_produktu, datum_nakupu, serial_number, imei) VALUES (2, "IPhone 4S 16GB", 9820, "2015-03-07", "asd81223has89123basd", "9-08sdf234");
+INSERT INTO MOBIL (ref_produkt, jmeno_produktu, cena_produktu, datum_nakupu, serial_number, imei) VALUES (3, "IPhone 6S 32GB", 22320, "2015-04-11", "8724has981b122890sdf", "2233409sdf");
+INSERT INTO MOBIL (ref_produkt, jmeno_produktu, cena_produktu, datum_nakupu, serial_number, imei) VALUES (4, "Samsung Galaxy S4 16GB", 11520, "2015-05-14", "1287asd8712nasd0", "ccxv98w2234");
+INSERT INTO MOBIL (ref_produkt, jmeno_produktu, cena_produktu, datum_nakupu, serial_number, imei) VALUES (5, "LG Nexus 5 16GB", 13005, "2015-06-18", "122897s89s2ns09sdf", "087fd234");
 
 
-INSERT INTO TABLET (ref_produkt, jmeno_produktu, cena_produktu, serial_number, imei, verze) VALUES (6, "IPad v3 32GB", 12775, "2114787214nsdf0823", "287f23n283", 3);
-INSERT INTO TABLET (ref_produkt, jmeno_produktu, cena_produktu, serial_number, imei, verze) VALUES (7, "Samsung Galaxy Pad v2 16GB", 11089, "1224789df82ndf09", "89sdf2b3498", 2);
-INSERT INTO TABLET (ref_produkt, jmeno_produktu, cena_produktu, serial_number, imei, verze) VALUES (8, "Prestigo PB320 8GB", 5250, "2337dfn240sdf", "3344897f234nu", 1);
-INSERT INTO TABLET (ref_produkt, jmeno_produktu, cena_produktu, serial_number, imei, verze) VALUES (9, "NVIDIA Shield 32GB", 13725, "234908dxn2309ssds", "23uy8yc234n", 1);
-INSERT INTO TABLET (ref_produkt, jmeno_produktu, cena_produktu, serial_number, imei, verze) VALUES (10, "IPad v4 32 GB", 24625, "1234uysd8234mnsdf8", "23309df23m90", 4);
+INSERT INTO TABLET (ref_produkt, jmeno_produktu, cena_produktu, datum_nakupu, serial_number, imei, verze) VALUES (6, "IPad v3 32GB", 12775, "2015-06-07", "2114787214nsdf0823", "287f23n283", 3);
+INSERT INTO TABLET (ref_produkt, jmeno_produktu, cena_produktu, datum_nakupu, serial_number, imei, verze) VALUES (7, "Samsung Galaxy Pad v2 16GB", 11089, "2015-08-10", "1224789df82ndf09", "89sdf2b3498", 2);
+INSERT INTO TABLET (ref_produkt, jmeno_produktu, cena_produktu, datum_nakupu, serial_number, imei, verze) VALUES (8, "Prestigo PB320 8GB", 5250, "2015-12-13", "2337dfn240sdf", "3344897f234nu", 1);
+INSERT INTO TABLET (ref_produkt, jmeno_produktu, cena_produktu, datum_nakupu, serial_number, imei, verze) VALUES (9, "NVIDIA Shield 32GB", 13725, "2015-02-16", "234908dxn2309ssds", "23uy8yc234n", 1);
+INSERT INTO TABLET (ref_produkt, jmeno_produktu, cena_produktu, datum_nakupu, serial_number, imei, verze) VALUES (10, "IPad v4 32 GB", 24625, "2015-04-18", "1234uysd8234mnsdf8", "23309df23m90", 4);
 
 
 INSERT INTO NAROKY_BEN VALUES (1, 1);

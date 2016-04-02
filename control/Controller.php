@@ -3,7 +3,7 @@
     global $conncetion;
     global $id;
 
-    function connect()
+    function connect($username1, $password1)
     {
         /*** mysql hostname ***/
         $hostname = 'localhost';
@@ -13,32 +13,34 @@
         $password = null;
         try
         {
-            if($pole = null)
+            if($username1 == null || $password1 == null)
             {
-                return "Nebyli zadany prihlasovaci udaje";
+                echo "Nebyli zadany prihlasovaci udaje!";
+                return null;
             }
             else
             {
-                $pole = array("jirnoh@seznam.cz", "adminjnohac");
-                $username1 = $pole[0];
-                $password1 = $pole[1];
                 $GLOBALS['connection'] = new PDO("mysql:host=$hostname;dbname=databaze_test", $username, $password);
                 $stt = $GLOBALS['connection']->prepare("SELECT id_uzi, jmeno, prijmeni, prava FROM uzivatele WHERE uzivatele.email = '$username1' AND uzivatele.heslo = '$password1';");
                 $stt->execute();
-                echo "connected" . "</br>";
                 $array = $stt->fetch(PDO::FETCH_ASSOC);
                 $cislo = 1;
+                if ($array == null)
+                {
+                    echo "Zadany email/heslo neni v databazi uzivatelu!";
+                    $GLOBALS['connection'] = null;
+                    return null;
+                }
                 foreach($array as $value)
                 {
                     if($cislo == 1)
                     {
                         $GLOBALS['id'] = $value;
-                        echo $GLOBALS['id'] . " ";
                         $cislo = 2;
                     }
                     echo $value . " ";
                 }
-                echo "</br>";
+                echo "connected </br>";
 
             }
 
@@ -59,6 +61,7 @@
                 (SELECT hodnota FROM DOTACE WHERE DOTACE.id_dotace = dotace) AS dotace,
                 (SELECT jmeno_produktu FROM mobil, naroky_pro WHERE ref_produkt = naroky_pro.pro_id_produktu AND naroky_pro.pro_id_benefitu = id_benefitu) as jmeno_produktu,
                 (SELECT cena_produktu FROM mobil, naroky_pro WHERE ref_produkt = naroky_pro.pro_id_produktu AND naroky_pro.pro_id_benefitu = id_benefitu) as cena,
+                (SELECT datum_nakupu FROM mobil, naroky_pro WHERE ref_produkt = naroky_pro.pro_id_produktu AND naroky_pro.pro_id_benefitu = id_benefitu) as datum_nakupu,
                 (SELECT serial_number FROM mobil, naroky_pro WHERE ref_produkt = naroky_pro.pro_id_produktu AND naroky_pro.pro_id_benefitu = id_benefitu) as seriove_cislo,
                 (SELECT imei FROM mobil, naroky_pro WHERE ref_produkt = naroky_pro.pro_id_produktu AND naroky_pro.pro_id_benefitu = id_benefitu) as imei,
                 zpusob_platby,
@@ -84,6 +87,7 @@
         (SELECT hodnota FROM DOTACE WHERE DOTACE.id_dotace = dotace) AS dotace,
         (SELECT jmeno_produktu FROM tablet, naroky_pro WHERE ref_produkt = naroky_pro.pro_id_produktu AND naroky_pro.pro_id_benefitu = id_benefitu) as jmeno_produktu,
         (SELECT cena_produktu FROM tablet, naroky_pro WHERE ref_produkt = naroky_pro.pro_id_produktu AND naroky_pro.pro_id_benefitu = id_benefitu) as cena,
+        (SELECT datum_nakupu FROM tablet, naroky_pro WHERE ref_produkt = naroky_pro.pro_id_produktu AND naroky_pro.pro_id_benefitu = id_benefitu) as datum_nakupu,
         (SELECT serial_number FROM tablet, naroky_pro WHERE ref_produkt = naroky_pro.pro_id_produktu AND naroky_pro.pro_id_benefitu = id_benefitu) as seriove_cislo,
         (SELECT imei FROM tablet, naroky_pro WHERE ref_produkt = naroky_pro.pro_id_produktu AND naroky_pro.pro_id_benefitu = id_benefitu) as imei,
         (SELECT verze FROM tablet, naroky_pro WHERE ref_produkt = naroky_pro.pro_id_produktu AND naroky_pro.pro_id_benefitu = id_benefitu) as verze,
@@ -110,6 +114,7 @@
         (SELECT hodnota FROM DOTACE WHERE DOTACE.id_dotace = dotace) AS dotace,
         (SELECT jmeno_produktu FROM mobil, naroky_pro WHERE ref_produkt = naroky_pro.pro_id_produktu AND naroky_pro.pro_id_benefitu = id_benefitu) as jmeno_produktu,
         (SELECT cena_produktu FROM mobil, naroky_pro WHERE ref_produkt = naroky_pro.pro_id_produktu AND naroky_pro.pro_id_benefitu = id_benefitu) as cena,
+        (SELECT datum_nakupu FROM mobil, naroky_pro WHERE ref_produkt = naroky_pro.pro_id_produktu AND naroky_pro.pro_id_benefitu = id_benefitu) as datum_nakupu,
         (SELECT serial_number FROM mobil, naroky_pro WHERE ref_produkt = naroky_pro.pro_id_produktu AND naroky_pro.pro_id_benefitu = id_benefitu) as seriove_cislo,
         (SELECT imei FROM mobil, naroky_pro WHERE ref_produkt = naroky_pro.pro_id_produktu AND naroky_pro.pro_id_benefitu = id_benefitu) as imei,
         zpusob_platby,
@@ -135,6 +140,7 @@ function userDataTablets()
     (SELECT hodnota FROM DOTACE WHERE DOTACE.id_dotace = dotace) AS dotace,
     (SELECT jmeno_produktu FROM tablet, naroky_pro WHERE ref_produkt = naroky_pro.pro_id_produktu AND naroky_pro.pro_id_benefitu = id_benefitu) as jmeno_produktu,
     (SELECT cena_produktu FROM tablet, naroky_pro WHERE ref_produkt = naroky_pro.pro_id_produktu AND naroky_pro.pro_id_benefitu = id_benefitu) as cena,
+    (SELECT datum_nakupu FROM tablet, naroky_pro WHERE ref_produkt = naroky_pro.pro_id_produktu AND naroky_pro.pro_id_benefitu = id_benefitu) as datum_nakupu,
     (SELECT serial_number FROM tablet, naroky_pro WHERE ref_produkt = naroky_pro.pro_id_produktu AND naroky_pro.pro_id_benefitu = id_benefitu) as seriove_cislo,
     (SELECT imei FROM tablet, naroky_pro WHERE ref_produkt = naroky_pro.pro_id_produktu AND naroky_pro.pro_id_benefitu = id_benefitu) as imei,
     (SELECT verze FROM tablet, naroky_pro WHERE ref_produkt = naroky_pro.pro_id_produktu AND naroky_pro.pro_id_benefitu = id_benefitu) as verze,
