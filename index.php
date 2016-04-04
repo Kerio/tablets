@@ -1,6 +1,20 @@
 <?php
 //  import locales for translation website
     require 'control/locale.php';
+    require 'control/db_config.php';
+
+if($user->is_loggedin()!=""){
+    $user->redirect('page/user_gui.php?locale='.$locale);
+}
+
+if(isset($_POST['btn-login'])) {
+    $umail = $_POST['usr'];
+    $upass = $_POST['pwd'];
+
+    if ($user->login($umail, $upass)) {
+        $user->redirect('page/user_gui.php?locale='.$locale);
+    }
+}
 
 echo '<!DOCTYPE html>
     <html lang= "\'.$phrase[$locale][\'lang\'].\'">
@@ -23,11 +37,6 @@ echo '<!DOCTYPE html>
                     <div class="navbar-header">
                         <a class="navbar-brand" href="index.php?locale='.$locale.'">'.$phrase[$locale]['kerio_b'].'</a>
                     </div>
-                    <ul class="nav navbar-nav">
-                        <li><a href="page/zaklad_stranky.php?locale='.$locale.'">default page</a></li>
-                        <li><a href="page/user_gui.php?locale='.$locale.'">user GUI</a></li>
-                        <li><a href="page/admin_gui.php?locale='.$locale.'">admin GUI</a></li>
-                    </ul>
                     
     <!-- exchange language -->
                     <ul class="nav navbar-nav navbar-right">
@@ -48,7 +57,7 @@ echo '<!DOCTYPE html>
                     <div id="form" class="col-md-6">
                         <h2>'.$phrase[$locale]['login'].'</h2>
                         <br>
-                        <form name="loginform" method="POST" action="control/checklogin.php">
+                        <form name="loginform" method="POST">
                             <div class="form-group">
                                 <label for="usr">'.$phrase[$locale]['login_mail'].'</label>
                                 <input type="text" class="form-control" name="usr" placeholder="'.$phrase[$locale]['login_mail_text'].'">
@@ -57,7 +66,7 @@ echo '<!DOCTYPE html>
                                 <label for="pwd">'.$phrase[$locale]['login_pwd'].':</label>
                                 <input type="password" class="form-control" name="pwd" placeholder="'.$phrase[$locale]['login_pwd_text'].'">
                             </div>
-                            <button type="submit" class="btn btn-default">'.$phrase[$locale]['submit'].'</button>
+                            <button type="submit" name="btn-login" class="btn btn-default">'.$phrase[$locale]['submit'].'</button>
                         </form>
                     </div>
 
