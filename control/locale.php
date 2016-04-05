@@ -37,7 +37,7 @@ $phrase['cz']['footer_text'] = "Webovou aplikaci vytvořila skupina ZMJ";
 //user
 $phrase['cz']['mobile'] = "Chytrý telefon";
 $phrase['cz']['tablet'] = "Tablet";
-$phrase['cz']['user_claim'] = "Nárok na další";
+$phrase['cz']['user_claim'] = "Nárok na nový";
 $phrase['cz']['user_subsidy'] = "Příspěvek";
 $phrase['cz']['user_device_cur'] = "Aktuální zařízení";
 $phrase['cz']['user_device_name'] = "Název";
@@ -45,6 +45,7 @@ $phrase['cz']['user_device_bought'] = "Zakoupeno";
 $phrase['cz']['user_device_price'] = "Cena";
 $phrase['cz']['user_device_addpay'] = "Doplatek";
 $phrase['cz']['user_history'] = "Historie";
+$phrase['cz']['no_device'] = "Jestě nevlastníš zařízení!";
 
 //admin
 $phrase['cz']['new_b_tab'] = "Nový benefit";
@@ -71,7 +72,7 @@ $phrase['eng']['footer_text'] = "Web application Made By ZMJ group";
 //user
 $phrase['eng']['mobile'] = "Smart phone";
 $phrase['eng']['tablet'] = "Tablet";
-$phrase['eng']['user_claim'] = "Next claim";
+$phrase['eng']['user_claim'] = "Claim for new one";
 $phrase['eng']['user_subsidy'] = "Subsidy";
 $phrase['eng']['user_device_cur'] = "Current device";
 $phrase['eng']['user_device_name'] = "Name";
@@ -79,6 +80,7 @@ $phrase['eng']['user_device_bought'] = "Bought";
 $phrase['eng']['user_device_price'] = "Price";
 $phrase['eng']['user_device_addpay'] = "Additional payment";
 $phrase['eng']['user_history'] = "History";
+$phrase['eng']['no_device'] = "You haven't own device yet!";
 
 //admin
 $phrase['eng']['new_b_tab'] = "New benefit";

@@ -12,7 +12,6 @@ if(!$user->is_loggedin())
 //$user->userDataMobil();
 //echo "<br>";
 //$user->userDataTablet();
-
 echo $head.
     '<!-- navigation bar -->
             <nav class="navbar navbar-inverse">  
@@ -54,7 +53,7 @@ echo              '</div>
     
         <div class="tab-content">
             <div id="benefit1" class="tab-pane fade in active">'
-                .$mobile.
+                .get_mobil_data($user->userDataMobil(), $phrase, $locale).
             '</div>
     
             <div id="benefit2" class="tab-pane fade">'

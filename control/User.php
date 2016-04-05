@@ -99,13 +99,13 @@ class USER{
         datum_naskoceni_benefitu, datum_vyplaceni_benefitu, poznamky FROM SEZ_BENEFITU, MOBIL, produkty, naroky_pro, naroky_ben, uzivatele WHERE mobil.ref_produkt = produkty.id_produktu AND naroky_pro.pro_id_produktu = produkty.id_produktu AND naroky_pro.pro_id_benefitu = id_benefitu AND naroky_ben.ben_id_benefitu = id_benefitu AND naroky_ben.ben_id_uzi = uzivatele.id_uzi AND id_uzi = " . $_SESSION['user_session'] . " ORDER BY id_benefitu;");
         $stmt->execute();
         $array = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        foreach($array as $innerarray)
+      /**  foreach($array as $innerarray)
         {
             foreach ($innerarray as $value)
             {
                 echo $value . "</br>";
             }
-        }
+        }**/
         return $array;
     }
 
@@ -125,13 +125,13 @@ class USER{
         datum_naskoceni_benefitu, datum_vyplaceni_benefitu, poznamky FROM SEZ_BENEFITU, tablet, produkty, naroky_pro, naroky_ben, uzivatele WHERE tablet.ref_produkt = produkty.id_produktu AND naroky_pro.pro_id_produktu = produkty.id_produktu AND naroky_pro.pro_id_benefitu = id_benefitu AND naroky_ben.ben_id_benefitu = id_benefitu AND naroky_ben.ben_id_uzi = uzivatele.id_uzi AND id_uzi = " . $_SESSION['user_session'] .  " ORDER BY id_benefitu;");
         $stmt->execute();
         $array = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        foreach($array as $innerarray)
+        /**foreach($array as $innerarray)
         {
             foreach ($innerarray as $value)
             {
                 echo $value . "</br>";
             }
-        }
+        }**/
         return $array;
     }
 }
