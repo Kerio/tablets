@@ -59,21 +59,21 @@ echo $head.
                             <table class="table table-striped ">
                                 <thead>
                                     <tr>
-                                        <th class="admin-th">ID</th>
-                                        <th class="admin-th">Jméno</th>
-                                        <th class="admin-th">Přijmení</th>
-                                        <th class="admin-th">Dotace</th>
-                                        <th class="admin-th">Zařízeni</th>
-                                        <th class="admin-th">Cena</th>
-                                        <th class="admin-th">Zakoupeno</th>
-                                        <th class="admin-th">Sériové číslo</th>
-                                        <th class="admin-th">IMEI</th>
-                                        <th class="admin-th">Verze</th>
-                                        <th class="admin-th">Typ platby</th>
-                                        <th class="admin-th">Dodavatel</th>
-                                        <th class="admin-th">Datum nároku</th>
-                                        <th class="admin-th">Datum převzetí</th>
-                                        <th class="admin-th">Poznánky</th>
+                                        <th class="admin-th">'.$phrase[$locale]['col_id'].'</th>
+                                        <th class="admin-th">'.$phrase[$locale]['col_name'].'</th>
+                                        <th class="admin-th">'.$phrase[$locale]['col_lastname'].'</th>
+                                        <th class="admin-th">'.$phrase[$locale]['col_donate'].'</th>
+                                        <th class="admin-th">'.$phrase[$locale]['col_device'].'</th>
+                                        <th class="admin-th">'.$phrase[$locale]['col_price'].'</th>
+                                        <th class="admin-th">'.$phrase[$locale]['col_bought'].'</th>
+                                        <th class="admin-th">'.$phrase[$locale]['col_sn'].'</th>
+                                        <th class="admin-th">'.$phrase[$locale]['col_imei'].'</th>
+                                        <th class="admin-th">'.$phrase[$locale]['col_version'].'</th>
+                                        <th class="admin-th">'.$phrase[$locale]['col_payment'].'</th>
+                                        <th class="admin-th">'.$phrase[$locale]['col_supplier'].'</th>
+                                        <th class="admin-th">'.$phrase[$locale]['col_claim'].'</th>
+                                        <th class="admin-th">'.$phrase[$locale]['col_took'].'</th>
+                                        <th class="admin-th">'.$phrase[$locale]['col_notes'].'</th>
                                     </tr>
                                 </thead>
                                 <tbody>';
@@ -95,20 +95,20 @@ echo '                          </tbody>
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th class="admin-th">ID</th>
-                                        <th class="admin-th">Jméno</th>
-                                        <th class="admin-th">Přijmení</th>
-                                        <th class="admin-th">Dotace</th>
-                                        <th class="admin-th">Zařízeni</th>
-                                        <th class="admin-th">Cena</th>
-                                        <th class="admin-th">Zakoupeno</th>
-                                        <th class="admin-th">Sériové číslo</th>
-                                        <th class="admin-th">IMEI</th>
-                                        <th class="admin-th">Typ platby</th>
-                                        <th class="admin-th">Dodavatel</th>
-                                        <th class="admin-th">Datum nároku</th>
-                                        <th class="admin-th">Datum převzetí</th>
-                                        <th class="admin-th">Poznánky</th>
+                                        <th class="admin-th">'.$phrase[$locale]['col_id'].'</th>
+                                        <th class="admin-th">'.$phrase[$locale]['col_name'].'</th>
+                                        <th class="admin-th">'.$phrase[$locale]['col_lastname'].'</th>
+                                        <th class="admin-th">'.$phrase[$locale]['col_donate'].'</th>
+                                        <th class="admin-th">'.$phrase[$locale]['col_device'].'</th>
+                                        <th class="admin-th">'.$phrase[$locale]['col_price'].'</th>
+                                        <th class="admin-th">'.$phrase[$locale]['col_bought'].'</th>
+                                        <th class="admin-th">'.$phrase[$locale]['col_sn'].'</th>
+                                        <th class="admin-th">'.$phrase[$locale]['col_imei'].'</th>
+                                        <th class="admin-th">'.$phrase[$locale]['col_payment'].'</th>
+                                        <th class="admin-th">'.$phrase[$locale]['col_supplier'].'</th>
+                                        <th class="admin-th">'.$phrase[$locale]['col_claim'].'</th>
+                                        <th class="admin-th">'.$phrase[$locale]['col_took'].'</th>
+                                        <th class="admin-th">'.$phrase[$locale]['col_notes'].'</th>
                                     </tr>
                                 </thead>
                                 <tbody>';

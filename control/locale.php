@@ -49,11 +49,7 @@ $phrase['cz']['user_device_addpay'] = "Doplatek";
 $phrase['cz']['user_history'] = "Historie";
 $phrase['cz']['no_device'] = "Jestě nevlastníš zařízení!";
 
-//<th>Zakoupeno</th><th>Sériové číslo</th><th>IMEI</th><th>Verze</th><th>Typ platby</th>
-//<th>Dodavatel</th><th>Datum nároku</th><th>Datum převzetí</th><th>Poznánky</th>
-
 //admin
-//tables
 $phrase['cz']['table_tablets'] = "Tablety";
 $phrase['cz']['table_phones'] = "Chytré telefony";
 $phrase['cz']['col_id'] = "ID";
@@ -62,22 +58,19 @@ $phrase['cz']['col_lastname'] = "Příjmení";
 $phrase['cz']['col_donate'] = "Dotace";
 $phrase['cz']['col_device'] = "Zařízení";
 $phrase['cz']['col_price'] = "Cena";
-$phrase['cz']['col_bought'] = "";
-$phrase['cz']['col_sn'] = "";
-$phrase['cz']['col_imei'] = "";
-$phrase['cz']['col_version'] = "";
-$phrase['cz']['col_payment'] = "";
-$phrase['cz']['col_supplier'] = "";
-$phrase['cz']['col_claim'] = "";
-$phrase['cz']['col_taking'] = "";
-$phrase['cz']['col_notes'] = "";
+$phrase['cz']['col_bought'] = "Zakoupeno";
+$phrase['cz']['col_sn'] = "Sériové číslo";
+$phrase['cz']['col_imei'] = "IMEI";
+$phrase['cz']['col_version'] = "Verze";
+$phrase['cz']['col_payment'] = "Typ platby";
+$phrase['cz']['col_supplier'] = "Dodavatel";
+$phrase['cz']['col_claim'] = "Datum nároku";
+$phrase['cz']['col_took'] = "Datum převzetí";
+$phrase['cz']['col_notes'] = "Poznámky";
 
-
-//new form
 $phrase['cz']['new_b_tab'] = "Nový benefit";
+$phrase['cz']['btn_send'] = "Odešli";
 
-
-//edit form
 $phrase['cz']['edit_b_tab'] = "Úprava benefitu";
 
 
@@ -99,7 +92,7 @@ $phrase['eng']['login_mail_text'] = "Enter e-mail";
 $phrase['eng']['login_pwd'] = "Password";
 $phrase['eng']['login_pwd_text'] = "Enter password";
 $phrase['eng']['submit'] = "Log in";
-$phrase['eng']['footer_text'] = "Web application Made By ZMJ group";
+$phrase['eng']['footer_text'] = "Web application created by ZMJ group";
 
 //user
 $phrase['eng']['mobile'] = "Smartphone";
@@ -115,30 +108,27 @@ $phrase['eng']['user_history'] = "History";
 $phrase['eng']['no_device'] = "You haven't own device yet!";
 
 //admin
-//tables
 $phrase['eng']['table_tablets'] = "Tablets";
 $phrase['eng']['table_phones'] = "Smartphones";
-$phrase['eng']['col_id'] = "";
-$phrase['eng']['col_name'] = "";
-$phrase['eng']['col_lastname'] = "";
-$phrase['eng']['col_donate'] = "";
-$phrase['eng']['col_device'] = "";
-$phrase['eng']['col_price'] = "";
-$phrase['eng']['col_bought'] = "";
-$phrase['eng']['col_sn'] = "";
-$phrase['eng']['col_imei'] = "";
-$phrase['eng']['col_version'] = "";
-$phrase['eng']['col_payment'] = "";
-$phrase['eng']['col_supplier'] = "";
-$phrase['eng']['col_claim'] = "";
-$phrase['eng']['col_taking'] = "";
-$phrase['eng']['col_notes'] = "";
+$phrase['eng']['col_id'] = "ID";
+$phrase['eng']['col_name'] = "Name";
+$phrase['eng']['col_lastname'] = "Lastname";
+$phrase['eng']['col_donate'] = "Donate";
+$phrase['eng']['col_device'] = "Device";
+$phrase['eng']['col_price'] = "Price";
+$phrase['eng']['col_bought'] = "Bought";
+$phrase['eng']['col_sn'] = "Serial number";
+$phrase['eng']['col_imei'] = "IMEI";
+$phrase['eng']['col_version'] = "Version";
+$phrase['eng']['col_payment'] = "Payment";
+$phrase['eng']['col_supplier'] = "Supplier";
+$phrase['eng']['col_claim'] = "Claim";
+$phrase['eng']['col_took'] = "Took";
+$phrase['eng']['col_notes'] = "Notes";
 
-//new form
 $phrase['eng']['new_b_tab'] = "New benefit";
+$phrase['eng']['btn_send'] = "Send";
 
-
-//edit form
 $phrase['eng']['edit_b_tab'] = "Edit benefit";
 
 
