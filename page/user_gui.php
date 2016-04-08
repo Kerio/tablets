@@ -18,27 +18,27 @@ echo $head.
                 <div class="container">
                     <div class="navbar-header">
                         <a class="navbar-brand" href="../index.php?locale='.$locale.'">'.$phrase[$locale]['kerio_b'].'</a>
-                    </div>
-                    
-                    
-        <!-- exchange language -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon glyphicon-globe"></span>   '.$phrase[$locale]['nav_lang'].'<span class="caret"></span></a>
+                    </div>';
+                    if($_SESSION['prava_session'] == 'admin'){
+                         echo '<ul class="nav navbar-nav">
+                                   <li><a href="admin_gui.php?locale='.$locale.'">Administrátor</a></li>
+                               </ul>';
+                    }
+echo '               <ul class="nav navbar-nav navbar-right">
+                        <li><a id="label-data"><span class="glyphicon glyphicon-user"></span> '.$_SESSION['name_session'].' '.$_SESSION['last_session'].'</a></li>
+                        <li><a href="../control/logout.php"><i class="glyphicon glyphicon-log-out"></i> logout</a></li>
+    <!-- exchange language -->
+                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-globe"></span>   '.$phrase[$locale]['nav_lang'].'<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="?locale=cz">'.$phrase[$locale]['nav_lang_cz'].'</a></li>
                                 <li><a href="?locale=eng">'.$phrase[$locale]['nav_lang_eng'].'</a></li>
                             </ul>
                         </li>
                     </ul>
+                </div>
+            </nav>';
 
-                    <div id="div-user" class="nav navbar-nav navbar-right">
-                        <div class="row"><label id="label-data">'.$_SESSION['name_session'].' '.$_SESSION['last_session'].'</label></div>
-                        <div class="row" id="div-logout"><label><a href="../control/logout.php"><i class="glyphicon glyphicon-log-out"></i> logout</a></label></div>
-                    </div>';
 
-                    if($_SESSION['prava_session'] == 'admin'){
-                        echo '<a id="a-admin" href="admin_gui.php?locale='.$locale.'" class="btn btn-default" role="button">Admin</a>';
-                    }
 echo              '</div>
             </nav>
 

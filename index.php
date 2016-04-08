@@ -60,7 +60,7 @@ echo '<!DOCTYPE html>
                         <form name="loginform" method="POST">
                             <div class="form-group">
                                 <label for="usr">'.$phrase[$locale]['login_mail'].'</label>
-                                <input type="text" class="form-control" name="usr" placeholder="'.$phrase[$locale]['login_mail_text'].'">
+                                <input type="email" class="form-control" name="usr" placeholder="'.$phrase[$locale]['login_mail_text'].'">
                             </div>
                             <div class="form-group">
                                 <label for="pwd">'.$phrase[$locale]['login_pwd'].':</label>

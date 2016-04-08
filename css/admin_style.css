@@ -3,90 +3,64 @@
 
 html,body{
     height: 100%;
+    background-color: ghostwhite;
+    overflow-x: hidden;
 }
 
 /* navigation bar */
-#div-user{
-    margin-top: 5px;
-    margin-right: 40px;
-}
-
 #label-data{
     font-size: 16px;
     color: white;
 }
 
-#div-logout{
-    font-size: 10px;
-    float: right;
-}
-
-#a-admin{
-    margin-top: 7px;
-    margin-right: 25px;
-    float: right;
-}
-
-/* center of page */
-#div-center{
+ /*center of page*/
+#div-tablets,#div-phones{
     background-color: ghostwhite;
-    margin-top: -20px;
-    min-height: 90%;
-}
-
-#div-table{
-    background-color: ghostwhite;
-    min-height: 78vh;
-}
-
-tr {
     width: 100%;
-    border: 1px solid black;
+    overflow-y: scroll;
+    position: absolute;
+    height: 80vh;
 }
 
-/*tr:hover {} - interakce na mys*/
-
-th,td {
+.admin-th,.admin-td {
     text-align: center;
     border: 1px solid black;
-}
-
-table{
-    min-height: 85vh;
-    border-collapse: collapse;
-}
-
-/* scrolling body*/
-tbody{
-    overflow-y: scroll;
-    height: 90%;
-    position: absolute;
+    white-space: nowrap;
 }
 
 /* control pane*/
 #div-control{
-    background-color: ghostwhite;
-    min-height: 78vh;
-    float: right;
-}
-
-/* info pane */
-#div-info{
-    background-color: ghostwhite;
-    min-height: 43vh;
-    padding: 45px;
-}
-
-/* edit pane */
-#div-edit{
-    background-color: ghostwhite;
-    min-height: 45vh;
 }
 
 #new_b{
-    padding: 20px;
+    padding-top: 5px;
+    overflow-y: scroll;
+    height: 78vh;
+}
+
+#choose-device{
+    width: 195px;
+}
+
+#form-date{
+    width: 195px;
+}
+
+.th-form{
+    border: none;
+    padding-bottom: 5px;
+}
+.td-form{
+    border: none;
+    padding-bottom: 5px;
+}
+
+
+
+.form-control{
+
 }
 
 #edit_b{
-    padding: 20px;
+    padding-top: 20px;
 }
