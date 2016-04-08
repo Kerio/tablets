@@ -14,6 +14,7 @@ $head = '<!DOCTYPE html>
     <!-- import ccs style -->
             <link rel="stylesheet" href="../css/main_style.css">
             <link rel="stylesheet" href="../css/admin_style.css">
+            <link rel="stylesheet" href="../css/user_style.css">
         </head>';
 
 //$navbar = '
