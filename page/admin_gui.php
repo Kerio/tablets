@@ -20,7 +20,9 @@ if($_SESSION['prava_session'] == 'user'){
 $tablets;
 
 echo $head.
-        '<body>
+        '
+        
+        <body>
         <!-- navigation bar -->
             <nav class="navbar navbar-inverse">  
                 <div class="container">
@@ -45,18 +47,25 @@ echo $head.
             </nav>
 
         <!-- center of page -->
-            <div id="div-center" class="row container-fluid">
-        <!-- table pane -->
-                <div id="div-tables" class="col-lg-8 col-md-8 col-sm-6 col-xs-4 container-fluid">
+            <div id="div-center" class="container">
+                    <div id="div-search">
+                        <form id="form-search" class="form-inline" role="form">
+                            <input type="text" class="form-control" id="search" placeholder="Vyhledat">
+                            <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-ok"></span></button>
+                            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-remove"></span></button>
+                        </form>
+                    </div>    
+                    <div class="col-xs-12">
                     <ul class="nav nav-tabs">
                         <li class = "active">
                             <a data-toggle="tab" href="#div-tablets">'.$phrase[$locale]['table_tablets'].'</a></li>
                         <li><a data-toggle="tab" href="#div-phones">'.$phrase[$locale]['table_phones'].'</a></li>
+                        <li><a data-toggle="tab" href="#div-new_b">'.$phrase[$locale]['new_b_tab'].'</a></li>
+                        <li><a data-toggle="tab" href="#div-settings_tab">'.$phrase[$locale]['settings'].'</a></li>
                     </ul>
-                    
-                    <div class="tab-content ">
-                        <div id="div-tablets" class"tab-pane fade active in">
-                            <table class="table table-striped ">
+                    </div>
+                    <div class="tab-content">
+                            <table id="div-tablets" class="table table-responsive table-striped tab-pane fade active in">
                                 <thead>
                                     <tr>
                                         <th class="admin-th">'.$phrase[$locale]['col_id'].'</th>
@@ -80,19 +89,24 @@ echo $head.
                                 $i = 0;
                                 $tablets = $user->allTablets();
                                 foreach($tablets as $innerarray){
+                                    $col = 1;
                                     echo '<tr id="'.$i.'">';
-                                        foreach ($innerarray as $value){
-                                            echo '<td class="admin-td">'.$value.'</td>';
+                                    foreach ($innerarray as $value){
+                                        if($col % 14 == 0){
+                                            echo '<td class="admin-td"><button type="button" class="btn btn-default">Teď</button></td>';
                                         }
+                                        else{
+                                             echo '<td class="admin-td">'.$value.'</td>';
+                                        }
+                                        $col++;
+                                    }
                                     $i++;
                                     echo '</tr>';
                                 }
 echo '                          </tbody>
                             </table>
-                        </div>
                         
-                        <div id="div-phones" class="tab-pane fade">
-                            <table class="table table-striped">
+                            <table id="div-phones" class="table table-responsive table-striped tab-pane fade">
                                 <thead>
                                     <tr>
                                         <th class="admin-th">'.$phrase[$locale]['col_id'].'</th>
@@ -115,37 +129,39 @@ echo '                          </tbody>
                                 $phones = $user->allMobiles();
                                 foreach($phones as $innerarray){
                                     echo '<tr>';
+                                    $col=1;
                                         foreach ($innerarray as $value){
-                                            echo '<td class="admin-td">'.$value.'</td>';
+                                            if($col % 13 == 0){
+                                                echo '<td class="admin-td"><button type="button" class="btn btn-default">Teď</button></td>';
+                                            }
+                                            else{
+                                                echo '<td class="admin-td">'.$value.'</td>';
+                                            }
+                                            $col++;
                                         }
                                     echo '</tr>';
                                 }
 
 echo '                          </tbody>
                             </table>
+                        
+                        <div id="div-new_b" class="tab-pane fade">
+                            '.$new_b_form.'
                         </div>
-                    </div>    
-                </div> 
+                        <div id="div-settings_tab" class="tab-pane fade">
+                            <div id="div-donate">
+                                <form class="form-inline" role="form">
+                                    <div class="form-group">
+                                        <label for="search">Aktuální dotace:</label>
+                                        <input type="number" min="0" class="form-control" id="search">
+                                    </div>
+                                    <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-ok"></span></button>
+                                </form>
+                            </div>   
+                        </div>
+                    </div>  
                 
-        <!-- control pane -->
-                <div id="div-control" class="col-lg-4 col-md-4 col-sm-6 col-xs-8 ">
-                    <div id="div-edit" class ="container-fluid">
-                        <ul class="nav nav-tabs">
-                            <li class = "active"><a data-toggle="tab" href="#new_b">'.$phrase[$locale]['new_b_tab'].'</a></li>
-                            <li><a data-toggle="tab" href="#edit_b">'.$phrase[$locale]['edit_b_tab'].'</a></li>
-                        </ul>
-                        <div class="tab-content">
-                            <div id="new_b" class="tab-pane fade in active">
-                                '.$new_b_form.'
-                            </div>
-                            <div id="edit_b" class="tab-pane fade">
-                                <p>Editing benefit</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>'
-
         .$foot.
         '</body>
     </html>';

@@ -54,7 +54,8 @@ echo '<!DOCTYPE html>
             <div class="container">
                 <div id="midlle" class="row">
     <!-- login formu -->
-                    <div id="form" class="col-md-6">
+                <div class="col-lg-1"></div>
+                    <div id="form" class="col-lg-3">
                         <h2>'.$phrase[$locale]['login'].'</h2>
                         <br>
                         <form name="loginform" method="POST">
@@ -69,10 +70,10 @@ echo '<!DOCTYPE html>
                             <button type="submit" name="btn-login" class="btn btn-default">'.$phrase[$locale]['submit'].'</button>
                         </form>
                     </div>
-
+                <div class="col-lg-1"></div>
     <!-- kerio logo -->
-            <div id="div-logo" class="col-md-6">
-                <img src="img/kerio-logo.png" class="img-responsive" alt="Kerio technologies s.r.o. logo" width="500">
+            <div id="div-logo" class="col-lg-6">
+                <img src="img/kerio-logo.png" class="img-responsive" alt="Kerio technologies s.r.o. logo" width="600">
             </div>
 
     <!-- footer of page -->

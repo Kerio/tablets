@@ -52,6 +52,8 @@ $phrase['cz']['no_device'] = "Jestě nevlastníš zařízení!";
 //admin
 $phrase['cz']['table_tablets'] = "Tablety";
 $phrase['cz']['table_phones'] = "Chytré telefony";
+$phrase['cz']['new_b_tab'] = "Nový benefit";
+$phrase['cz']['settings'] = "Nastavení";
 $phrase['cz']['col_id'] = "ID";
 $phrase['cz']['col_name'] = "Jméno";
 $phrase['cz']['col_lastname'] = "Příjmení";
@@ -68,7 +70,6 @@ $phrase['cz']['col_claim'] = "Datum nároku";
 $phrase['cz']['col_took'] = "Datum převzetí";
 $phrase['cz']['col_notes'] = "Poznámky";
 
-$phrase['cz']['new_b_tab'] = "Nový benefit";
 $phrase['cz']['btn_send'] = "Odešli";
 
 $phrase['cz']['edit_b_tab'] = "Úprava benefitu";
@@ -110,6 +111,8 @@ $phrase['eng']['no_device'] = "You haven't own device yet!";
 //admin
 $phrase['eng']['table_tablets'] = "Tablets";
 $phrase['eng']['table_phones'] = "Smartphones";
+$phrase['eng']['new_b_tab'] = "New benefit";
+$phrase['eng']['settings'] = "Settings";
 $phrase['eng']['col_id'] = "ID";
 $phrase['eng']['col_name'] = "Name";
 $phrase['eng']['col_lastname'] = "Lastname";
@@ -126,7 +129,6 @@ $phrase['eng']['col_claim'] = "Claim";
 $phrase['eng']['col_took'] = "Took";
 $phrase['eng']['col_notes'] = "Notes";
 
-$phrase['eng']['new_b_tab'] = "New benefit";
 $phrase['eng']['btn_send'] = "Send";
 
 $phrase['eng']['edit_b_tab'] = "Edit benefit";

@@ -2,9 +2,7 @@
 /*=========================*/
 
 html,body{
-    height: 100%;
     background-color: ghostwhite;
-    overflow-x: hidden;
 }
 
 /* navigation bar */
@@ -13,39 +11,31 @@ html,body{
     color: white;
 }
 
- /*center of page*/
-#div-tablets,#div-phones{
-    background-color: ghostwhite;
-    width: 100%;
-    overflow-y: scroll;
-    position: absolute;
-    height: 80vh;
+ /*!*center of page*!*/
+#form-search{
+    float: right;
 }
 
+.tab-content{
+    margin-left: 15px;
+}
+#div-donate{
+    margin: 20px;
+    float: left;
+}
 .admin-th,.admin-td {
     text-align: center;
     border: 1px solid black;
     white-space: nowrap;
 }
 
-/* control pane*/
-#div-control{
-}
-
-#new_b{
-    padding-top: 5px;
-    overflow-y: scroll;
-    height: 78vh;
-}
-
+/* new benefit form*/
 #choose-device{
     width: 195px;
 }
-
 #form-date{
     width: 195px;
 }
-
 .th-form{
     border: none;
     padding-bottom: 5px;
@@ -53,14 +43,4 @@ html,body{
 .td-form{
     border: none;
     padding-bottom: 5px;
-}
-
-
-
-.form-control{
-
-}
-
-#edit_b{
-    padding-top: 20px;
 }
