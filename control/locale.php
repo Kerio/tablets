@@ -45,7 +45,6 @@ $phrase['cz']['user_device_cur'] = "Aktuální zařízení";
 $phrase['cz']['user_device_name'] = "Název";
 $phrase['cz']['user_device_bought'] = "Zakoupeno";
 $phrase['cz']['user_device_price'] = "Cena";
-$phrase['cz']['user_device_addpay'] = "Doplatek";
 $phrase['cz']['user_history'] = "Historie";
 $phrase['cz']['no_device'] = "Jestě nevlastníš zařízení!";
 

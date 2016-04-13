@@ -1,8 +1,19 @@
 <?php
 
+/*********************************************************************
+ * funkce vrací řetězec html kodu, který v uživatelském
+ * rozhraní zobrazuje informace o benefitu mobil. Kod
+ * je generovám s daty z databáze.
+ *
+ * @param $array_mobile pole všech mobilních zařízení uživatele
+ * @param $phrase pole z locale.php
+ * @param $locale aktuální jazyk
+ * @return string html kod daného benefitu
+ */
 function get_mobile_data($array_mobile, $phrase, $locale)
 {
 
+    //výpočet dnů do nároku na další benefit
     if(count($array_mobile) == 0){
         $fdate = (date("Y-m", strtotime("now")));
         $date_diff = 0;
@@ -19,6 +30,7 @@ function get_mobile_data($array_mobile, $phrase, $locale)
 
     $device =
         '<h3>' . $phrase[$locale]['mobile'] . '</h3>
+        <!-- informace o následujícím benefitu -->
         <div class="well">
             <div class="progress">
                 <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="'. $part .'" aria-valuemin="0" aria-valuemax="100" style="width: '. $part .'%;">
@@ -27,7 +39,7 @@ function get_mobile_data($array_mobile, $phrase, $locale)
             </div>
             <div class="table-responsive">
                 <table class="user-table">
-                    <tr><th>' . $phrase[$locale]['user_claim'] . ':</th><td class="td-user">'. $fdate .'</td></tr>
+                    <tr><th>' . $phrase[$locale]['user_claim'] . ':</th><td class="td-user">'. date("m-Y", strtotime($fdate)) .'</td></tr>
                     <tr><th>' . $phrase[$locale]['user_subsidy'] . ':</th><td class="td-user"> nemam data kč</td></tr>
                 </table>
             </div>
@@ -38,9 +50,10 @@ function get_mobile_data($array_mobile, $phrase, $locale)
     if (count($array_mobile) > 0) {
         $device .=
             '<div class="table-responsive">
+            <!-- informace o aktuálním benefitu -->
                  <table class="user-table">
                     <tr><th>' . $phrase[$locale]['user_device_name'] . ':</th><td class="td-user">' . $array_mobile[0]['jmeno_produktu'] . '</td></tr>
-                    <tr><th>' . $phrase[$locale]['user_device_bought'] . ':</th><td class="td-user">' . $array_mobile[0]['datum_nakupu'] . '</td></tr>
+                    <tr><th>' . $phrase[$locale]['user_device_bought'] . ':</th><td class="td-user">' . date("d. m. Y", strtotime($array_mobile[0]['datum_nakupu'])) . '</td></tr>
                     <tr><th>' . $phrase[$locale]['user_device_price'] . ':</th><td class="td-user">' . $array_mobile[0]['cena'] . 'kč</td></tr>
                     <tr><th>' . $phrase[$locale]['col_donate'] . ':</th><td class="td-user">' . $array_mobile[0]['dotace'] . 'kč</td></tr>
                  </table>
@@ -49,6 +62,7 @@ function get_mobile_data($array_mobile, $phrase, $locale)
 
         if(count($array_mobile) > 1) {
             $device .= '<div class="panel-group">
+            <!-- informace o historii benefitu -->
             <div id="user-history-panel" class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
@@ -69,10 +83,20 @@ function get_mobile_data($array_mobile, $phrase, $locale)
     return $device;
 }
 
-
+/*********************************************************************
+ * funkce vrací řetězec html kodu, který v uživatelském
+ * rozhraní zobrazuje informace o benefitu tablet. Kod
+ * je generovám s daty z databáze.
+ *
+ * @param $array_tablet pole všech tabletů uživatele
+ * @param $phrase pole z locale.php
+ * @param $locale aktuální jazyk
+ * @return string html kod daného benefitu
+ */
 function get_tablet_data($array_tablet, $phrase, $locale)
 {
 
+    //výpočet dnů do nároku na další benefit
     if(count($array_tablet) == 0){
         $fdate = (date("Y-m", strtotime("now")));
         $date_diff = 0;
@@ -89,6 +113,7 @@ function get_tablet_data($array_tablet, $phrase, $locale)
 
     $device =
         '<h3>' . $phrase[$locale]['tablet'] . '</h3>
+        <!-- informace o následujícím benefitu -->
         <div class="well">
             <div class="progress">
                 <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="'. $part .'" aria-valuemin="0" aria-valuemax="100" style="width: '. $part .'%;">
@@ -97,7 +122,7 @@ function get_tablet_data($array_tablet, $phrase, $locale)
             </div>
             <div class="table-responsive">
                 <table class="user-table">
-                    <tr><th>' . $phrase[$locale]['user_claim'] . ':</th><td class="td-user">'. $fdate .'</td></tr>
+                    <tr><th>' . $phrase[$locale]['user_claim'] . ':</th><td class="td-user">'. date("m-Y", strtotime($fdate)) .'</td></tr>
                     <tr><th>' . $phrase[$locale]['user_subsidy'] . ':</th><td class="td-user"> nemam data kč</td></tr>
                 </table>
             </div>
@@ -109,9 +134,10 @@ function get_tablet_data($array_tablet, $phrase, $locale)
     if (count($array_tablet) > 0) {
         $device .=
             '<div class="table-responsive">
+            <!-- informace o aktuálním benefitu -->
                  <table class="user-table">
                     <tr><th>' . $phrase[$locale]['user_device_name'] . ':</th><td class="td-user">' . $array_tablet[0]['jmeno_produktu'] . '</td></tr>
-                    <tr><th>' . $phrase[$locale]['user_device_bought'] . ':</th><td class="td-user">' . $array_tablet[0]['datum_nakupu'] . '</td></tr>
+                    <tr><th>' . $phrase[$locale]['user_device_bought'] . ':</th><td class="td-user">' . date("d. m. Y", strtotime($array_tablet[0]['datum_nakupu'])) . '</td></tr>
                     <tr><th>' . $phrase[$locale]['user_device_price'] . ':</th><td class="td-user">' . $array_tablet[0]['cena'] . 'kč</td></tr>
                     <tr><th>' . $phrase[$locale]['col_donate'] . ':</th><td class="td-user">' . $array_tablet[0]['dotace'] . 'kč</td></tr>
                  </table>
@@ -120,6 +146,7 @@ function get_tablet_data($array_tablet, $phrase, $locale)
 
         if(count($array_tablet) > 1) {
             $device .= '<div class="panel-group">
+            <!-- informace o historii benefitu -->
             <div id="user-history-panel" class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
@@ -140,6 +167,13 @@ function get_tablet_data($array_tablet, $phrase, $locale)
     return $device;
 }
 
+/*****************************************************************************************
+ * funkce vygeneruje html kod pro historii daného benefitu
+ * @param $array pole všech předchozích zařízení uživatele
+ * @param $phrase pole z locale.php
+ * @param $locale aktuální jazyk
+ * @return string html kod historie daného benefitu
+ */
 function device_history($array, $phrase, $locale){
     $history = '';
     for($i = 1; $i < count($array); $i++) {
@@ -148,7 +182,7 @@ function device_history($array, $phrase, $locale){
              <div class="table-responsive">
                  <table class="user-table">
                     <tr><th>' . $phrase[$locale]['user_device_name'] . ':</th><td class="td-user">' . $array[$i]['jmeno_produktu'] . '</td>
-                    <tr><th>'. $phrase[$locale]['user_device_bought'] . ':</th><td class="td-user">' . $array[$i]['datum_nakupu'] . '</td>
+                    <tr><th>'. $phrase[$locale]['user_device_bought'] . ':</th><td class="td-user">' . date("d. m. Y", strtotime($array[$i]['datum_nakupu'])) . '</td>
                     <tr><th>'. $phrase[$locale]['user_device_price'] . ':</th><td class="td-user">' . $array[$i]['cena'] . 'kč</td>
                     <tr><th>'. $phrase[$locale]['col_donate'] . ':</th><td class="td-user">' . $array[$i]['dotace'] . 'kč</td>
                 </table>

@@ -25,10 +25,31 @@ class USER{
                 return true;
             }
         }
-        
+
         catch (PDOException $e) {
             echo $e->getMessage();
         }
+    }
+
+    public function login_ldap($umail,$upass){
+        $ldap_host = "localhost";
+        $dn = "o=My Company,c=US";
+        // Connect to AD
+        $ldap = ldap_connect($ldap_host) or die("Could not connect to LDAP");
+
+        ldap_set_option($ldap, LDAP_OPT_REFERRALS, 0);
+        ldap_set_option($ldap, LDAP_OPT_PROTOCOL_VERSION, 3);
+        //Bind to AD
+        ldap_bind($ldap,$umail,$upass) or die("Could not bind to LDAP");
+
+        // Retrieve the desired information
+        $results = ldap_search($ldap, $dn, $umail);
+        $info = ldap_get_entries($ldap, $results);
+        // Output the Group and Full Name
+        printf("Group: %s ", $info[ 0] ["ou"][ 0] );
+        printf("Affiliation: %s ", $info[ 0] ["description"][ 0] );
+
+        ldap_close($ldap);
     }
 
     public function is_loggedIn(){
