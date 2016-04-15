@@ -2,6 +2,7 @@
 //  import locales for translation website
 require '../control/view.php';
 require '../control/new_b_form.php';
+require '../control/edit_b_modal.php';
 require '../control/db_config.php';
 
 if(!$user->is_loggedin()){
@@ -21,7 +22,6 @@ $tablets;
 
 echo $head.
         '
-        
         <body>
         <!-- navigation bar -->
             <nav class="navbar navbar-inverse">  
@@ -50,16 +50,16 @@ echo $head.
             <div id="div-center" class="container">
                     <div id="div-search">
                         <form id="form-search" class="form-inline" role="form">
-                            <input type="text" class="form-control" id="search" placeholder="Vyhledat">
+                            <input type="text" class="form-control" id="search" placeholder="'.$phrase[$locale]['search'].'">
                             <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-ok"></span></button>
                             <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-remove"></span></button>
                         </form>
                     </div>    
                     <div class="col-xs-12">
                     <ul class="nav nav-tabs">
-                        <li class = "active">
+                        <li id="tab-tablets" class = "active">
                             <a data-toggle="tab" href="#div-tablets">'.$phrase[$locale]['table_tablets'].'</a></li>
-                        <li><a data-toggle="tab" href="#div-phones">'.$phrase[$locale]['table_phones'].'</a></li>
+                        <li id="tab-phones"><a data-toggle="tab" href="#div-phones">'.$phrase[$locale]['table_phones'].'</a></li>
                         <li><a data-toggle="tab" href="#div-new_b">'.$phrase[$locale]['new_b_tab'].'</a></li>
                         <li><a data-toggle="tab" href="#div-settings_tab">'.$phrase[$locale]['settings'].'</a></li>
                     </ul>
@@ -90,13 +90,13 @@ echo $head.
                                 $tablets = $user->allTablets();
                                 foreach($tablets as $innerarray){
                                     $col = 1;
-                                    echo '<tr id="'.$i.'">';
+                                    echo '<tr id="'.$i.'" class="admin-tr">';
                                     foreach ($innerarray as $value){
                                         if($col % 14 == 0){
-                                            echo '<td class="admin-td"><button type="button" class="btn btn-default">Teď</button></td>';
+                                            echo '<td class="admin-td"><button type="button" class="btn btn-default btn-xs btn-now">'.$phrase[$locale]['btn_now'].'</button></td>';
                                         }
                                         else{
-                                             echo '<td class="admin-td">'.$value.'</td>';
+                                             echo '<td id="'.$col.'"class="admin-td">'.$value.'</td>';
                                         }
                                         $col++;
                                     }
@@ -128,11 +128,11 @@ echo '                          </tbody>
                                 <tbody>';
                                 $phones = $user->allMobiles();
                                 foreach($phones as $innerarray){
-                                    echo '<tr>';
+                                    echo '<tr class="admin-tr">';
                                     $col=1;
                                         foreach ($innerarray as $value){
                                             if($col % 13 == 0){
-                                                echo '<td class="admin-td"><button type="button" class="btn btn-default">Teď</button></td>';
+                                                echo '<td class="admin-td"><button type="button" class="btn btn-default btn-xs btn-now">'.$phrase[$locale]['btn_now'].'</button></td>';
                                             }
                                             else{
                                                 echo '<td class="admin-td">'.$value.'</td>';
@@ -152,7 +152,14 @@ echo '                          </tbody>
                             <div id="div-donate">
                                 <form class="form-inline" role="form">
                                     <div class="form-group">
-                                        <label for="search">Aktuální dotace:</label>
+                                        <select class="form-control" name="choose-device" id="settings_choose-device">
+                                            <option></option>
+                                            <option value="tablet">'.$phrase[$locale]['tablet'].'</option>
+                                            <option value="smartphone">'.$phrase[$locale]['mobile'].'</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label id="l-search" for="search">'.$phrase[$locale]['curr_donate'].':</label>
                                         <input type="number" min="0" class="form-control" id="search">
                                     </div>
                                     <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-ok"></span></button>
@@ -162,7 +169,8 @@ echo '                          </tbody>
                     </div>  
                 
             </div>'
-        .$foot.
-        '</body>
+        .$edit_b_modal.' '.$foot.
+        '
+        </body>
     </html>';
 ?>

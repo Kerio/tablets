@@ -68,11 +68,12 @@ $phrase['cz']['col_supplier'] = "Dodavatel";
 $phrase['cz']['col_claim'] = "Datum nároku";
 $phrase['cz']['col_took'] = "Datum převzetí";
 $phrase['cz']['col_notes'] = "Poznámky";
-
 $phrase['cz']['btn_send'] = "Odešli";
-
+$phrase['cz']['btn_now'] = "Teď";
+$phrase['cz']['search'] = "Vyhledat";
 $phrase['cz']['edit_b_tab'] = "Úprava benefitu";
-
+$phrase['cz']['cancel'] = "Storno";
+$phrase['cz']['curr_donate'] = "Aktuální dotace";
 
 //==============================================================================================
 
@@ -127,10 +128,11 @@ $phrase['eng']['col_supplier'] = "Supplier";
 $phrase['eng']['col_claim'] = "Claim";
 $phrase['eng']['col_took'] = "Took";
 $phrase['eng']['col_notes'] = "Notes";
-
 $phrase['eng']['btn_send'] = "Send";
-
+$phrase['eng']['btn_now'] = "Now";
+$phrase['eng']['search'] = "Search";
 $phrase['eng']['edit_b_tab'] = "Edit benefit";
-
+$phrase['eng']['cancel'] = "Cancel";
+$phrase['eng']['curr_donate'] = "Current donate";
 
 ?>

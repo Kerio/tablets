@@ -7,10 +7,10 @@ $new_b_form = '<form class="form-inline" name="new_b-form" method="POST">
                                         <tr>
                                             <th class="th-form"></th>
                                             <td class="td-form">
-                                                <select class="form-control" id="choose-device">
+                                                <select class="form-control" name="choose-device" id="choose-device">
                                                     <option></option>
-                                                    <option>Tablet</option>
-                                                    <option>Chytrý telefon</option>
+                                                    <option value="tablet">'.$phrase[$locale]['tablet'].'</option>
+                                                    <option value="smartphone">'.$phrase[$locale]['mobile'].'</option>
                                                 </select>
                                             </td>
                                         </tr>
