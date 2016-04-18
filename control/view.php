@@ -12,6 +12,8 @@ $head = '<!DOCTYPE html>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
             <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
             <script src="../js/interaction.js"></script>
+            <script type="text/javascript" src="../js/search.js"></script>
+            <script type="text/javascript" src="../js/jquery.tablesorter.min.js"></script>
     <!-- import ccs style -->
             <link rel="stylesheet" href="../css/main_style.css">
             <link rel="stylesheet" href="../css/admin_style.css">

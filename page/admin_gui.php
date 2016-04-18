@@ -48,12 +48,8 @@ echo $head.
 
         <!-- center of page -->
             <div id="div-center" class="container">
-                    <div id="div-search">
-                        <form id="form-search" class="form-inline" role="form">
-                            <input type="text" class="form-control" id="search" placeholder="'.$phrase[$locale]['search'].'">
-                            <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-ok"></span></button>
-                            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-remove"></span></button>
-                        </form>
+                    <div id="div-search" class="form-group pull-right">
+                        <input type="text" class="search form-control" placeholder="'.$phrase[$locale]['search'].'">
                     </div>    
                     <div class="col-xs-12">
                     <ul class="nav nav-tabs">
@@ -65,7 +61,7 @@ echo $head.
                     </ul>
                     </div>
                     <div class="tab-content">
-                            <table id="div-tablets" class="table table-responsive table-striped tab-pane fade active in">
+                            <table id="div-tablets" class="table table-responsive table-striped tab-pane results fade active in">
                                 <thead>
                                     <tr>
                                         <th class="admin-th">'.$phrase[$locale]['col_id'].'</th>
@@ -83,6 +79,9 @@ echo $head.
                                         <th class="admin-th">'.$phrase[$locale]['col_claim'].'</th>
                                         <th class="admin-th">'.$phrase[$locale]['col_took'].'</th>
                                         <th class="admin-th">'.$phrase[$locale]['col_notes'].'</th>
+                                    </tr>
+                                    <tr class="warning no-result">
+                                        <td colspan="4"><i class="fa fa-warning"></i> No result</td>
                                     </tr>
                                 </thead>
                                 <tbody>';
@@ -106,7 +105,7 @@ echo $head.
 echo '                          </tbody>
                             </table>
                         
-                            <table id="div-phones" class="table table-responsive table-striped tab-pane fade">
+                            <table id="div-phones" class="table table-responsive table-striped tab-pane fade results">
                                 <thead>
                                     <tr>
                                         <th class="admin-th">'.$phrase[$locale]['col_id'].'</th>
@@ -123,6 +122,9 @@ echo '                          </tbody>
                                         <th class="admin-th">'.$phrase[$locale]['col_claim'].'</th>
                                         <th class="admin-th">'.$phrase[$locale]['col_took'].'</th>
                                         <th class="admin-th">'.$phrase[$locale]['col_notes'].'</th>
+                                    </tr>
+                                    <tr class="warning no-result">
+                                        <td colspan="4"><i class="fa fa-warning"></i> No result</td>
                                     </tr>
                                 </thead>
                                 <tbody>';
@@ -174,3 +176,10 @@ echo '                          </tbody>
         </body>
     </html>';
 ?>
+<script type="text/javascript">
+    $(function()
+    {
+        $('#div-tablets').tablesorter();
+        $('#div-phones').tablesorter();
+    });
+</script>
