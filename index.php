@@ -11,6 +11,8 @@ if(isset($_POST['btn-login'])) {
     $umail = $_POST['usr'];
     $upass = $_POST['pwd'];
 
+
+    $user->redirect('single-sign-on/idp.php?username='.$umail);
     if ($user->login($umail, $upass)) {
         $user->redirect('page/user_gui.php?locale='.$locale);
     }

@@ -35,6 +35,7 @@ $phrase['cz']['login_pwd'] = "Heslo";
 $phrase['cz']['login_pwd_text'] = "Zadejte heslo";
 $phrase['cz']['submit'] = "Přihlásit";
 $phrase['cz']['footer_text'] = "Webovou aplikaci vytvořila skupina ZMJ";
+$phrase['cz']['admin'] = "Administrátor";
 
 //user
 $phrase['cz']['mobile'] = "Chytrý telefon";
@@ -94,6 +95,8 @@ $phrase['eng']['login_pwd'] = "Password";
 $phrase['eng']['login_pwd_text'] = "Enter password";
 $phrase['eng']['submit'] = "Log in";
 $phrase['eng']['footer_text'] = "Web application created by ZMJ group";
+$phrase['aj']['admin'] = "Admin";
+
 
 //user
 $phrase['eng']['mobile'] = "Smartphone";
@@ -104,7 +107,6 @@ $phrase['eng']['user_device_cur'] = "Current device";
 $phrase['eng']['user_device_name'] = "Name";
 $phrase['eng']['user_device_bought'] = "Bought";
 $phrase['eng']['user_device_price'] = "Price";
-$phrase['eng']['user_device_addpay'] = "Additional payment";
 $phrase['eng']['user_history'] = "History";
 $phrase['eng']['no_device'] = "You haven't own device yet!";
 

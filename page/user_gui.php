@@ -21,7 +21,7 @@ echo $head.
                     </div>';
                     if($_SESSION['prava_session'] == 'admin'){
                          echo '<ul class="nav navbar-nav">
-                                   <li><a href="admin_gui.php?locale='.$locale.'">Administrátor</a></li>
+                                   <li><a href="admin_gui.php?locale='.$locale.'">'. $phrase[$locale]['admin'] .'</a></li>
                                </ul>';
                     }
 echo '               <ul class="nav navbar-nav navbar-right">
