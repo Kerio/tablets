@@ -95,7 +95,7 @@ $phrase['eng']['login_pwd'] = "Password";
 $phrase['eng']['login_pwd_text'] = "Enter password";
 $phrase['eng']['submit'] = "Log in";
 $phrase['eng']['footer_text'] = "Web application created by ZMJ group";
-$phrase['aj']['admin'] = "Admin";
+$phrase['eng']['admin'] = "Admin";
 
 
 //user

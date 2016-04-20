@@ -7,16 +7,16 @@ if($user->is_loggedin()!=""){
     $user->redirect('page/user_gui.php?locale='.$locale);
 }
 
-if(isset($_POST['btn-login'])) {
-    $umail = $_POST['usr'];
-    $upass = $_POST['pwd'];
+//if(isset($_POST['btn-login'])) {
+    //$umail = $_POST['usr'];
+    //$upass = $_POST['pwd'];
 
 
-    $user->redirect('single-sign-on/idp.php?username='.$umail);
-    if ($user->login($umail, $upass)) {
-        $user->redirect('page/user_gui.php?locale='.$locale);
-    }
-}
+  //  $user->redirect('single-sign-on/idp.php');
+    //if ($user->login($umail, $upass)) {
+     //   $user->redirect('page/user_gui.php?locale='.$locale);
+    //}
+//}
 
 echo '<!DOCTYPE html>
     <html lang= "\'.$phrase[$locale][\'lang\'].\'">
@@ -60,7 +60,7 @@ echo '<!DOCTYPE html>
                     <div id="form" class="col-lg-3">
                         <h2>'.$phrase[$locale]['login'].'</h2>
                         <br>
-                        <form name="loginform" method="POST">
+                        <form name="loginform" method="POST" action="single-sign-on/idp.php">
                             <div class="form-group">
                                 <label for="usr">'.$phrase[$locale]['login_mail'].'</label>
                                 <input type="email" class="form-control" name="usr" placeholder="'.$phrase[$locale]['login_mail_text'].'">

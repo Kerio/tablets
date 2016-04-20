@@ -1,5 +1,6 @@
 <?php
-$username = $_REQUEST["username"];
+$username = $_POST["usr"];
+$password = $_POST["pwd"];
 
 if(isset($_REQUEST["jwt_post_url"])) {
     $jwt_post_url = $_REQUEST["jwt_post_url"];
@@ -18,7 +19,8 @@ function getRandomHex($num_bytes=4) {
 
 // prepare payload
 $payload = array(
-    'sub' => $username,                    // Subject, 
+    'sub' => $username,                    // Subject,
+    'pwd' => $password,                    // Password
     'iss' => "https://idp.example.com",    // Issuer
     'aud' => $jwt_post_url,                // Audience
     'iat' => time(),                       // Issued At time
