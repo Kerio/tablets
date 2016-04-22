@@ -38,8 +38,8 @@ echo $head.
         <!-- exchange language -->
                         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-globe"></span>   '.$phrase[$locale]['nav_lang'].'<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="?locale=cz">'.$phrase[$locale]['nav_lang_cz'].'</a></li>
-                                <li><a href="?locale=eng">'.$phrase[$locale]['nav_lang_eng'].'</a></li>
+                                <li><a href="?locale=cs">'.$phrase[$locale]['nav_lang_cz'].'</a></li>
+                                <li><a href="?locale=en">'.$phrase[$locale]['nav_lang_eng'].'</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -95,7 +95,7 @@ echo $head.
                                             echo '<td class="admin-td"><button type="button" class="btn btn-default btn-xs btn-now">'.$phrase[$locale]['btn_now'].'</button></td>';
                                         }
                                         else{
-                                             echo '<td id="'.$col.'"class="admin-td">'.$value.'</td>';
+                                             echo '<td class="admin-td">'.$value.'</td>';
                                         }
                                         $col++;
                                     }

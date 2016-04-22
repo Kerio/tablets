@@ -30,8 +30,8 @@ echo '               <ul class="nav navbar-nav navbar-right">
     <!-- exchange language -->
                         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-globe"></span>   '.$phrase[$locale]['nav_lang'].'<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="?locale=cz">'.$phrase[$locale]['nav_lang_cz'].'</a></li>
-                                <li><a href="?locale=eng">'.$phrase[$locale]['nav_lang_eng'].'</a></li>
+                                <li><a href="?locale=cs">'.$phrase[$locale]['nav_lang_cz'].'</a></li>
+                                <li><a href="?locale=en">'.$phrase[$locale]['nav_lang_eng'].'</a></li>
                             </ul>
                         </li>
                     </ul>
