@@ -39,9 +39,7 @@ echo '               <ul class="nav navbar-nav navbar-right">
             </nav>';
 
 
-echo              '</div>
-            </nav>
-
+echo              '
     <!-- center of page -->
     <!-- tab bar -->
     <div class="container">

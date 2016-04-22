@@ -63,7 +63,7 @@ function get_mobile_data($array_mobile, $phrase, $locale)
         if(count($array_mobile) > 1) {
             $device .= '<div class="panel-group">
             <!-- informace o historii benefitu -->
-            <div id="user-history-panel" class="panel panel-default">
+            <div id="mobile-history-panel" class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
                         <a data-toggle="collapse" href="#history-mobile">' . $phrase[$locale]['user_history'] . '</a>
@@ -147,7 +147,7 @@ function get_tablet_data($array_tablet, $phrase, $locale)
         if(count($array_tablet) > 1) {
             $device .= '<div class="panel-group">
             <!-- informace o historii benefitu -->
-            <div id="user-history-panel" class="panel panel-default">
+            <div id="tablet-history-panel" class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
                         <a data-toggle="collapse" href="#history-tablet">' . $phrase[$locale]['user_history'] . '</a>
