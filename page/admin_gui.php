@@ -81,7 +81,7 @@ echo $head.
                                         <th class="admin-th">'.$phrase[$locale]['col_notes'].'</th>
                                     </tr>
                                     <tr class="warning no-result">
-                                        <td colspan="4"><i class="fa fa-warning"></i> No result</td>
+                                        <td colspan="15"><i class="fa fa-warning"></i> No result</td>
                                     </tr>
                                 </thead>
                                 <tbody>';
@@ -124,7 +124,7 @@ echo '                          </tbody>
                                         <th class="admin-th">'.$phrase[$locale]['col_notes'].'</th>
                                     </tr>
                                     <tr class="warning no-result">
-                                        <td colspan="4"><i class="fa fa-warning"></i> No result</td>
+                                        <td colspan="14"><i class="fa fa-warning"></i> No result</td>
                                     </tr>
                                 </thead>
                                 <tbody>';
@@ -152,10 +152,10 @@ echo '                          </tbody>
                         </div>
                         <div id="div-settings_tab" class="tab-pane fade">
                             <div id="div-donate">
-                                <form class="form-inline" role="form">
+                                <form class="form-inline">
                                     <div class="form-group">
                                         <select class="form-control" name="choose-device" id="settings_choose-device">
-                                            <option></option>
+                                            <option disabled selected value>'.$phrase[$locale]['choose'].'</option>
                                             <option value="tablet">'.$phrase[$locale]['tablet'].'</option>
                                             <option value="smartphone">'.$phrase[$locale]['mobile'].'</option>
                                         </select>
@@ -173,13 +173,13 @@ echo '                          </tbody>
             </div>'
         .$edit_b_modal.' '.$foot.
         '
-        </body>
-    </html>';
-?>
-<script type="text/javascript">
-    $(function()
+        <script type="text/javascript">';
+ echo "   $(function()
     {
         $('#div-tablets').tablesorter();
         $('#div-phones').tablesorter();
-    });
-</script>
+    });";
+echo '  </script>
+        </body>
+    </html>';
+?>

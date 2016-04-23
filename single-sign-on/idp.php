@@ -5,7 +5,7 @@ $password = $_POST["pwd"];
 if(isset($_REQUEST["jwt_post_url"])) {
     $jwt_post_url = $_REQUEST["jwt_post_url"];
 } else {
-    $jwt_post_url = "http://localhost:85/zswi/single-sign-on/sp.php";
+    $jwt_post_url = "http://localhost/zswi/single-sign-on/sp.php";
 }
 
 // ---------------------------------------------------

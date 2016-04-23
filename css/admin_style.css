@@ -12,12 +12,17 @@ html,body{
 }
 
  /*!*center of page*!*/
-#div-tablets, #div-phones{
+#div-tablets, #div-phones,#new-b-submit{
     margin-bottom: 40px;
 }
 
 #form-search{
     float: right;
+}
+
+/* margin for safari */
+.form-new{
+    margin-top: 60px;
 }
 
 .tab-content{
@@ -33,6 +38,10 @@ html,body{
     white-space: nowrap;
 }
 
+.admin-td{
+    width: 195px;
+}
+
 #l-search{
     margin-left: 10px;
 }
@@ -40,17 +49,20 @@ html,body{
 /* new benefit form*/
 #choose-device{
     width: 195px;
-    /*margin-top: 81px;*/
-    /*margin-left: 108px;*/
 }
 
 #b_e-choose-device{
     width: 195px;
 }
 
-#form-date{
+#n-form-date1,#n-form-date2,#n-form-date3{
     width: 195px;
 }
+
+#e-form-date1,#e-form-date2,#e-form-date3{
+    width: 195px;
+}
+
 .th-form{
     border: none;
     padding: 2px;

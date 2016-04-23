@@ -8,7 +8,7 @@ $edit_b_modal = '
             <!-- Modal content-->
                     <div class="modal-content">
                         <div class="modal-header">
-                            <button type="cancel" class="close" data-dismiss="modal">&times;</button>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
                             <h4 class="modal-title">'.$phrase[$locale]['edit_b_tab'].'</h4>
                         </div>
                         <div class="modal-body">
@@ -18,69 +18,70 @@ $edit_b_modal = '
                                         <th class="th-form"></th>
                                         <td class="td-form">
                                             <select class="form-control" name="b_e-choose-device" id="b_e-choose-device">
-                                                <option></option>
+                                                <option disabled selected value>'.$phrase[$locale]['choose'].'</option>
                                                 <option value="tablet">'.$phrase[$locale]['tablet'].'</option>
                                                 <option value="smartphone">'.$phrase[$locale]['mobile'].'</option>
                                             </select>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th class="th-form"><label for="b-name">'.$phrase[$locale]['col_name'].':</label></th>
-                                        <td class="td-form"><input type="text" class="form-control" name="b_e-name" placeholder=""></td>
+                                        <th class="th-form"><label>'.$phrase[$locale]['col_name'].':</label></th>
+                                        <td class="td-form"><input type="text" class="form-control" name="b_e-name"></td>
                                     </tr>
                                     <tr>
-                                        <th class="th-form"><label for="b-lastname">'.$phrase[$locale]['col_lastname'].':</label></th>
-                                        <td class="td-form"><input type="text" class="form-control" name="b_e-lastname" placeholder=""></td>
+                                        <th class="th-form"><label>'.$phrase[$locale]['col_lastname'].':</label></th>
+                                        <td class="td-form"><input type="text" class="form-control" name="b_e-lastname"></td>
                                     </tr>
                                     <tr>
-                                        <th class="th-form"><label for="b-grant">'.$phrase[$locale]['col_donate'].':</label></th>
-                                        <td class="td-form"><input type="number" min="0" class="form-control" name="b_e-grant" placeholder=""></td>
+                                        <th class="th-form"><label>'.$phrase[$locale]['col_donate'].':</label></th>
+                                        <td class="td-form"><input type="number" min="0" class="form-control" name="b_e-grant"></td>
                                     </tr>
                                     <tr>
-                                        <th class="th-form"><label for="b-device">'.$phrase[$locale]['col_device'].':</label></th>
-                                        <td class="td-form"><input type="text" class="form-control" name="b_e-device" placeholder=""></td>
+                                        <th class="th-form"><label>'.$phrase[$locale]['col_device'].':</label></th>
+                                        <td class="td-form"><input type="text" class="form-control" name="b_e-device"></td>
                                     </tr>
                                     <tr>
-                                        <th class="th-form"><label for="b-price">'.$phrase[$locale]['col_price'].':</label></th>
-                                        <td class="td-form"><input type="number" min="0" class="form-control" name="b_e-price" placeholder=""></td>
+                                        <th class="th-form"><label>'.$phrase[$locale]['col_price'].':</label></th>
+                                        <td class="td-form"><input type="number" min="0" class="form-control" name="b_e-price"></td>
                                     </tr>
                                     <tr>
-                                        <th class="th-form"><label for="b-bought">'.$phrase[$locale]['col_bought'].':</label></th>
-                                        <td class="td-form"><input id="form-date" type="date" class="form-control" name="b_e-bought" placeholder=""></td>
+                                        <th class="th-form"><label>'.$phrase[$locale]['col_bought'].':</label></th>
+                                        <td class="td-form"><input id="e-form-date1" type="date" class="form-control" name="b_e-bought"></td>
                                     </tr>
                                     <tr>
-                                        <th class="th-form"><label for="b-sn">'.$phrase[$locale]['col_sn'].':</label></th>
-                                        <td class="td-form"><input type="text" class="form-control" name="b_e-sn" placeholder=""></td>
+                                        <th class="th-form"><label>'.$phrase[$locale]['col_sn'].':</label></th>
+                                        <td class="td-form"><input type="text" class="form-control" name="b_e-sn"></td>
                                     </tr>
                                     <tr>
-                                        <th class="th-form"><label for="b-imei">'.$phrase[$locale]['col_imei'].':</label></th>
-                                        <td class="td-form"><input type="text" class="form-control" name="b_e-imei" placeholder=""></td>
+                                        <th class="th-form"><label>'.$phrase[$locale]['col_imei'].':</label></th>
+                                        <td class="td-form"><input type="text" class="form-control" name="b_e-imei"></td>
                                     </tr>
                                     <tr>
-                                        <th class="th-form"><label for="b-version">'.$phrase[$locale]['col_version'].':</label></th>
-                                        <td class="td-form"><input type="text" class="form-control" name="b_e-version" placeholder=""></td>
+                                        <th class="th-form"><label>'.$phrase[$locale]['col_version'].':</label></th>
+                                        <td class="td-form"><input type="text" class="form-control" name="b_e-version"></td>
                                     </tr>
                                     <tr>
-                                        <th class="th-form"><label for="b-payment">'.$phrase[$locale]['col_payment'].':</label></th>
-                                        <td class="td-form"><input type="text" class="form-control" name="b_e-payment" placeholder=""></td>
+                                        <th class="th-form"><label>'.$phrase[$locale]['col_payment'].':</label></th>
+                                        <td class="td-form"><input type="text" class="form-control" name="b_e-payment"></td>
                                     </tr>
                                     <tr>
-                                        <th class="th-form"><label for="b-supplier">'.$phrase[$locale]['col_supplier'].':</label></th>
-                                        <td class="td-form"><input type="text" class="form-control" name="b_e-supplier" placeholder=""></td>
+                                        <th class="th-form"><label>'.$phrase[$locale]['col_supplier'].':</label></th>
+                                        <td class="td-form"><input type="text" class="form-control" name="b_e-supplier"></td>
                                     </tr>
                                     <tr>
-                                        <th class="th-form"><label for="b-claim">'.$phrase[$locale]['col_claim'].':</label></th>
-                                        <td class="td-form"><input id="form-date" type="date" class="form-control" name="b_e-claim" placeholder=""></td>
+                                        <th class="th-form"><label>'.$phrase[$locale]['col_claim'].':</label></th>
+                                        <td class="td-form"><input id="e-form-date2" type="date" class="form-control" name="b_e-claim"></td>
                                     </tr>
                                     <tr>
-                                        <th class="th-form"><label for="b-took">'.$phrase[$locale]['col_took'].':</label></th>
-                                        <td class="td-form"><input id="form-date" type="date" class="form-control" name="b_e-took" placeholder=""></td>
+                                        <th class="th-form"><label>'.$phrase[$locale]['col_took'].':</label></th>
+                                        <td class="td-form"><input id="e-form-date3" type="date" class="form-control" name="b_e-took"></td>
                                     </tr>
                                     <tr>
-                                        <th class="th-form"><label for="b-notes">'.$phrase[$locale]['col_notes'].':</label></th>
-                                        <td class="td-form"><input type="text" class="form-control" name="b_e-notes" placeholder=""></td>
+                                        <th class="th-form"><label>'.$phrase[$locale]['col_notes'].':</label></th>
+                                        <td class="td-form"><input type="text" class="form-control" name="b_e-notes"></td>
                                     </tr>
                                     <tr>
+                                        <th></th>
                                         <td class="th-form"><button type="submit" name="btn-new_b" class="btn btn-default">'.$phrase[$locale]['btn_send'].'</button></td>
                                     </tr>
                                 </table>

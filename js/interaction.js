@@ -1,20 +1,18 @@
 $(document).ready(function(){
-    $(".btn-now").dblclick(function () {
-        event.stopPropagation();
-    })
-
-    $(".btn-now").click(function () {
-        var par = $(event.target).parent();
+    $(".btn-now").on('click', function(e) {
+        var evt = e || window.event;
+        var par = $(evt.target).parent();
         var fullDate = new Date();
-            var twoDigitMonth = ((fullDate.getMonth().length+1) === 1)? (fullDate.getMonth()+1) : '0' + (fullDate.getMonth()+1);
-            var currentDate =  fullDate.getFullYear()+ "-" + twoDigitMonth + "-" + fullDate.getDate();
+        var twoDigitMonth = ((fullDate.getMonth().length+1) === 1)? (fullDate.getMonth()+1) : '0' + (fullDate.getMonth()+1);
+        var currentDate =  fullDate.getFullYear()+ "-" + twoDigitMonth + "-" + fullDate.getDate();
         par.html(currentDate);
-    })
+    });
 
-    $(".admin-tr").dblclick(function() {
-        if(event.target.id == 14){ event.stopPropagation()}
+    $(".admin-tr").on('dblclick', function(e) {
+        var evt = e || window.event;
+        if(evt.target.id == 14){ evt.stopPropagation()}
         else {
-            var par = event.currentTarget;
+            var par = evt.currentTarget;
             var text1
             if($("#tab-tablets").attr('class') == "active") {
                 if($('html')[0].lang == 'cz') text1 = 'Tablet';
