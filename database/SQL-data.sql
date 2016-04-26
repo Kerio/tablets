@@ -1,22 +1,22 @@
 
-INSERT INTO UZIVATELE (jmeno, prijmeni, datum_narozeni, prava, email, heslo) VALUES ("Jiri", "Nohac", "1994-08-20", "admin", "jirnoh@seznam.cz", "adminjnohac");
-INSERT INTO UZIVATELE (jmeno, prijmeni, datum_narozeni, prava, email, heslo) VALUES ("Zdenek", "Ziegler", "1994-03-11", "admin", "zdezie@seznam.cz", "adminzziegler");
-INSERT INTO UZIVATELE (jmeno, prijmeni, datum_narozeni, prava, email, heslo) VALUES ("Michal", "Strunc", "1994-10-13", "admin", "michstr@seznam.cz", "adminmstrunc");
-INSERT INTO UZIVATELE (jmeno, prijmeni, datum_narozeni, prava, email, heslo) VALUES ("Karel", "Hrnec", "1993-08-20", "user", "karhrn@seznam.cz", "karhrn");
-INSERT INTO UZIVATELE (jmeno, prijmeni, datum_narozeni, prava, email, heslo) VALUES ("Josef", "Pantofel", "1992-07-15", "user", "jospan@seznam.cz", "jospan");
-INSERT INTO UZIVATELE (jmeno, prijmeni, datum_narozeni, prava, email, heslo) VALUES ("Marek", "Poklicka", "1991-06-14", "user", "marpok@seznam.cz", "marpok");
-INSERT INTO UZIVATELE (jmeno, prijmeni, datum_narozeni, prava, email, heslo) VALUES ("Jakub", "Skrinka", "1990-05-09", "user", "jakskr@seznam.cz", "jakskr");
-INSERT INTO UZIVATELE (jmeno, prijmeni, datum_narozeni, prava, email, heslo) VALUES ("Borivoj", "Cednik", "1989-04-08", "user", "borced@seznam.cz", "borced");
-INSERT INTO UZIVATELE (jmeno, prijmeni, datum_narozeni, prava, email, heslo) VALUES ("Ladislav", "Lednicka", "1987-03-03", "user", "ladled@seznam.cz", "ladled");
-INSERT INTO UZIVATELE (jmeno, prijmeni, datum_narozeni, prava, email, heslo) VALUES ("Tomas", "Mrazak", "1986-02-02", "user", "tommra@seznam.cz", "tommra");
-INSERT INTO UZIVATELE (jmeno, prijmeni, datum_narozeni, prava, email, heslo) VALUES ("Petr", "Vidlicka", "1985-01-28", "user", "petvid@seznam.cz", "petvid");
-INSERT INTO UZIVATELE (jmeno, prijmeni, datum_narozeni, prava, email, heslo) VALUES ("Frantisek", "Nuz", "1984-00-27", "user", "franuz@seznam.cz", "franuz");
-INSERT INTO UZIVATELE (jmeno, prijmeni, datum_narozeni, prava, email, heslo) VALUES ("Jarmoir", "Lzice", "1983-12-22", "user", "jarlzi@seznam.cz", "jarlzi");
-INSERT INTO UZIVATELE (jmeno, prijmeni, datum_narozeni, prava, email, heslo) VALUES ("Ivan", "Drez", "1982-11-21", "user", "ivadre@seznam.cz", "ivadre");
-INSERT INTO UZIVATELE (jmeno, prijmeni, datum_narozeni, prava, email, heslo) VALUES ("Richard", "Jablko", "1981-10-16", "user", "richjab@seznam.cz", "richjab");
-INSERT INTO UZIVATELE (jmeno, prijmeni, datum_narozeni, prava, email, heslo) VALUES ("Otakar", "Steak", "1980-09-15", "user", "otaste@seznam.cz", "otaste");
-INSERT INTO UZIVATELE (jmeno, prijmeni, datum_narozeni, prava, email, heslo) VALUES ("Ctirad", "Chleba", "1979-08-10", "user", "ctichle@seznam.cz", "ctichle");
-INSERT INTO UZIVATELE (jmeno, prijmeni, datum_narozeni, prava, email, heslo) VALUES ("Alexandr", "Rohlik", "1978-07-09", "user", "aleroh@seznam.cz", "aleroh");
+INSERT INTO UZIVATELE (jmeno, prijmeni, prava, email) VALUES ("Jiri", "Nohac", "admin", "jirnoh@seznam.cz");
+INSERT INTO UZIVATELE (jmeno, prijmeni, prava, email) VALUES ("Zdenek", "Ziegler", "admin", "zdezie@seznam.cz");
+INSERT INTO UZIVATELE (jmeno, prijmeni, prava, email) VALUES ("Michal", "Strunc", "admin", "michstr@seznam.cz");
+INSERT INTO UZIVATELE (jmeno, prijmeni, prava, email) VALUES ("Karel", "Hrnec", "user", "karhrn@seznam.cz");
+INSERT INTO UZIVATELE (jmeno, prijmeni, prava, email) VALUES ("Josef", "Pantofel", "user", "jospan@seznam.cz");
+INSERT INTO UZIVATELE (jmeno, prijmeni, prava, email) VALUES ("Marek", "Poklicka", "user", "marpok@seznam.cz");
+INSERT INTO UZIVATELE (jmeno, prijmeni, prava, email) VALUES ("Jakub", "Skrinka", "user", "jakskr@seznam.cz");
+INSERT INTO UZIVATELE (jmeno, prijmeni, prava, email) VALUES ("Borivoj", "Cednik", "user", "borced@seznam.cz");
+INSERT INTO UZIVATELE (jmeno, prijmeni, prava, email) VALUES ("Ladislav", "Lednicka", "user", "ladled@seznam.cz");
+INSERT INTO UZIVATELE (jmeno, prijmeni, prava, email) VALUES ("Tomas", "Mrazak", "user", "tommra@seznam.cz");
+INSERT INTO UZIVATELE (jmeno, prijmeni, prava, email) VALUES ("Petr", "Vidlicka", "user", "petvid@seznam.cz");
+INSERT INTO UZIVATELE (jmeno, prijmeni, prava, email) VALUES ("Frantisek", "Nuz", "user", "franuz@seznam.cz");
+INSERT INTO UZIVATELE (jmeno, prijmeni, prava, email) VALUES ("Jarmoir", "Lzice", "user", "jarlzi@seznam.cz");
+INSERT INTO UZIVATELE (jmeno, prijmeni, prava, email) VALUES ("Ivan", "Drez", "user", "ivadre@seznam.cz");
+INSERT INTO UZIVATELE (jmeno, prijmeni, prava, email) VALUES ("Richard", "Jablko", "user", "richjab@seznam.cz");
+INSERT INTO UZIVATELE (jmeno, prijmeni, prava, email) VALUES ("Otakar", "Steak", "user", "otaste@seznam.cz");
+INSERT INTO UZIVATELE (jmeno, prijmeni, prava, email) VALUES ("Ctirad", "Chleba", "user", "ctichle@seznam.cz");
+INSERT INTO UZIVATELE (jmeno, prijmeni, prava, email) VALUES ("Alexandr", "Rohlik", "user", "aleroh@seznam.cz");
 
 
 INSERT INTO DOTACE(hodnota) VALUES (15600);
@@ -126,3 +126,27 @@ INSERT INTO NAROKY_PRO VALUES (4, 18);
 INSERT INTO NAROKY_PRO VALUES (3, 19);
 INSERT INTO NAROKY_PRO VALUES (6, 20);
 INSERT INTO NAROKY_PRO VALUES (7, 21);
+
+
+
+INSERT INTO `sso` (`jmeno`, `prijmeni`, `prava`, `email`, `heslo`) VALUES ('Jakub', 'Váverka', 'admin', 'jakvav@seznam.cz', 'adminjvaverka');
+INSERT INTO `sso` (`jmeno`, `prijmeni`, `prava`, `email`, `heslo`) VALUES ('Josef', 'Novák', 'user', 'josnov@seznam.cz', 'josnov');
+
+INSERT INTO `sso` (`jmeno`, `prijmeni`, `prava`, `email`, `heslo`) VALUES ("Jiri", "Nohac", "admin", "jirnoh@seznam.cz", "adminjnohac");
+INSERT INTO `sso` (`jmeno`, `prijmeni`, `prava`, `email`, `heslo`) VALUES ("Zdenek", "Ziegler", "admin", "zdezie@seznam.cz", "adminzziegler");
+INSERT INTO `sso` (`jmeno`, `prijmeni`, `prava`, `email`, `heslo`) VALUES ("Michal", "Strunc", "admin", "michstr@seznam.cz", "adminmstrunc");
+INSERT INTO `sso` (`jmeno`, `prijmeni`, `prava`, `email`, `heslo`) VALUES ("Karel", "Hrnec", "user", "karhrn@seznam.cz", "karhrn");
+INSERT INTO `sso` (`jmeno`, `prijmeni`, `prava`, `email`, `heslo`) VALUES ("Josef", "Pantofel", "user", "jospan@seznam.cz", "jospan");
+INSERT INTO `sso` (`jmeno`, `prijmeni`, `prava`, `email`, `heslo`) VALUES ("Marek", "Poklicka", "user", "marpok@seznam.cz", "marpok");
+INSERT INTO `sso` (`jmeno`, `prijmeni`, `prava`, `email`, `heslo`) VALUES ("Jakub", "Skrinka", "user", "jakskr@seznam.cz", "jakskr");
+INSERT INTO `sso` (`jmeno`, `prijmeni`, `prava`, `email`, `heslo`) VALUES ("Borivoj", "Cednik", "user", "borced@seznam.cz", "borced");
+INSERT INTO `sso` (`jmeno`, `prijmeni`, `prava`, `email`, `heslo`) VALUES ("Ladislav", "Lednicka", "user", "ladled@seznam.cz", "ladled");
+INSERT INTO `sso` (`jmeno`, `prijmeni`, `prava`, `email`, `heslo`) VALUES ("Tomas", "Mrazak", "user", "tommra@seznam.cz", "tommra");
+INSERT INTO `sso` (`jmeno`, `prijmeni`, `prava`, `email`, `heslo`) VALUES ("Petr", "Vidlicka", "user", "petvid@seznam.cz", "petvid");
+INSERT INTO `sso` (`jmeno`, `prijmeni`, `prava`, `email`, `heslo`) VALUES ("Frantisek", "Nuz", "user", "franuz@seznam.cz", "franuz");
+INSERT INTO `sso` (`jmeno`, `prijmeni`, `prava`, `email`, `heslo`) VALUES("Jarmoir", "Lzice", "user", "jarlzi@seznam.cz", "jarlzi");
+INSERT INTO `sso` (`jmeno`, `prijmeni`, `prava`, `email`, `heslo`) VALUES ("Ivan", "Drez", "user", "ivadre@seznam.cz", "ivadre");
+INSERT INTO `sso` (`jmeno`, `prijmeni`, `prava`, `email`, `heslo`) VALUES ("Richard", "Jablko", "user", "richjab@seznam.cz", "richjab");
+INSERT INTO `sso` (`jmeno`, `prijmeni`, `prava`, `email`, `heslo`) VALUES ("Otakar", "Steak", "user", "otaste@seznam.cz", "otaste");
+INSERT INTO `sso` (`jmeno`, `prijmeni`, `prava`, `email`, `heslo`) VALUES ("Ctirad", "Chleba", "user", "ctichle@seznam.cz", "ctichle");
+INSERT INTO `sso` (`jmeno`, `prijmeni`, `prava`, `email`, `heslo`) VALUES ("Alexandr", "Rohlik", "user", "aleroh@seznam.cz", "aleroh");

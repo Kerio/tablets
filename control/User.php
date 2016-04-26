@@ -7,49 +7,36 @@ class USER{
     function __construct($DB_con){
         $this->db = $DB_con;
     }
-
-    public function login($umail,$upass){
+    
+    function login($user, $umail){
+        $jmeno = $user['jmeno'];
+        $prijmeni = $user['prijmeni'];
+        $prava = $user['prava'];
         try {
-            $stmt = $this->db->prepare("SELECT id_uzi, jmeno, prijmeni, prava FROM uzivatele WHERE uzivatele.email = '$umail' AND uzivatele.heslo = '$upass';");
-            $stmt->execute();
-            $array = $stmt->fetch(PDO::FETCH_ASSOC);
-            if ($array == null){
-                echo "Zadany email/heslo neni v databazi uzivatelu!";
-                return false;
+            $old = $this->db->prepare("SELECT id_uzi, jmeno, prijmeni, prava FROM uzivatele WHERE uzivatele.email = '$umail';");
+            $old->execute();
+            $user_db = $old->fetch(PDO::FETCH_ASSOC);
+            if ($user_db == null){
+                $new = $this->db->prepare(" INSERT INTO UZIVATELE (jmeno, prijmeni, prava, email) VALUES ('$jmeno', '$prijmeni', '$prava', '$umail');");
+                $new->execute();
+
+                $new = $this->db->prepare("SELECT id_uzi, jmeno, prijmeni, prava FROM uzivatele WHERE uzivatele.email = '$umail';");
+                $new->execute();
+                $user_db = $new->fetch(PDO::FETCH_ASSOC);
             }
             else{
-                $_SESSION['user_session'] = $array['id_uzi'];
-                $_SESSION['name_session'] = $array['jmeno'];
-                $_SESSION['last_session'] = $array['prijmeni'];
-                $_SESSION['prava_session'] = $array['prava'];
-                return true;
+                $update = $this->db->prepare("UPDATE uzivatele SET jmeno = '$jmeno', prijmeni = '$prijmeni', prava = '$prava' WHERE uzivatele.email = '$umail';");
+                $update->execute();
             }
+                $_SESSION['user_session'] = $user_db['id_uzi'];
+                $_SESSION['name_session'] = $user['jmeno'];
+                $_SESSION['last_session'] = $user['prijmeni'];
+                $_SESSION['prava_session'] = $user['prava'];
         }
 
         catch (PDOException $e) {
             echo $e->getMessage();
         }
-    }
-
-    public function login_ldap($umail,$upass){
-        $ldap_host = "localhost";
-        $dn = "o=My Company,c=US";
-        // Connect to AD
-        $ldap = ldap_connect($ldap_host) or die("Could not connect to LDAP");
-
-        ldap_set_option($ldap, LDAP_OPT_REFERRALS, 0);
-        ldap_set_option($ldap, LDAP_OPT_PROTOCOL_VERSION, 3);
-        //Bind to AD
-        ldap_bind($ldap,$umail,$upass) or die("Could not bind to LDAP");
-
-        // Retrieve the desired information
-        $results = ldap_search($ldap, $dn, $umail);
-        $info = ldap_get_entries($ldap, $results);
-        // Output the Group and Full Name
-        printf("Group: %s ", $info[ 0] ["ou"][ 0] );
-        printf("Affiliation: %s ", $info[ 0] ["description"][ 0] );
-
-        ldap_close($ldap);
     }
 
     public function is_loggedIn(){

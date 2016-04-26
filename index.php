@@ -6,17 +6,9 @@
 if($user->is_loggedin()!=""){
     $user->redirect('page/user_gui.php?locale='.$locale);
 }
-
-//if(isset($_POST['btn-login'])) {
-    //$umail = $_POST['usr'];
-    //$upass = $_POST['pwd'];
-
-
-  //  $user->redirect('single-sign-on/idp.php');
-    //if ($user->login($umail, $upass)) {
-     //   $user->redirect('page/user_gui.php?locale='.$locale);
-    //}
-//}
+if(isset($_REQUEST["connect"])) {
+    echo "email nebo heslo neexistuje v databázi";
+}
 
 echo '<!DOCTYPE html>
     <html lang= "'.$phrase[$locale]['lang'].'">

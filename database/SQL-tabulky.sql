@@ -3,10 +3,8 @@ CREATE TABLE UZIVATELE
   id_uzi      INT(6) AUTO_INCREMENT,
   jmeno       VARCHAR(60),
   prijmeni    VARCHAR(60),
-  datum_narozeni DATE,
   prava   VARCHAR(5),
   email   VARCHaR(60),
-  heslo   VARCHAR(30),
   PRIMARY KEY (id_uzi) 
 );
 
@@ -85,4 +83,17 @@ CREATE TABLE NAROKY_PRO
   pro_id_benefitu   INT(9),
   FOREIGN KEY (pro_id_produktu) REFERENCES PRODUKTY(id_produktu),
   FOREIGN KEY (pro_id_benefitu) REFERENCES SEZ_BENEFITU(id_benefitu)
-);                          
+);                 
+
+CREATE TABLE SSO
+(
+
+  jmeno       VARCHAR(60),
+  prijmeni    VARCHAR(60),
+  prava   VARCHAR(5),
+  email   VARCHaR(60),
+  heslo   VARCHAR(30),
+  PRIMARY KEY (email) 
+
+);
+         
