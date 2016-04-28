@@ -1,13 +1,17 @@
 <?php
+/*** Modul s formularem pro novy benefit***/
 
-require 'locale.php';
+require 'locale.php';  // pro pouziti frazi
 
-$new_b_form = '<form class="form-inline form-new" name="new_b-form" method="POST">
+/* promenna uchovavajici cely formular pro novy benefit */
+$new_b_form = '
+                <!-- Form for new benefit -->
+                <form class="form-inline form-new" name="new_b-form" method="POST">
                                     <table id="new_b-table">
                                         <tr>
                                             <th class="th-form"></th>
                                             <td class="td-form">
-                                                <select class="form-control" name="choose-device" id="choose-device">
+                                                <select class="form-control" name="choose-device" id="choose-device" title="Please select option in the list."required>
                                                     <option disabled selected value>'.$phrase[$locale]['choose'].'</option>
                                                     <option value="tablet">'.$phrase[$locale]['tablet'].'</option>
                                                     <option value="smartphone">'.$phrase[$locale]['mobile'].'</option>
@@ -15,12 +19,8 @@ $new_b_form = '<form class="form-inline form-new" name="new_b-form" method="POST
                                             </td>
                                         </tr>
                                         <tr>
-                                            <th class="th-form"><label>'.$phrase[$locale]['col_name'].':</label></th>
-                                            <td class="td-form"><input type="text" class="form-control" name="b-name"></td>
-                                        </tr>
-                                        <tr>
-                                            <th class="th-form"><label>'.$phrase[$locale]['col_lastname'].':</label></th>
-                                            <td class="td-form"><input type="text" class="form-control" name="b-lastname"></td>
+                                            <th class="th-form"><label>'.$phrase[$locale]['login_mail'].':</label></th>
+                                            <td class="td-form"><input type="email" class="form-control" name="b-email" title="Please fill out this field." required></td>
                                         </tr>
                                         <tr>
                                             <th class="th-form"><label>'.$phrase[$locale]['col_donate'].':</label></th>
@@ -28,7 +28,7 @@ $new_b_form = '<form class="form-inline form-new" name="new_b-form" method="POST
                                         </tr>
                                         <tr>
                                             <th class="th-form"><label>'.$phrase[$locale]['col_device'].':</label></th>
-                                            <td class="td-form"><input type="text" class="form-control" name="b-device"></td>
+                                            <td class="td-form"><input type="text" class="form-control" name="b-device" title="Please fill out this field." required></td>
                                         </tr>
                                         <tr>
                                             <th class="th-form"><label>'.$phrase[$locale]['col_price'].':</label></th>
@@ -47,10 +47,6 @@ $new_b_form = '<form class="form-inline form-new" name="new_b-form" method="POST
                                             <td class="td-form"><input type="text" class="form-control" name="b-imei"></td>
                                         </tr>
                                         <tr>
-                                            <th class="th-form"><label>'.$phrase[$locale]['col_version'].':</label></th>
-                                            <td class="td-form"><input type="text" class="form-control" name="b-version"></td>
-                                        </tr>
-                                        <tr>
                                             <th class="th-form"><label>'.$phrase[$locale]['col_payment'].':</label></th>
                                             <td class="td-form"><input type="text" class="form-control" name="b-payment"></td>
                                         </tr>
@@ -61,10 +57,6 @@ $new_b_form = '<form class="form-inline form-new" name="new_b-form" method="POST
                                         <tr>
                                             <th class="th-form"><label>'.$phrase[$locale]['col_claim'].':</label></th>
                                             <td class="td-form"><input id="n-form-date2" type="date" class="form-control" name="b-claim"></td>
-                                        </tr>
-                                        <tr>
-                                            <th class="th-form"><label>'.$phrase[$locale]['col_took'].':</label></th>
-                                            <td class="td-form"><input id="n-form-date3" type="date" class="form-control" name="b-took"></td>
                                         </tr>
                                         <tr>
                                             <th class="th-form"><label>'.$phrase[$locale]['col_notes'].':</label></th>

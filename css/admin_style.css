@@ -16,22 +16,29 @@ html,body{
     margin-bottom: 40px;
 }
 
+/* search */
 #form-search{
     float: right;
 }
 
-/* margin for safari */
-.form-new{
-    margin-top: 60px;
+#l-search{
+    margin-left: 10px;
 }
-
+/* tab */
 .tab-content{
     margin-left: 15px;
 }
-#div-donate{
-    margin: 20px;
-    float: left;
+
+/* tables */
+.results tr[visible='false'],
+.no-result{
+    display:none;
 }
+
+.results tr[visible='true']{
+    display:table-row;
+}
+
 .admin-th,.admin-td {
     text-align: center;
     border: 1px solid black;
@@ -42,11 +49,7 @@ html,body{
     width: 195px;
 }
 
-#l-search{
-    margin-left: 10px;
-}
-
-/* new benefit form*/
+/* new/edit benefit form*/
 #choose-device{
     width: 195px;
 }
@@ -72,11 +75,20 @@ html,body{
     padding: 2px;
 }
 
-.results tr[visible='false'],
-.no-result{
-    display:none;
+#new-b-submit{
+   float: right;
 }
 
-.results tr[visible='true']{
-    display:table-row;
+/* actaul donate */
+#div-donate{
+    margin: 20px;
+    float: left;
 }
+
+
+/*===================*/
+/* margin for safari */
+.form-new{
+    margin-top: 60px;
+}
+/*===================*/

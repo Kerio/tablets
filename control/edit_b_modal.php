@@ -1,6 +1,9 @@
 <?php
-require 'locale.php';
+/*** Modul obsahujici modal s editacnim formularem ***/
 
+require 'locale.php'; // pro pouziti frazi 
+
+/* promenna s vyskakovaci oknem (modalem), ktere v sobe ma editacni formular */
 $edit_b_modal = '
             <!-- Modal -->
             <div class="modal fade" id="editModal" data-backdrop="static" role="dialog">
@@ -12,7 +15,8 @@ $edit_b_modal = '
                             <h4 class="modal-title">'.$phrase[$locale]['edit_b_tab'].'</h4>
                         </div>
                         <div class="modal-body">
-                            <form class="form-inline" name="edit_b-form" method="POST">
+                            <!-- Form for editing benefit -->
+                            <form class="form-inline" name="edit_b-form" id="edit_b-form" method="POST" action="../control/testform.php">
                                 <table id="edit_b-table">
                                     <tr>
                                         <th class="th-form"></th>
@@ -57,10 +61,6 @@ $edit_b_modal = '
                                         <td class="td-form"><input type="text" class="form-control" name="b_e-imei"></td>
                                     </tr>
                                     <tr>
-                                        <th class="th-form"><label>'.$phrase[$locale]['col_version'].':</label></th>
-                                        <td class="td-form"><input type="text" class="form-control" name="b_e-version"></td>
-                                    </tr>
-                                    <tr>
                                         <th class="th-form"><label>'.$phrase[$locale]['col_payment'].':</label></th>
                                         <td class="td-form"><input type="text" class="form-control" name="b_e-payment"></td>
                                     </tr>
@@ -80,14 +80,13 @@ $edit_b_modal = '
                                         <th class="th-form"><label>'.$phrase[$locale]['col_notes'].':</label></th>
                                         <td class="td-form"><input type="text" class="form-control" name="b_e-notes"></td>
                                     </tr>
-                                    <tr>
-                                        <th></th>
-                                        <td class="th-form"><button type="submit" name="btn-new_b" class="btn btn-default">'.$phrase[$locale]['btn_send'].'</button></td>
-                                    </tr>
+                                    <input type="number" class="form-control hidden" name="b_e-id" readonly required>
+                                    <input type="email" class="form-control hidden" name="b_e-email" readonly required>
                                 </table>
                             </form>
                         </div>
                         <div class="modal-footer">
+                            <button type="button" name="btn-edit_b" id="btn-edit_b" class="btn btn-default">'.$phrase[$locale]['btn_send'].'</button>
                             <button type="button" class="btn btn-default" data-dismiss="modal">'.$phrase[$locale]['cancel'].'</button>
                         </div>
                     </div>

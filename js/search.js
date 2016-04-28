@@ -1,3 +1,5 @@
+/* scrpit vyhledavajici v tabulkach */
+
 $(document).ready(function() {
   $(".search").keyup(function () {
     var searchTerm = $(".search").val();

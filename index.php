@@ -1,13 +1,15 @@
 <?php
-//  import locales for translation website
-    require 'control/locale.php';
-    require 'control/db_config.php';
+    require 'control/locale.php'; // pro pouziti frazi
+    require 'control/db_config.php'; // db/user/session
 
+/* test zda je uzivatel prihlasen */
 if($user->is_loggedin()!=""){
     $user->redirect('page/user_gui.php?locale='.$locale);
 }
+/* vypis chybove hlasky */
 if(isset($_REQUEST["connect"])) {
-    echo "email nebo heslo neexistuje v databázi";
+    echo "Chybný E-mail nebo heslo!".'<br>';
+    echo "Kombinace zadaného E-mailu a hesla neodpovídá položkám v databázi";
 }
 
 echo '<!DOCTYPE html>
@@ -47,7 +49,7 @@ echo '<!DOCTYPE html>
     <!-- center of page -->
             <div class="container">
                 <div id="midlle" class="row">
-    <!-- login formu -->
+    <!-- login form -->
                     <div class="col-lg-1"></div>
                         <div id="form" class="col-lg-3">
                             <h2>'.$phrase[$locale]['login'].'</h2>

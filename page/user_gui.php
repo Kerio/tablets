@@ -1,17 +1,14 @@
 <?php
-//  import locales for translation website
-require '../control/view.php';
-require '../control/benefit.php';
-require '../control/db_config.php';
 
-if(!$user->is_loggedin())
-{
+require '../control/view.php'; // pro pouziti frazi
+require '../control/benefit.php'; // pro pouziti funkci 
+require '../control/db_config.php'; // db/user/session
+
+/* test zda je uzivatel prihlasen */
+if(!$user->is_loggedin()){
     $user->redirect('../index.php');
 }
 
-//$user->userDataMobil();
-//echo "<br>";
-//$user->userDataTablet();
 echo $head.
     '<!-- navigation bar -->
             <nav class="navbar navbar-inverse">  
@@ -19,6 +16,7 @@ echo $head.
                     <div class="navbar-header">
                         <a class="navbar-brand" href="../index.php?locale='.$locale.'">'.$phrase[$locale]['kerio_b'].'</a>
                     </div>';
+                    /* pridani odkazu na administratorske rozhrani */
                     if($_SESSION['prava_session'] == 'admin'){
                          echo '<ul class="nav navbar-nav">
                                    <li><a href="admin_gui.php?locale='.$locale.'">'. $phrase[$locale]['admin'] .'</a></li>
@@ -43,11 +41,11 @@ echo              '
     <!-- center of page -->
     <!-- tab bar -->
     <div class="container">
-            <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#benefit1">'.$phrase[$locale]['mobile'].'</a></li>
-                <li><a data-toggle="tab" href="#benefit2">'.$phrase[$locale]['tablet'].'</a></li>
-            </ul>
-    
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#benefit1">'.$phrase[$locale]['mobile'].'</a></li>
+            <li><a data-toggle="tab" href="#benefit2">'.$phrase[$locale]['tablet'].'</a></li>
+        </ul>
+    <!-- benefits -->
         <div class="tab-content">
             <div id="benefit1" class="tab-pane fade in active">'
                 .get_mobile_data($user->userDataMobil(), $phrase, $locale).

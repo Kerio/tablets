@@ -1,5 +1,5 @@
-/*css styles for home page and login page*/
-/*=======================================*/
+/*css styles for login page*/
+/*=========================*/
 
 /* dark bg */
 .bg-1 {
@@ -7,24 +7,25 @@
     color: #fff;
 }
 
-/* footer */
-.navbar-fixed-bottom {
-    padding-top: 10px;
-}
-
-#form{
-    margin-top: 60px;
-}
-
 /* navigation bar*/
 .navbar {
     font-size: 12px;
 }
 
-/* all img in login*/
+/* form */
+#form{
+    margin-top: 60px;
+}
+
+/* all img */
 .img-responsive {
     position: relative;
     margin-top: 180px;
     margin-bottom: 135px;
     opacity: 0.7;
+}
+
+/* footer */
+.navbar-fixed-bottom {
+    padding-top: 10px;
 }

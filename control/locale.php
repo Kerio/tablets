@@ -1,25 +1,27 @@
 <?php
+/*** Modul obasahujici jazykove fraze pro aplikaci v podporovanych jazycich ***/
 
+/* povolene retezce v superglobalnim poli $_GET */
 $authorized = array('cs','en');
 
-//  language setting
+/* nastaveni jazyka */
 if($_GET == NULL){
-    $locale = $authorized[0];
+    $locale = $authorized[0]; /* defaultni nastaveni */
 }
 else{
     foreach ($authorized as $item => $value){
         if($value == $_GET['locale']) {
-            $locale = $value;
+            $locale = $value; /* nastaveni povoleneho jazyka */
         }
         else {
-            $locale = $authorized[0];
+            $locale = $authorized[0]; /* jinak defaultni nastaveni */
         }
     }
 
 }
 
 //CZ
-//general
+//základ
 $phrase['cs']['lang'] = "cs";
 $phrase['cs']['kerio_b'] = "Kerio benefity";
 $phrase['cs']['nav_home'] = "Domů";
@@ -37,7 +39,7 @@ $phrase['cs']['submit'] = "Přihlásit";
 $phrase['cs']['footer_text'] = "Webovou aplikaci vytvořila skupina ZMJ";
 $phrase['cs']['admin'] = "Administrátor";
 
-//user
+//uzivatelska stranka
 $phrase['cs']['mobile'] = "Chytrý telefon";
 $phrase['cs']['tablet'] = "Tablet";
 $phrase['cs']['user_claim'] = "Nárok na nový";
@@ -49,7 +51,7 @@ $phrase['cs']['user_device_price'] = "Cena";
 $phrase['cs']['user_history'] = "Historie";
 $phrase['cs']['no_device'] = "Jestě nevlastníš zařízení!";
 
-//admin
+//administatorska stranka
 $phrase['cs']['table_tablets'] = "Tablety";
 $phrase['cs']['table_phones'] = "Chytré telefony";
 $phrase['cs']['new_b_tab'] = "Nový benefit";
@@ -99,7 +101,7 @@ $phrase['en']['footer_text'] = "Web application created by ZMJ group";
 $phrase['en']['admin'] = "Admin";
 
 
-//user
+//user page
 $phrase['en']['mobile'] = "Smartphone";
 $phrase['en']['tablet'] = "Tablet";
 $phrase['en']['user_claim'] = "Claim for new one";
@@ -111,7 +113,7 @@ $phrase['en']['user_device_price'] = "Price";
 $phrase['en']['user_history'] = "History";
 $phrase['en']['no_device'] = "You haven't own device yet!";
 
-//admin
+//admin page
 $phrase['en']['table_tablets'] = "Tablets";
 $phrase['en']['table_phones'] = "Smartphones";
 $phrase['en']['new_b_tab'] = "New benefit";

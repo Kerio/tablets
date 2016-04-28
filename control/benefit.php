@@ -1,4 +1,5 @@
 <?php
+/*** Modul s funkcemi pro zpracovani a zobrazeni dat z databaze uzivateli ***/
 
 /*********************************************************************
  * funkce vrací řetězec html kodu, který v uživatelském
@@ -30,7 +31,7 @@ function get_mobile_data($array_mobile, $phrase, $locale)
 
     $device =
         '<h3>' . $phrase[$locale]['mobile'] . '</h3>
-        <!-- informace o následujícím benefitu -->
+        <!-- info about next benefit-->
         <div class="well">
             <div class="progress">
                 <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="'. $part .'" aria-valuemin="0" aria-valuemax="100" style="width: '. $part .'%;">
@@ -50,7 +51,7 @@ function get_mobile_data($array_mobile, $phrase, $locale)
     if (count($array_mobile) > 0) {
         $device .=
             '<div class="table-responsive">
-            <!-- informace o aktuálním benefitu -->
+            <!-- info about actual benefit -->
                  <table class="user-table">
                     <tr><th>' . $phrase[$locale]['user_device_name'] . ':</th><td class="td-user">' . $array_mobile[0]['jmeno_produktu'] . '</td></tr>
                     <tr><th>' . $phrase[$locale]['user_device_bought'] . ':</th><td class="td-user">' . date("d. m. Y", strtotime($array_mobile[0]['datum_nakupu'])) . '</td></tr>
@@ -62,7 +63,7 @@ function get_mobile_data($array_mobile, $phrase, $locale)
 
         if(count($array_mobile) > 1) {
             $device .= '<div class="panel-group">
-            <!-- informace o historii benefitu -->
+            <!-- benefit history -->
             <div id="mobile-history-panel" class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
@@ -113,7 +114,7 @@ function get_tablet_data($array_tablet, $phrase, $locale)
 
     $device =
         '<h3>' . $phrase[$locale]['tablet'] . '</h3>
-        <!-- informace o následujícím benefitu -->
+        <!-- info about next benefit-->
         <div class="well">
             <div class="progress">
                 <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="'. $part .'" aria-valuemin="0" aria-valuemax="100" style="width: '. $part .'%;">
@@ -134,7 +135,7 @@ function get_tablet_data($array_tablet, $phrase, $locale)
     if (count($array_tablet) > 0) {
         $device .=
             '<div class="table-responsive">
-            <!-- informace o aktuálním benefitu -->
+            <!-- info about actual benefit -->
                  <table class="user-table">
                     <tr><th>' . $phrase[$locale]['user_device_name'] . ':</th><td class="td-user">' . $array_tablet[0]['jmeno_produktu'] . '</td></tr>
                     <tr><th>' . $phrase[$locale]['user_device_bought'] . ':</th><td class="td-user">' . date("d. m. Y", strtotime($array_tablet[0]['datum_nakupu'])) . '</td></tr>
@@ -146,7 +147,7 @@ function get_tablet_data($array_tablet, $phrase, $locale)
 
         if(count($array_tablet) > 1) {
             $device .= '<div class="panel-group">
-            <!-- informace o historii benefitu -->
+            <!-- benefit history -->
             <div id="tablet-history-panel" class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
