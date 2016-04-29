@@ -4,7 +4,7 @@ CREATE TABLE UZIVATELE
   jmeno       VARCHAR(60),
   prijmeni    VARCHAR(60),
   prava   VARCHAR(5),
-  email   VARCHaR(60),
+  email   VARCHAR(60),
   PRIMARY KEY (id_uzi) 
 );
 
@@ -12,6 +12,11 @@ CREATE TABLE DOTACE
 (
   id_dotace  INT(6) AUTO_INCREMENT,
   hodnota   INT(9),
+  datum_zapsani DATE,
+  presny_cas TIME,
+  typ_produktu   VARCHAR(30),
+  id_uzi  INT(60),
+  FOREIGN KEY (id_uzi) REFERENCES UZIVATELE(id_uzi),
   PRIMARY KEY (id_dotace)
 );
 

@@ -83,6 +83,166 @@ class USER{
         return true;
     }
 
+    public function createBenefit($input)
+    {
+        $zadID = $_SESSION['user_session'];
+        $stmt = $this->db->prepare('SELECT id_uzi FROM uzivatele WHERE email LIKE "'.$input[0].'";');
+        $stmt->execute();
+        $userId = $stmt->fetch(PDO::FETCH_ASSOC);
+        $usID = $userId['id_uzi'];
+        if($userId == null)
+        {
+            echo "Zadany uzivatele neexistuje!";
+            sleep(3);
+            $this->redirect("../page/admin_gui.php");
+        }
+        //echo "DONE PART 1<br>";
+        $stmt = $this->db->prepare('SELECT id_dotace FROM dotace ORDER by datum_zapsani DESC, presny_cas DESC LIMIT 1;');
+        $stmt->execute();
+        $dotaceId = $stmt->fetch(PDO::FETCH_ASSOC);
+        if($dotaceId == null)
+        {
+            $stmt = $this->db->prepare('INSERT INTO dotace (hodnota, datum_zapsani, presny_cas, typ_produktu, id_uzi) VALUES
+                                      ('.$input[1].', "'.date("Y-m-d").'", "'.date("h:i:s").'", "'.$_POST['choose-device'].'", '.$zadID.');');
+            $stmt->execute();
+            $dotaceId = $this->db->lastInsertId();
+        }
+        $dotID = $dotaceId['id_dotace'];
+        //echo "DONE PART 2<br>";
+        $stmt = $this->db->prepare('INSERT INTO sez_benefitu (dotace, zpusob_platby, datum_naskoceni_benefitu, poznamky)
+                                    VALUES ('.$dotID.', "'.$input[7].'", "'.$input[9].'","'.$input[10].'");');
+        $stmt->execute();
+        $benefitId = $this->db->lastInsertId();
+        $benID = $benefitId;
+        $stmt = $this->db->prepare('INSERT INTO naroky_ben (ben_id_uzi, ben_id_benefitu) VALUES ('.$usID.', '.$benID.');');
+        $stmt->execute();
+        //echo "DONE PART 3 <br>";
+        $stmt = $this->db->prepare('SELECT id_dodavatele FROM dodavatele WHERE nazev_dodavatele LIKE "'.$input[8].'";');
+        $stmt->execute();
+        $dodavatelId = $stmt->fetch(PDO::FETCH_ASSOC);
+        $dodID = $dodavatelId['id_dodavatele'];
+        if($dodID == null)
+        {
+            $stmt = $this->db->prepare('INSERT INTO dodavatele (nazev_dodavatele) VALUES ("'.$input[8].'");');
+            $stmt->execute();
+            $dodavatelId = $this->db->lastInsertId();
+            $dodID = $dodavatelId['id_dodavatele'];
+        }
+        //echo "DONE PART 4<br>";
+        $stmt = $this->db->prepare('INSERT INTO produkty (dodavatel) VALUES ('.$dodID.');');
+        $stmt->execute();
+        $produktId = $this->db->lastInsertId();
+        $proID = (int)$produktId;
+        $stmt = $this->db->prepare('INSERT INTO naroky_pro (pro_id_produktu, pro_id_benefitu) VALUES ('.$produktId.', '.$benefitId.');');
+        $stmt->execute();
+        $cenaPro = (int)$input[3];
+        if(strcmp($_POST['choose-device'],"smartphone") == 0)
+        {
+            $stmt = $this->db->prepare('INSERT INTO mobil (ref_produkt, jmeno_produktu, cena_produktu, datum_nakupu, serial_number, imei)
+                                        VALUES ('.$proID.',"'.$input[2].'", '.$cenaPro.', "'.$input[4].'", "'.$input[5].'", "'.$input[6].'");');
+            $stmt->execute();
+        }
+        else
+        {
+            $stmt = $this->db->prepare('INSERT INTO tablet (ref_produkt, jmeno_produktu, cena_produktu, datum_nakupu, serial_number, imei)
+                                        VALUES ('.$proID.',"'.$input[2].'", '.$cenaPro.', "'.$input[4].'", "'.$input[5].'", "'.$input[6].'");');
+            $stmt->execute();
+        }
+        //echo "DONE ALL";
+        $this->redirect("../page/admin_gui.php");
+    }
+
+    public function updateBenefit($input)
+    {
+        $zadID = $_SESSION['user_session'];
+        $stmt = $this->db->prepare('SELECT id_uzi FROM uzivatele WHERE email LIKE "'.$input[0].'";');
+        $stmt->execute();
+        $userId = $stmt->fetch(PDO::FETCH_ASSOC);
+        $usID = $userId['id_uzi'];
+        if($usID == null)
+        {
+            echo "Zadany uzivatele neexistuje!";
+            sleep(3);
+            $this->redirect("../page/admin_gui.php");
+        }
+        $benID = $input[1];
+        $stmt = $this->db->prepare('SELECT id_dotace, hodnota FROM dotace, sez_benefitu WHERE id_benefitu = '.$benID.' AND id_dotace = dotace;');
+        $stmt->execute();
+        $hodnotaDo = $stmt->fetch(PDO::FETCH_ASSOC);
+//        if($hodnotaDo['hodnota'] != $input[4])
+//        {
+//            $stmt = $this->db->prepare('SELECT id_dotace FROM dotace ORDER by datum_zapsani DESC, presny_cas DESC LIMIT 1;');
+//            $stmt->execute();
+//            $dotaceId = $stmt->fetch(PDO::FETCH_ASSOC);
+//            if($dotaceId == null)
+//            {
+//                $stmt = $this->db->prepare('INSERT INTO dotace (hodnota, datum_zapsani, presny_cas, typ_produktu, id_uzi) VALUES
+//                                      ('.$input[1].', "'.date("Y-m-d").'", "'.date("h:i:s").'", "'.$_POST['choose-device'].'", '.$zadID.');');
+//                $stmt->execute();
+//                $hodnotaDo = $this->db->lastInsertId();
+//            }
+//        }
+        $dotID = $hodnotaDo['id_dotace'];
+        $stmt = $this->db->prepare('UPDATE sez_benefitu SET dotace = '.$dotID.', zpusob_platby = "'.$input[10].
+            '", datum_naskoceni_benefitu = "'.$input[12].'", datum_vyplaceni_benefitu = "'.$input[13].'", poznamky = "'.$input[14].'" WHERE id_benefitu = '.$benID.';');
+        $stmt->execute();
+
+        $stmt = $this->db->prepare('SELECT id_dodavatele FROM dodavatele WHERE nazev_dodavatele LIKE "'.$input[11].'";');
+        $stmt->execute();
+        $dodavatelId = $stmt->fetch(PDO::FETCH_ASSOC);
+        echo var_dump($dodavatelId);
+        $dodID = $dodavatelId['id_dodavatele'];
+        if($dodID == null)
+        {
+            $stmt = $this->db->prepare('INSERT INTO dodavatele (nazev_dodavatele) VALUES ("'.$input[11].'");');
+            $stmt->execute();
+            $dodID = $this->db->lastInsertId();
+        }
+
+        $stmt = $this->db->prepare('SELECT id_produktu FROM produkty, naroky_pro WHERE id_produktu = pro_id_produktu AND pro_id_benefitu = '.$benID.';');
+        $stmt->execute();
+        $produktId = $stmt->fetch(PDO::FETCH_ASSOC);
+        $proID = $produktId['id_produktu'];
+
+        $stmt = $this->db->prepare('UPDATE produkty SET dodavatel = '.$dodID.' WHERE id_produktu = '.$proID.';');
+        $stmt->execute();
+        if(strcmp($_POST['b_e-choose-device'],"smartphone") == 0)
+        {
+            $stmt = $this->db->prepare('UPDATE mobil SET ref_produkt = '.$proID.', jmeno_produktu = "'.$input[5].'", cena_produktu = '.$input[6].'
+                                        , datum_nakupu = "'.$input[7].'", serial_number = "'.$input[8].'", imei = "'.$input[9].'" WHERE ref_produkt = '.$proID.';');
+            $stmt->execute();
+        }
+        else
+        {
+            $stmt = $this->db->prepare('UPDATE tablet SET ref_produkt = '.$proID.', jmeno_produktu = "'.$input[5].'", cena_produktu = '.$input[6].'
+                                        , datum_nakupu = "'.$input[7].'", serial_number = "'.$input[8].'", imei = "'.$input[9].'" WHERE ref_produkt = '.$proID.';');
+            $stmt->execute();
+        }
+        //echo "DONE ALL";
+        $this->redirect("../page/admin_gui.php");
+    }
+
+    public function dotaceCreate($input)
+    {
+        $usID = (int)($_SESSION['user_session']);
+        $stmt = $this->db->prepare('SELECT COUNT(*) FROM dotace WHERE hodnota = "'.date("Y-m-d").'";');
+        $stmt->execute();
+        $dotace= $stmt->fetch(PDO::FETCH_ASSOC);
+        $dodPocet = $dotace['COUNT(*)'];
+        if($dodPocet < 5)
+        {
+            $stmt = $this->db->prepare('INSERT INTO dotace (hodnota, datum_zapsani, presny_cas, typ_produktu, id_uzi) VALUES ('.$input[1].',
+                                      "'.date("Y-m-d").'", "'.date("h:i:s").'", "'.$input[0].'", '.$usID.');');
+            $stmt->execute();
+        }
+        else
+        {
+            echo "Prekrocen pocet zmen v dotacich za den!<br>";
+            sleep(3);
+        }
+        $this->redirect("../page/admin_gui.php");
+    }
+
     /**
      * funkce nacitajici data o vsech tabletech
      * @return mixed pole vsech informaci tykajicich se tabletu

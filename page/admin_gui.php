@@ -154,9 +154,9 @@ echo '                  </tbody>
         <!-- settings -->
                     <div id="div-settings_tab" class="tab-pane fade">
                         <div id="div-donate">
-                            <form class="form-inline" method="post">
+                            <form class="form-inline" method="post" action="../control/dotaceCreate.php">
                                 <div class="form-group">
-                                    <select class="form-control" name="choose-device" id="settings_choose-device" title="Please select option in the list."required>
+                                    <select class="form-control" name="settings_choose-device" id="settings_choose-device" title="Please select option in the list."required>
                                         <option disabled selected value>'.$phrase[$locale]['choose'].'</option>
                                         <option value="tablet">'.$phrase[$locale]['tablet'].'</option>
                                         <option value="smartphone">'.$phrase[$locale]['mobile'].'</option>
@@ -164,7 +164,7 @@ echo '                  </tbody>
                                 </div>
                                 <div class="form-group">
                                     <label id="l-search" for="search">'.$phrase[$locale]['curr_donate'].':</label>
-                                    <input type="number" min="0" class="form-control" id="search" title="Please fill out this field." required>
+                                    <input type="number" min="0" class="form-control" id="search" name="settings_grant" title="Please fill out this field." required>
                                 </div>
                                 <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-ok"></span></button>
                             </form>

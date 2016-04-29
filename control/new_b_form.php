@@ -1,12 +1,12 @@
 <?php
 /*** Modul s formularem pro novy benefit***/
 
-require 'locale.php';  // pro pouziti frazi
+require 'locale.php';// pro pouziti frazi
 
 /* promenna uchovavajici cely formular pro novy benefit */
 $new_b_form = '
                 <!-- Form for new benefit -->
-                <form class="form-inline form-new" name="new_b-form" method="POST">
+                <form class="form-inline form-new" name="new_b-form" method="POST" action="../control/createBenefit.php">
                                     <table id="new_b-table">
                                         <tr>
                                             <th class="th-form"></th>

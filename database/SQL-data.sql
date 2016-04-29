@@ -19,9 +19,9 @@ INSERT INTO UZIVATELE (jmeno, prijmeni, prava, email) VALUES ("Ctirad", "Chleba"
 INSERT INTO UZIVATELE (jmeno, prijmeni, prava, email) VALUES ("Alexandr", "Rohlik", "user", "aleroh@seznam.cz");
 
 
-INSERT INTO DOTACE(hodnota) VALUES (15600);
-INSERT INTO DOTACE(hodnota) VALUES (20000);
-INSERT INTO DOTACE(hodnota) VALUES (10000);
+INSERT INTO DOTACE(hodnota, datum_zapsani, presny_cas, typ_produktu, id_uzi) VALUES (15600, "2014-02-20", "03:53:15", "tablet", 1);
+INSERT INTO DOTACE(hodnota, datum_zapsani, presny_cas, typ_produktu, id_uzi) VALUES (20000, "2014-04-21", "12:33:46", "smartphone", 2);
+INSERT INTO DOTACE(hodnota, datum_zapsani, presny_cas, typ_produktu, id_uzi) VALUES (10000, "2015-06-30", "16:58:01", "tablet", 3);
 
 
 INSERT INTO SEZ_BENEFITU (dotace, zpusob_platby, datum_naskoceni_benefitu, poznamky) VALUES (1, "VISA CARD", "2016-07-31", null);

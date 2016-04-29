@@ -16,7 +16,7 @@ $edit_b_modal = '
                         </div>
                         <div class="modal-body">
                             <!-- Form for editing benefit -->
-                            <form class="form-inline" name="edit_b-form" id="edit_b-form" method="POST" action="../control/testform.php">
+                            <form class="form-inline" name="edit_b-form" id="edit_b-form" method="POST" action="../control/updateBenefit.php">
                                 <table id="edit_b-table">
                                     <tr>
                                         <th class="th-form"></th>
