@@ -83,9 +83,18 @@ class USER{
         return true;
     }
 
+    /**
+     * funkce, ktera provede kompletni prdani vsech potrebnych
+     * informaci o novem benefitu do datbaze, vcetene kontroly
+     * uzivatele, dotace a dodavatele.
+     *
+     * @param    $input     pole hodnot, ze ktereho se bude ukladat
+     *                      do databaze
+     */
     public function createBenefit($input)
     {
         $zadID = $_SESSION['user_session'];
+        //kontrola uzivatele
         $stmt = $this->db->prepare('SELECT id_uzi FROM uzivatele WHERE email LIKE "'.$input[0].'";');
         $stmt->execute();
         $userId = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -96,7 +105,7 @@ class USER{
             sleep(3);
             $this->redirect("../page/admin_gui.php");
         }
-        //echo "DONE PART 1<br>";
+        //kontrola dotace, ci pridani dotace
         $stmt = $this->db->prepare('SELECT id_dotace FROM dotace ORDER by datum_zapsani DESC, presny_cas DESC LIMIT 1;');
         $stmt->execute();
         $dotaceId = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -108,15 +117,17 @@ class USER{
             $dotaceId = $this->db->lastInsertId();
         }
         $dotID = $dotaceId['id_dotace'];
-        //echo "DONE PART 2<br>";
-        $stmt = $this->db->prepare('INSERT INTO sez_benefitu (dotace, zpusob_platby, datum_naskoceni_benefitu, poznamky)
-                                    VALUES ('.$dotID.', "'.$input[7].'", "'.$input[9].'","'.$input[10].'");');
+
+        //pridani noveho benefitu do datbaze
+        $stmt = $this->db->prepare('INSERT INTO sez_benefitu (dotace, zpusob_platby, datum_naskoceni_benefitu, datum_vyplaceni_benefitu, poznamky)
+                                    VALUES ('.$dotID.', "'.$input[7].'", "'.$input[9].'", NULL,"'.$input[10].'");');
         $stmt->execute();
         $benefitId = $this->db->lastInsertId();
         $benID = $benefitId;
         $stmt = $this->db->prepare('INSERT INTO naroky_ben (ben_id_uzi, ben_id_benefitu) VALUES ('.$usID.', '.$benID.');');
         $stmt->execute();
-        //echo "DONE PART 3 <br>";
+
+        //kontrola dodavatele, ci pridani dodavatele do databaze
         $stmt = $this->db->prepare('SELECT id_dodavatele FROM dodavatele WHERE nazev_dodavatele LIKE "'.$input[8].'";');
         $stmt->execute();
         $dodavatelId = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -128,7 +139,8 @@ class USER{
             $dodavatelId = $this->db->lastInsertId();
             $dodID = $dodavatelId['id_dodavatele'];
         }
-        //echo "DONE PART 4<br>";
+
+        //pridani produktu do databaze vceten zarizeni, ktereho se to tyka
         $stmt = $this->db->prepare('INSERT INTO produkty (dodavatel) VALUES ('.$dodID.');');
         $stmt->execute();
         $produktId = $this->db->lastInsertId();
@@ -148,13 +160,21 @@ class USER{
                                         VALUES ('.$proID.',"'.$input[2].'", '.$cenaPro.', "'.$input[4].'", "'.$input[5].'", "'.$input[6].'");');
             $stmt->execute();
         }
-        //echo "DONE ALL";
+        //presmerovani na administratorskou stranku
         $this->redirect("../page/admin_gui.php");
     }
 
+    /**
+     * funkce, ktera provede kompletni update daneho benefitu
+     * do datbaze, vcetene kontroly uzivatele, dotace a dodavatele.
+     *
+     * @param    $input     pole hodnot, ze ktereho se bude ukladat
+     *                      do databaze
+     */
     public function updateBenefit($input)
     {
         $zadID = $_SESSION['user_session'];
+        //kontrola uzivatele
         $stmt = $this->db->prepare('SELECT id_uzi FROM uzivatele WHERE email LIKE "'.$input[0].'";');
         $stmt->execute();
         $userId = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -165,6 +185,8 @@ class USER{
             sleep(3);
             $this->redirect("../page/admin_gui.php");
         }
+
+        //kontrola dotace, ci zapsani nove dotace
         $benID = $input[1];
         $stmt = $this->db->prepare('SELECT id_dotace, hodnota FROM dotace, sez_benefitu WHERE id_benefitu = '.$benID.' AND id_dotace = dotace;');
         $stmt->execute();
@@ -183,14 +205,26 @@ class USER{
 //            }
 //        }
         $dotID = $hodnotaDo['id_dotace'];
-        $stmt = $this->db->prepare('UPDATE sez_benefitu SET dotace = '.$dotID.', zpusob_platby = "'.$input[10].
-            '", datum_naskoceni_benefitu = "'.$input[12].'", datum_vyplaceni_benefitu = "'.$input[13].'", poznamky = "'.$input[14].'" WHERE id_benefitu = '.$benID.';');
-        $stmt->execute();
 
+        //update benefitu
+        if($input[13] == false)
+        {
+            $input[13] = "NULL";
+            $stmt = $this->db->prepare('UPDATE sez_benefitu SET dotace = '.$dotID.', zpusob_platby = "'.$input[10].
+                '", datum_naskoceni_benefitu = "'.$input[12].'", datum_vyplaceni_benefitu = '.$input[13].', poznamky = "'.$input[14].'" WHERE id_benefitu = '.$benID.';');
+            $stmt->execute();
+        }
+        else
+        {
+            $stmt = $this->db->prepare('UPDATE sez_benefitu SET dotace = '.$dotID.', zpusob_platby = "'.$input[10].
+                '", datum_naskoceni_benefitu = "'.$input[12].'", datum_vyplaceni_benefitu = "'.$input[13].'", poznamky = "'.$input[14].'" WHERE id_benefitu = '.$benID.';');
+            $stmt->execute();
+        }
+
+        //update dodavatele, ci vytvoreni noveho dodavatele
         $stmt = $this->db->prepare('SELECT id_dodavatele FROM dodavatele WHERE nazev_dodavatele LIKE "'.$input[11].'";');
         $stmt->execute();
         $dodavatelId = $stmt->fetch(PDO::FETCH_ASSOC);
-        echo var_dump($dodavatelId);
         $dodID = $dodavatelId['id_dodavatele'];
         if($dodID == null)
         {
@@ -199,6 +233,7 @@ class USER{
             $dodID = $this->db->lastInsertId();
         }
 
+        //update produkutu a konkretniho zarizeni
         $stmt = $this->db->prepare('SELECT id_produktu FROM produkty, naroky_pro WHERE id_produktu = pro_id_produktu AND pro_id_benefitu = '.$benID.';');
         $stmt->execute();
         $produktId = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -218,10 +253,17 @@ class USER{
                                         , datum_nakupu = "'.$input[7].'", serial_number = "'.$input[8].'", imei = "'.$input[9].'" WHERE ref_produkt = '.$proID.';');
             $stmt->execute();
         }
-        //echo "DONE ALL";
+        //presmerovani na administratorskou stranku
         $this->redirect("../page/admin_gui.php");
     }
 
+    /**
+     * funkce, ktera zprostredkuje pridani nove dotace do tabulky dotace
+     * podle toho, kdo a kdy ji pridal na zaklade zarizeni. Tato zmena
+     * nastane pouze v pripade, ze admin nastavil novou dotaci.
+     *
+     * @return zapis do databze.
+     */
     public function dotaceCreate($input)
     {
         $usID = (int)($_SESSION['user_session']);
@@ -229,6 +271,7 @@ class USER{
         $stmt->execute();
         $dotace= $stmt->fetch(PDO::FETCH_ASSOC);
         $dodPocet = $dotace['COUNT(*)'];
+        //Denne lze zmenit 5x menit dotaci, pri dalsim pokus se vyhodi chyba
         if($dodPocet < 5)
         {
             $stmt = $this->db->prepare('INSERT INTO dotace (hodnota, datum_zapsani, presny_cas, typ_produktu, id_uzi) VALUES ('.$input[1].',
@@ -240,6 +283,29 @@ class USER{
             echo "Prekrocen pocet zmen v dotacich za den!<br>";
             sleep(3);
         }
+        //presmerovani na administratorskou stranku
+        $this->redirect("../page/admin_gui.php");
+    }
+
+    /**
+     * funkce, ktera provede aktualizaci daneho
+     * benefitu, kdyz se klikne v prislusne radce
+     * na tlacitko ted.
+     *
+     * @param       $benID      id benefitu
+     */
+    public function updateBenefitDate($benID)
+    {
+        $stmt = $this->db->prepare('SELECT id_benefitu FROM sez_benefitu ORDER BY id_benefitu DESC LIMIT 1;');
+        $stmt->execute();
+        $tmp= $stmt->fetch(PDO::FETCH_ASSOC);
+        $cislo = $tmp['id_benefitu'];
+        if($cislo >= $benID)
+        {
+            $stmt = $this->db->prepare('UPDATE sez_benefitu SET datum_vyplaceni_benefitu = "'.date("Y-m-d").'" WHERE id_benefitu = '.$benID.';');
+            $stmt->execute();
+        }
+        //presmerovani na administratorskou stranku
         $this->redirect("../page/admin_gui.php");
     }
 
@@ -293,6 +359,14 @@ class USER{
         return $array;
     }
 
+    /**
+     * funkce, ktera provede dotaz nad databazi,
+     * ktera vrati benefity konkretniho prihlaseneho
+     * uzivatele, tyto benefity se tykaji mobilu.
+     *
+     * @return      mixed       vraci pole naplnene
+     *                          daty z databaze
+     */
     public function userDataMobil(){
         $stmt = $this->db->prepare("SELECT id_benefitu,
         (SELECT jmeno FROM UZIVATELE, naroky_ben WHERE NAROKY_BEN.ben_id_benefitu = id_benefitu AND naroky_ben.ben_id_uzi = id_uzi) AS jmeno,
@@ -311,6 +385,14 @@ class USER{
         return $array;
     }
 
+    /**
+     * funkce, ktera provede dotaz nad databazi,
+     * ktera vrati benefity konkretniho prihlaseneho
+     * uzivatele, tyto benefity se tykaji tabletu.
+     *
+     * @return      mixed       vraci pole naplnene
+     *                          daty z databaze
+     */
     public function userDataTablet(){
         $stmt = $this->db->prepare("SELECT id_benefitu,
         (SELECT jmeno FROM UZIVATELE, naroky_ben WHERE NAROKY_BEN.ben_id_benefitu = id_benefitu AND naroky_ben.ben_id_uzi = id_uzi) AS jmeno,
