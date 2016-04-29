@@ -90,7 +90,7 @@ echo $head.
                                     $col = 1;
                                     echo '<tr id="'.$i.'" class="admin-tr">';
                                     foreach ($innerarray as $value){
-                                        if($col % 14 == 0){ /* vlozeni tlacitka do bunky */
+                                        if($col % 14 == 0 && $value == NULL){ /* vlozeni tlacitka do bunky */
                                             echo '<td class="admin-td"><button type="button" class="btn btn-default btn-xs btn-now">'.$phrase[$locale]['btn_now'].'</button></td>';
                                         }
                                         else{
@@ -134,7 +134,7 @@ echo '                  </tbody>
                                     echo '<tr class="admin-tr">';
                                     $col=1;
                                         foreach ($innerarray as $value){
-                                            if($col % 14 == 0){
+                                            if($col % 14 == 0 && $value == NULL){
                                                 echo '<td class="admin-td"><button type="button" class="btn btn-default btn-xs btn-now">'.$phrase[$locale]['btn_now'].'</button></td>';
                                             }
                                             else{
