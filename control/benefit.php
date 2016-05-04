@@ -9,25 +9,34 @@
  * @param $array_mobile pole všech mobilních zařízení uživatele
  * @param $phrase pole z locale.php
  * @param $locale aktuální jazyk
+ * @param $db_con připojení k databázi
  * @return string html kod daného benefitu
  */
-function get_mobile_data($array_mobile, $phrase, $locale)
+function get_mobile_data($array_mobile, $phrase, $locale, $db_con)
 {
 
     //výpočet dnů do nároku na další benefit
     if(count($array_mobile) == 0){
-        $fdate = (date("Y-m", strtotime("now")));
+        $future_date = (date("Y-m", strtotime("now")));
         $date_diff = 0;
         $part = 100;
     }
     else{
         $date = date("Y-m", strtotime($array_mobile[0]['datum_nakupu']));
-        $fdate = date("Y-m", strtotime("+2 Years", strtotime($date)));
-        $cdate = date("Y-m-d", strtotime("now"));
-        $date_diff=number_format(((strtotime($fdate)-strtotime($cdate)) / 86400) ,0);
-        $date_diff2=(strtotime($fdate)-strtotime($date)) / 86400;
+        $future_date = date("Y-m", strtotime("+2 Years", strtotime($date)));
+        $current_date = date("Y-m-d", strtotime("now"));
+        $date_diff=number_format(((strtotime($future_date)-strtotime($current_date)) / 86400) ,0);
+        $date_diff2=(strtotime($future_date)-strtotime($date)) / 86400;
         $part = number_format(($date_diff2 - $date_diff)/($date_diff2/100),2);
     }
+
+    if($date_diff < 0){
+        $date_diff = 0;
+    }
+
+    $stmt = $db_con->prepare("SELECT hodnota, datum_zapsani, presny_cas FROM DOTACE WHERE typ_produktu = 'smartphone' ORDER BY datum_zapsani DESC, presny_cas DESC LIMIT 1;");
+    $stmt->execute();
+    $subsidy = $stmt->fetch(PDO::FETCH_ASSOC);
 
     $device =
         '<h3>' . $phrase[$locale]['mobile'] . '</h3>
@@ -40,8 +49,8 @@ function get_mobile_data($array_mobile, $phrase, $locale)
             </div>
             <div class="table-responsive">
                 <table class="user-table">
-                    <tr><th>' . $phrase[$locale]['user_claim'] . ':</th><td class="td-user">'. date("m-Y", strtotime($fdate)) .'</td></tr>
-                    <tr><th>' . $phrase[$locale]['user_subsidy'] . ':</th><td class="td-user"> nemam data kč</td></tr>
+                    <tr><th>' . $phrase[$locale]['user_claim'] . ':</th><td class="td-user">'. date("m-Y", strtotime($future_date)) .'</td></tr>
+                    <tr><th>' . $phrase[$locale]['user_subsidy'] . ':</th><td class="td-user">'. $subsidy['hodnota'] .'kč</td></tr>
                 </table>
             </div>
         </div>
@@ -92,25 +101,34 @@ function get_mobile_data($array_mobile, $phrase, $locale)
  * @param $array_tablet pole všech tabletů uživatele
  * @param $phrase pole z locale.php
  * @param $locale aktuální jazyk
+ * @param $db_con připojení k databázi
  * @return string html kod daného benefitu
  */
-function get_tablet_data($array_tablet, $phrase, $locale)
+function get_tablet_data($array_tablet, $phrase, $locale, $db_con)
 {
 
     //výpočet dnů do nároku na další benefit
     if(count($array_tablet) == 0){
-        $fdate = (date("Y-m", strtotime("now")));
+        $future_date = (date("Y-m", strtotime("now")));
         $date_diff = 0;
         $part = 100;
     }
     else{
         $date = date("Y-m", strtotime($array_tablet[0]['datum_nakupu']));
-        $fdate = date("Y-m", strtotime("+2 Years", strtotime($date)));
-        $cdate = date("Y-m-d", strtotime("now"));
-        $date_diff=(strtotime($fdate)-strtotime($cdate)) / 86400;
-        $date_diff2=(strtotime($fdate)-strtotime($date)) / 86400;
-        $part = ($date_diff2 - $date_diff)/($date_diff2/100);
+        $future_date = date("Y-m", strtotime("+2 Years", strtotime($date)));
+        $current_date = date("Y-m-d", strtotime("now"));
+        $date_diff=number_format(((strtotime($future_date)-strtotime($current_date)) / 86400) ,0);
+        $date_diff2=(strtotime($future_date)-strtotime($date)) / 86400;
+        $part = number_format(($date_diff2 - $date_diff)/($date_diff2/100),2);
     }
+
+    if($date_diff < 0){
+        $date_diff = 0;
+    }
+
+    $stmt = $db_con->prepare("SELECT hodnota, datum_zapsani, presny_cas FROM DOTACE WHERE typ_produktu = 'tablet' ORDER BY datum_zapsani DESC, presny_cas DESC LIMIT 1;");
+    $stmt->execute();
+    $subsidy = $stmt->fetch(PDO::FETCH_ASSOC);
 
     $device =
         '<h3>' . $phrase[$locale]['tablet'] . '</h3>
@@ -123,8 +141,8 @@ function get_tablet_data($array_tablet, $phrase, $locale)
             </div>
             <div class="table-responsive">
                 <table class="user-table">
-                    <tr><th>' . $phrase[$locale]['user_claim'] . ':</th><td class="td-user">'. date("m-Y", strtotime($fdate)) .'</td></tr>
-                    <tr><th>' . $phrase[$locale]['user_subsidy'] . ':</th><td class="td-user"> nemam data kč</td></tr>
+                    <tr><th>' . $phrase[$locale]['user_claim'] . ':</th><td class="td-user">'. date("m-Y", strtotime($future_date)) .'</td></tr>
+                    <tr><th>' . $phrase[$locale]['user_subsidy'] . ':</th><td class="td-user">'. $subsidy['hodnota'] .'kč</td></tr>
                 </table>
             </div>
         </div>
@@ -170,22 +188,22 @@ function get_tablet_data($array_tablet, $phrase, $locale)
 
 /*****************************************************************************************
  * funkce vygeneruje html kod pro historii daného benefitu
- * @param $array pole všech předchozích zařízení uživatele
+ * @param $array_device_history pole všech předchozích zařízení uživatele
  * @param $phrase pole z locale.php
  * @param $locale aktuální jazyk
  * @return string html kod historie daného benefitu
  */
-function device_history($array, $phrase, $locale){
+function device_history($array_device_history, $phrase, $locale){
     $history = '';
-    for($i = 1; $i < count($array); $i++) {
+    for($i = 1; $i < count($array_device_history); $i++) {
         $history .=
         '<div class="well">
              <div class="table-responsive">
                  <table class="user-table">
-                    <tr><th>' . $phrase[$locale]['user_device_name'] . ':</th><td class="td-user">' . $array[$i]['jmeno_produktu'] . '</td>
-                    <tr><th>'. $phrase[$locale]['user_device_bought'] . ':</th><td class="td-user">' . date("d. m. Y", strtotime($array[$i]['datum_nakupu'])) . '</td>
-                    <tr><th>'. $phrase[$locale]['user_device_price'] . ':</th><td class="td-user">' . $array[$i]['cena'] . 'kč</td>
-                    <tr><th>'. $phrase[$locale]['col_donate'] . ':</th><td class="td-user">' . $array[$i]['dotace'] . 'kč</td>
+                    <tr><th>' . $phrase[$locale]['user_device_name'] . ':</th><td class="td-user">' . $array_device_history[$i]['jmeno_produktu'] . '</td>
+                    <tr><th>'. $phrase[$locale]['user_device_bought'] . ':</th><td class="td-user">' . date("d. m. Y", strtotime($array_device_history[$i]['datum_nakupu'])) . '</td>
+                    <tr><th>'. $phrase[$locale]['user_device_price'] . ':</th><td class="td-user">' . $array_device_history[$i]['cena'] . 'kč</td>
+                    <tr><th>'. $phrase[$locale]['col_donate'] . ':</th><td class="td-user">' . $array_device_history[$i]['dotace'] . 'kč</td>
                 </table>
              </div>
          </div>';

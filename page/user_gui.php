@@ -48,11 +48,11 @@ echo              '
     <!-- benefits -->
         <div class="tab-content">
             <div id="benefit1" class="tab-pane fade in active">'
-                .get_mobile_data($user->userDataMobil(), $phrase, $locale).
+                .get_mobile_data($user->userDataMobil(), $phrase, $locale, $db_con).
             '</div>
     
             <div id="benefit2" class="tab-pane fade">'
-                .get_tablet_data($user->userDataTablet(), $phrase, $locale).
+                .get_tablet_data($user->userDataTablet(), $phrase, $locale, $db_con).
             '</div>
         </div>
     </div>'
