@@ -13,6 +13,8 @@ $(document).ready(function(){
         var fullDate = new Date(); // ziskani casu
         var twoDigitMonth = ((fullDate.getMonth().length+1) === 1)? (fullDate.getMonth()+1) : '0' + (fullDate.getMonth()+1); // dvojciselny mesic
         var currentDate =  fullDate.getFullYear()+ "-" + twoDigitMonth + "-" + fullDate.getDate(); // pozadovany datum
+        var id = par.parent()[0].firstChild.innerHTML; // ziskani id radku na zaklade event handleru
+        $.post("../control/updateDate.php", {id: id}, function(data){})//zavolani funkce na update data pro konkretni radek
         par.html(currentDate); // nahrazeni tlacitka datumem
     });
 
@@ -92,3 +94,7 @@ $(document).ready(function(){
         $("#edit_b-form").submit();
     });
 });
+ function on_callPHP()
+ {
+     var result = "updateDate.php";
+ }

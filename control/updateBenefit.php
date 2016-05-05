@@ -1,6 +1,6 @@
 <?php
 require_once '../control/db_config.php';
-
+    //pripraveni pole dat na aktualizaci benfitu z editacniho formulare
     if(strcmp($_POST['b_e-choose-device'],"smartphone") == 0)
     {
         $input = array($_POST['b_e-email'], $_POST['b_e-id'], $_POST['b_e-name'], $_POST['b_e-lastname'], $_POST['b_e-grant'], $_POST['b_e-device'], $_POST['b_e-price'],$_POST['b_e-bought'],
