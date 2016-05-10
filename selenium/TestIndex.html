@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:85/zswi/" />
+<title>Test</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Test</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/zswi/</td>
+	<td></td>
+</tr>
+<!-- kontrola komponent-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=label-brand</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=label-brand</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-brand</td>
+	<td>Kerio benefity</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=language</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=language</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=language</td>
+	<td>*Jazyk*</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=czech</td>
+	<td>Čeština</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=english</td>
+	<td>Angličtina</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=label-highline</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=label-highline</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-highline</td>
+	<td>Přihlášení</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=label-email</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=label-email</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-email</td>
+	<td>E-mail:</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=input-email</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=input-email</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyEditable</td>
+	<td>id=input-email</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyAttribute</td>
+	<td>id=input-email@placeholder</td>
+	<td>Zadejte e-mail</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=label-psw</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=label-psw</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-psw</td>
+	<td>Heslo:</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=input-psw</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=input-psw</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyEditable</td>
+	<td>id=input-psw</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyAttribute</td>
+	<td>id=input-psw@placeholder</td>
+	<td>Zadejte heslo</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=button-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=button-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=button-submit</td>
+	<td>Přihlásit</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=div-logo</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=div-logo</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=footer</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=footer</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=footer</td>
+	<td>Webovou aplikaci vytvořila skupina ZMJ</td>
+</tr>
+<!--anglické popisky-->
+<tr>
+	<td>click</td>
+	<td>link=Jazyk</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Angličtina</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-brand</td>
+	<td>Kerio benefits</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=language</td>
+	<td>*Language*</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=czech</td>
+	<td>Czech</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=english</td>
+	<td>English</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-highline</td>
+	<td>Log in</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-email</td>
+	<td>E-mail:</td>
+</tr>
+<tr>
+	<td>verifyAttribute</td>
+	<td>id=input-email@placeholder</td>
+	<td>Enter e-mail</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-psw</td>
+	<td>Password:</td>
+</tr>
+<tr>
+	<td>verifyAttribute</td>
+	<td>id=input-psw@placeholder</td>
+	<td>Enter password</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=button-submit</td>
+	<td>Log in</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=footer</td>
+	<td>Web application created by ZMJ group</td>
+</tr>
+<!--přihlášení-->
+<tr>
+	<td>type</td>
+	<td>id=input-email</td>
+	<td>jirnoh@seznam.cz</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=input-psw</td>
+	<td>adminjnohac</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=button-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertLocation</td>
+	<td>http://localhost:85/zswi/page/user_gui.php?locale=cs</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertLocation</td>
+	<td>http://localhost:85/zswi/index.php</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=input-email</td>
+	<td>neniemail</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=input-psw</td>
+	<td>heslo</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=button-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertLocation</td>
+	<td>http://localhost:85/zswi/index.php</td>
+	<td></td>
+</tr>
+<!--sql injection-->
+<tr>
+	<td>type</td>
+	<td>id=input-email</td>
+	<td>jirnoh@seznam.cz</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=input-psw</td>
+	<td>a';DROP TABLE uzivatele; --</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=button-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertLocation</td>
+	<td>http://localhost:85/zswi/index.php?locale=cs&amp;connect=fail</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=body</td>
+	<td>Chybný E-mail nebo heslo!<br />Kombinace zadaného E-mailu a hesla neodpovídá položkám v databázi Kerio benefity <br /> Jazyk Čeština Angličtina <br /> <br /> Přihlášení <br /> E-mail: <br /> Heslo: <br /> Přihlásit <br /> <br /> <br /> Webovou aplikaci vytvořila skupina ZMJ</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=input-email</td>
+	<td>jirnoh@seznam.cz</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=input-psw</td>
+	<td>&quot;</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=button-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertLocation</td>
+	<td>http://localhost:85/zswi/index.php?locale=cs&amp;connect=fail</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=body</td>
+	<td>Chybný E-mail nebo heslo!<br />Kombinace zadaného E-mailu a hesla neodpovídá položkám v databázi Kerio benefity <br /> Jazyk Čeština Angličtina <br /> <br /> Přihlášení <br /> E-mail: <br /> Heslo: <br /> Přihlásit <br /> <br /> <br /> Webovou aplikaci vytvořila skupina ZMJ</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=input-email</td>
+	<td>jirnoh@seznam.cz</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=input-psw</td>
+	<td>;</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=button-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertLocation</td>
+	<td>http://localhost:85/zswi/index.php?locale=cs&amp;connect=fail</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=body</td>
+	<td>Chybný E-mail nebo heslo!<br />Kombinace zadaného E-mailu a hesla neodpovídá položkám v databázi Kerio benefity <br /> Jazyk Čeština Angličtina <br /> <br /> Přihlášení <br /> E-mail: <br /> Heslo: <br /> Přihlásit <br /> <br /> <br /> Webovou aplikaci vytvořila skupina ZMJ</td>
+</tr>
+</td>
+	<td></td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

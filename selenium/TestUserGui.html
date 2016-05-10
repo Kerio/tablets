@@ -1,0 +1,759 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:85/zswi/" />
+<title>New Test</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">New Test</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/zswi</td>
+	<td></td>
+</tr>
+<!--komponenty s admin 2x mobil 2x tablet -->
+<tr>
+	<td>type</td>
+	<td>id=input-email</td>
+	<td>jirnoh@seznam.cz</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=input-psw</td>
+	<td>adminjnohac</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=button-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertLocation</td>
+	<td>http://localhost:85/zswi/page/user_gui.php?locale=cs</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=label-brand</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=label-brand</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-brand</td>
+	<td>Kerio benefity</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=label-gui-switch</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=label-gui-switch</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-gui-switch</td>
+	<td>Administrátor</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=label-name</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=label-name</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-name</td>
+	<td>*Jiri Nohac*</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=language</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=language</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=language</td>
+	<td>*Jazyk*</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=czech</td>
+	<td>Čeština</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=english</td>
+	<td>Angličtina</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=benefit-tab</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=benefit-tab</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=benefit-mobile</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=benefit-mobile</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=benefit-mobile</td>
+	<td>Chytrý telefon</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=benefit-tablet</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=benefit-tablet</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=benefit-tablet</td>
+	<td>Tablet</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Chytrý telefon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=label-higline-mobile</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=label-higline-mobile</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-higline-mobile</td>
+	<td>Chytrý telefon</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=well-progress-mobile</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=well-progress-mobile</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=progressbar-mobile</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=progressbar-mobile</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=table-progress-mobile</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=table-progress-mobile</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=user-mobile-claim</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=user-mobile-claim</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=user-mobile-claim</td>
+	<td>Nárok na nový:</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=user-mobile-subsidy</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=user-mobile-subsidy</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=user-mobile-subsidy</td>
+	<td>Příspěvek:</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=well-current-mobile</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=well-current-mobile</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=label-higline-currentmobile</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=label-higline-currentmobile</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-higline-currentmobile</td>
+	<td>Aktuální zařízení</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=table-current-mobile</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=table-current-mobile</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=user-mobile-name</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=user-mobile-name</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=user-mobile-name</td>
+	<td>Název:</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=user-mobile-bought</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=user-mobile-bought</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=user-mobile-bought</td>
+	<td>Zakoupeno:</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=user-mobile-price</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=user-mobile-price</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=user-mobile-price</td>
+	<td>Cena:</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=user-mobile-donate</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=user-mobile-donate</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=user-mobile-donate</td>
+	<td>Dotace:</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=mobile-history-panel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=mobile-history-panel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=mobile-history-panel</td>
+	<td>*Historie*</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=well-history1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyNotVisible</td>
+	<td>id=well-history1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Historie</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=well-history1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Tablet</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=label-higline-tablet</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=label-higline-tablet</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-higline-tablet</td>
+	<td>Tablet</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=well-progress-tablet</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=well-progress-tablet</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=progressbar-tablet</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=progressbar-tablet</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=table-progress-tablet</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=table-progress-tablet</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=user-tablet-claim</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=user-tablet-claim</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=user-tablet-claim</td>
+	<td>Nárok na nový:</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=user-tablet-subsidy</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=user-tablet-subsidy</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=user-tablet-subsidy</td>
+	<td>Příspěvek:</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=well-current-tablet</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=well-current-tablet</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=label-higline-currenttablet</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=label-higline-currenttablet</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-higline-currenttablet</td>
+	<td>Aktuální zařízení</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=table-current-tablet</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=table-current-tablet</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=user-tablet-name</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=user-tablet-name</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=user-tablet-name</td>
+	<td>Název:</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=user-tablet-bought</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=user-tablet-bought</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=user-tablet-bought</td>
+	<td>Zakoupeno:</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=user-tablet-price</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=user-tablet-price</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=user-tablet-price</td>
+	<td>Cena:</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=user-tablet-donate</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=user-tablet-donate</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=user-tablet-donate</td>
+	<td>Dotace:</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=tablet-history-panel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=tablet-history-panel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=tablet-history-panel</td>
+	<td>*Historie*</td>
+</tr>
+<!--kontrola angličtina-->
+<tr>
+	<td>click</td>
+	<td>link=Jazyk</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Angličtina</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-brand</td>
+	<td>Kerio benefits</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-gui-switch</td>
+	<td>Admin</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=language</td>
+	<td>*Language*</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=czech</td>
+	<td>Czech</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=english</td>
+	<td>English</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=benefit-mobile</td>
+	<td>Smartphone</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=benefit-tablet</td>
+	<td>Tablet</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-higline-mobile</td>
+	<td>Smartphone</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=user-mobile-claim</td>
+	<td>Claim for new one:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=user-mobile-subsidy</td>
+	<td>Subsidy:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-higline-currentmobile</td>
+	<td>Current device</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=user-mobile-name</td>
+	<td>Name:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=user-mobile-bought</td>
+	<td>Bought:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=user-mobile-price</td>
+	<td>Price:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=user-mobile-donate</td>
+	<td>Donate:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=mobile-history-panel</td>
+	<td>*History*</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-higline-tablet</td>
+	<td>Tablet</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=user-tablet-claim</td>
+	<td>Claim for new one:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=user-tablet-subsidy</td>
+	<td>Subsidy:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-higline-currenttablet</td>
+	<td>Current device</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=user-tablet-name</td>
+	<td>Name:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=user-tablet-bought</td>
+	<td>Bought:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=user-tablet-price</td>
+	<td>Price:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=user-tablet-donate</td>
+	<td>Donate:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=tablet-history-panel</td>
+	<td>*History*</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertLocation</td>
+	<td>http://localhost:85/zswi/index.php</td>
+	<td></td>
+</tr>
+<!--Komponenty user, 1x mobil 0x tablet-->
+<tr>
+	<td>type</td>
+	<td>id=input-email</td>
+	<td>richjab@seznam.cz</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=input-psw</td>
+	<td>richjab</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=button-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertLocation</td>
+	<td>http://localhost:85/zswi/page/user_gui.php?locale=cs</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementNotPresent</td>
+	<td>id=label-gui-switch</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Chytrý telefon</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementNotPresent</td>
+	<td>id=mobil-history-panel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Tablet</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=p</td>
+	<td>Jestě nevlastníš zařízení!</td>
+</tr>
+<tr>
+	<td>verifyElementNotPresent</td>
+	<td>id=tablet-history-panel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertLocation</td>
+	<td>http://localhost:85/zswi/index.php</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

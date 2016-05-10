@@ -31,15 +31,15 @@ echo '<!DOCTYPE html>
             <nav class="navbar navbar-inverse">
                 <div class="container">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="index.php?locale='.$locale.'">'.$phrase[$locale]['kerio_b'].'</a>
+                        <a class="navbar-brand" id="label-brand" href="index.php?locale='.$locale.'">'.$phrase[$locale]['kerio_b'].'</a>
                     </div>
                     
     <!-- exchange language -->
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon glyphicon-globe"></span>   '.$phrase[$locale]['nav_lang'].'<span class="caret"></span></a>
+                        <li class="dropdown" id="language"><a class="dropdown-toggle"data-toggle="dropdown" href="#"><span class="glyphicon glyphicon glyphicon-globe"></span>   '.$phrase[$locale]['nav_lang'].'<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="?locale=cs">'.$phrase[$locale]['nav_lang_cz'].'</a></li>
-                                <li><a href="?locale=en">'.$phrase[$locale]['nav_lang_eng'].'</a></li>
+                                <li id="czech"><a href="?locale=cs">'.$phrase[$locale]['nav_lang_cz'].'</a></li>
+                                <li id="english"><a href="?locale=en">'.$phrase[$locale]['nav_lang_eng'].'</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -52,18 +52,18 @@ echo '<!DOCTYPE html>
     <!-- login form -->
                     <div class="col-lg-1"></div>
                         <div id="form" class="col-lg-3">
-                            <h2>'.$phrase[$locale]['login'].'</h2>
+                            <h2 id="label-highline">'.$phrase[$locale]['login'].'</h2>
                             <br>
                             <form name="loginform" method="POST" action="single-sign-on/idp.php">
                                 <div class="form-group">
-                                    <label>'.$phrase[$locale]['login_mail'].'</label>
-                                        <input type="email" class="form-control" name="usr" placeholder="'.$phrase[$locale]['login_mail_text'].'">
+                                    <label id="label-email">'.$phrase[$locale]['login_mail'].':</label>
+                                        <input id="input-email" type="email" class="form-control" name="usr" placeholder="'.$phrase[$locale]['login_mail_text'].'">
                                 </div>
                                 <div class="form-group">
-                                    <label>'.$phrase[$locale]['login_pwd'].':</label>
-                                    <input type="password" class="form-control" name="pwd" placeholder="'.$phrase[$locale]['login_pwd_text'].'">
+                                    <label id="label-psw">'.$phrase[$locale]['login_pwd'].':</label>
+                                    <input id="input-psw" type="password" class="form-control" name="pwd" placeholder="'.$phrase[$locale]['login_pwd_text'].'">
                                 </div>
-                                <button type="submit" name="btn-login" class="btn btn-default">'.$phrase[$locale]['submit'].'</button>
+                                <button id="button-submit" type="submit" name="btn-login" class="btn btn-default">'.$phrase[$locale]['submit'].'</button>
                             </form>
                         </div>
                     <div class="col-lg-1"></div>
@@ -73,7 +73,7 @@ echo '<!DOCTYPE html>
                     </div>
 
     <!-- footer of page -->
-                    <footer class="navbar-fixed-bottom bg-1 text-center">
+                    <footer id="footer" class="navbar-fixed-bottom bg-1 text-center">
                         <p>'.$phrase[$locale]['footer_text'].'</p>
                     </footer>
                 </div>

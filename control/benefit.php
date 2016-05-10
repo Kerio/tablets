@@ -32,6 +32,7 @@ function get_mobile_data($array_mobile, $phrase, $locale, $db_con)
 
     if($date_diff < 0){
         $date_diff = 0;
+        $part = 100;
     }
 
     $stmt = $db_con->prepare("SELECT hodnota, datum_zapsani, presny_cas FROM DOTACE WHERE typ_produktu = 'smartphone' ORDER BY datum_zapsani DESC, presny_cas DESC LIMIT 1;");
@@ -39,33 +40,33 @@ function get_mobile_data($array_mobile, $phrase, $locale, $db_con)
     $subsidy = $stmt->fetch(PDO::FETCH_ASSOC);
 
     $device =
-        '<h3>' . $phrase[$locale]['mobile'] . '</h3>
+        '<h3 id="label-higline-mobile">' . $phrase[$locale]['mobile'] . '</h3>
         <!-- info about next benefit-->
-        <div class="well">
+        <div class="well" id="well-progress-mobile">
             <div class="progress">
-                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="'. $part .'" aria-valuemin="0" aria-valuemax="100" style="width: '. $part .'%;">
+                <div class="progress-bar progress-bar-striped active" id="progressbar-mobile" role="progressbar" aria-valuenow="'. $part .'" aria-valuemin="0" aria-valuemax="100" style="width: '. $part .'%;">
                     <span>'. $date_diff .' dní</span>
                 </div>
             </div>
             <div class="table-responsive">
-                <table class="user-table">
-                    <tr><th>' . $phrase[$locale]['user_claim'] . ':</th><td class="td-user">'. date("m-Y", strtotime($future_date)) .'</td></tr>
-                    <tr><th>' . $phrase[$locale]['user_subsidy'] . ':</th><td class="td-user">'. $subsidy['hodnota'] .'kč</td></tr>
+                <table class="user-table" id="table-progress-mobile">
+                    <tr><th id="user-mobile-claim">' . $phrase[$locale]['user_claim'] . ':</th><td class="td-user">'. date("m-Y", strtotime($future_date)) .'</td></tr>
+                    <tr><th id="user-mobile-subsidy">' . $phrase[$locale]['user_subsidy'] . ':</th><td class="td-user">'. $subsidy['hodnota'] .'kč</td></tr>
                 </table>
             </div>
         </div>
 
-        <div class="well">
-            <h3>' . $phrase[$locale]['user_device_cur'] . '</h3>';
+        <div class="well" id="well-current-mobile">
+            <h3 id="label-higline-currentmobile">' . $phrase[$locale]['user_device_cur'] . '</h3>';
     if (count($array_mobile) > 0) {
         $device .=
             '<div class="table-responsive">
             <!-- info about actual benefit -->
-                 <table class="user-table">
-                    <tr><th>' . $phrase[$locale]['user_device_name'] . ':</th><td class="td-user">' . $array_mobile[0]['jmeno_produktu'] . '</td></tr>
-                    <tr><th>' . $phrase[$locale]['user_device_bought'] . ':</th><td class="td-user">' . date("d. m. Y", strtotime($array_mobile[0]['datum_nakupu'])) . '</td></tr>
-                    <tr><th>' . $phrase[$locale]['user_device_price'] . ':</th><td class="td-user">' . $array_mobile[0]['cena'] . 'kč</td></tr>
-                    <tr><th>' . $phrase[$locale]['col_donate'] . ':</th><td class="td-user">' . $array_mobile[0]['dotace'] . 'kč</td></tr>
+                 <table class="user-table" id="table-current-mobile">
+                    <tr><th id="user-mobile-name">' . $phrase[$locale]['user_device_name'] . ':</th><td class="td-user">' . $array_mobile[0]['jmeno_produktu'] . '</td></tr>
+                    <tr><th id="user-mobile-bought">' . $phrase[$locale]['user_device_bought'] . ':</th><td class="td-user">' . date("d. m. Y", strtotime($array_mobile[0]['datum_nakupu'])) . '</td></tr>
+                    <tr><th id="user-mobile-price">' . $phrase[$locale]['user_device_price'] . ':</th><td class="td-user">' . $array_mobile[0]['cena'] . 'kč</td></tr>
+                    <tr><th id="user-mobile-donate">' . $phrase[$locale]['col_donate'] . ':</th><td class="td-user">' . $array_mobile[0]['dotace'] . 'kč</td></tr>
                  </table>
             </div>
         </div>';
@@ -124,6 +125,7 @@ function get_tablet_data($array_tablet, $phrase, $locale, $db_con)
 
     if($date_diff < 0){
         $date_diff = 0;
+        $part = 100;
     }
 
     $stmt = $db_con->prepare("SELECT hodnota, datum_zapsani, presny_cas FROM DOTACE WHERE typ_produktu = 'tablet' ORDER BY datum_zapsani DESC, presny_cas DESC LIMIT 1;");
@@ -131,34 +133,34 @@ function get_tablet_data($array_tablet, $phrase, $locale, $db_con)
     $subsidy = $stmt->fetch(PDO::FETCH_ASSOC);
 
     $device =
-        '<h3>' . $phrase[$locale]['tablet'] . '</h3>
+        '<h3 id="label-higline-tablet">' . $phrase[$locale]['tablet'] . '</h3>
         <!-- info about next benefit-->
-        <div class="well">
+        <div class="well" id="well-progress-tablet">
             <div class="progress">
-                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="'. $part .'" aria-valuemin="0" aria-valuemax="100" style="width: '. $part .'%;">
+                <div class="progress-bar progress-bar-striped active" id="progressbar-tablet" role="progressbar" aria-valuenow="'. $part .'" aria-valuemin="0" aria-valuemax="100" style="width: '. $part .'%;">
                     <span>'. $date_diff .' dní</span>
                 </div>
             </div>
             <div class="table-responsive">
-                <table class="user-table">
-                    <tr><th>' . $phrase[$locale]['user_claim'] . ':</th><td class="td-user">'. date("m-Y", strtotime($future_date)) .'</td></tr>
-                    <tr><th>' . $phrase[$locale]['user_subsidy'] . ':</th><td class="td-user">'. $subsidy['hodnota'] .'kč</td></tr>
+                <table class="user-table" id="table-progress-tablet">
+                    <tr><th id="user-tablet-claim">' . $phrase[$locale]['user_claim'] . ':</th><td class="td-user">'. date("m-Y", strtotime($future_date)) .'</td></tr>
+                    <tr><th id="user-tablet-subsidy">' . $phrase[$locale]['user_subsidy'] . ':</th><td class="td-user">'. $subsidy['hodnota'] .'kč</td></tr>
                 </table>
             </div>
         </div>
 
-        <div class="well">
-            <h3>' . $phrase[$locale]['user_device_cur'] . '</h3>
+        <div class="well" id="well-current-tablet">
+            <h3 id="label-higline-currenttablet">' . $phrase[$locale]['user_device_cur'] . '</h3>
             <p>';
     if (count($array_tablet) > 0) {
         $device .=
             '<div class="table-responsive">
             <!-- info about actual benefit -->
-                 <table class="user-table">
-                    <tr><th>' . $phrase[$locale]['user_device_name'] . ':</th><td class="td-user">' . $array_tablet[0]['jmeno_produktu'] . '</td></tr>
-                    <tr><th>' . $phrase[$locale]['user_device_bought'] . ':</th><td class="td-user">' . date("d. m. Y", strtotime($array_tablet[0]['datum_nakupu'])) . '</td></tr>
-                    <tr><th>' . $phrase[$locale]['user_device_price'] . ':</th><td class="td-user">' . $array_tablet[0]['cena'] . 'kč</td></tr>
-                    <tr><th>' . $phrase[$locale]['col_donate'] . ':</th><td class="td-user">' . $array_tablet[0]['dotace'] . 'kč</td></tr>
+                 <table class="user-table" id="table-current-tablet">
+                    <tr><th id="user-tablet-name">' . $phrase[$locale]['user_device_name'] . ':</th><td class="td-user">' . $array_tablet[0]['jmeno_produktu'] . '</td></tr>
+                    <tr><th id="user-tablet-bought">' . $phrase[$locale]['user_device_bought'] . ':</th><td class="td-user">' . date("d. m. Y", strtotime($array_tablet[0]['datum_nakupu'])) . '</td></tr>
+                    <tr><th id="user-tablet-price">' . $phrase[$locale]['user_device_price'] . ':</th><td class="td-user">' . $array_tablet[0]['cena'] . 'kč</td></tr>
+                    <tr><th id="user-tablet-donate">' . $phrase[$locale]['col_donate'] . ':</th><td class="td-user">' . $array_tablet[0]['dotace'] . 'kč</td></tr>
                  </table>
             </div>
         </div>';
@@ -197,7 +199,7 @@ function device_history($array_device_history, $phrase, $locale){
     $history = '';
     for($i = 1; $i < count($array_device_history); $i++) {
         $history .=
-        '<div class="well">
+        '<div class="well" id="well-history'. $i .'">
              <div class="table-responsive">
                  <table class="user-table">
                     <tr><th>' . $phrase[$locale]['user_device_name'] . ':</th><td class="td-user">' . $array_device_history[$i]['jmeno_produktu'] . '</td>

@@ -14,22 +14,22 @@ echo $head.
             <nav class="navbar navbar-inverse">  
                 <div class="container">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="../index.php?locale='.$locale.'">'.$phrase[$locale]['kerio_b'].'</a>
+                        <a class="navbar-brand" id="label-brand" href="../index.php?locale='.$locale.'">'.$phrase[$locale]['kerio_b'].'</a>
                     </div>';
                     /* pridani odkazu na administratorske rozhrani */
                     if($_SESSION['prava_session'] == 'admin'){
                          echo '<ul class="nav navbar-nav">
-                                   <li><a href="admin_gui.php?locale='.$locale.'">'. $phrase[$locale]['admin'] .'</a></li>
+                                   <li id="label-gui-switch"><a href="admin_gui.php?locale='.$locale.'">'. $phrase[$locale]['admin'] .'</a></li>
                                </ul>';
                     }
 echo '               <ul class="nav navbar-nav navbar-right">
-                        <li><a id="label-data"><span class="glyphicon glyphicon-user"></span> '.$_SESSION['name_session'].' '.$_SESSION['last_session'].'</a></li>
-                        <li><a href="../control/logout.php"><i class="glyphicon glyphicon-log-out"></i> logout</a></li>
+                        <li id="label-name"><a id="label-data"><span class="glyphicon glyphicon-user"></span> '.$_SESSION['name_session'].' '.$_SESSION['last_session'].'</a></li>
+                        <li id="logout"><a href="../control/logout.php"><i class="glyphicon glyphicon-log-out"></i> logout</a></li>
     <!-- exchange language -->
-                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-globe"></span>   '.$phrase[$locale]['nav_lang'].'<span class="caret"></span></a>
+                        <li class="dropdown" id="language"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-globe"></span>   '.$phrase[$locale]['nav_lang'].'<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="?locale=cs">'.$phrase[$locale]['nav_lang_cz'].'</a></li>
-                                <li><a href="?locale=en">'.$phrase[$locale]['nav_lang_eng'].'</a></li>
+                                <li id="czech"><a href="?locale=cs">'.$phrase[$locale]['nav_lang_cz'].'</a></li>
+                                <li id="english"><a href="?locale=en">'.$phrase[$locale]['nav_lang_eng'].'</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -41,9 +41,9 @@ echo              '
     <!-- center of page -->
     <!-- tab bar -->
     <div class="container">
-        <ul class="nav nav-tabs">
-            <li class="active"><a data-toggle="tab" href="#benefit1">'.$phrase[$locale]['mobile'].'</a></li>
-            <li><a data-toggle="tab" href="#benefit2">'.$phrase[$locale]['tablet'].'</a></li>
+        <ul id="benefit-tab" class="nav nav-tabs">
+            <li id="benefit-mobile" class="active"><a data-toggle="tab" href="#benefit1">'.$phrase[$locale]['mobile'].'</a></li>
+            <li id="benefit-tablet"><a data-toggle="tab" href="#benefit2">'.$phrase[$locale]['tablet'].'</a></li>
         </ul>
     <!-- benefits -->
         <div class="tab-content">
