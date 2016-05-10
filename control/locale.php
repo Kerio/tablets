@@ -78,6 +78,7 @@ $phrase['cs']['edit_b_tab'] = "Úprava benefitu";
 $phrase['cs']['cancel'] = "Storno";
 $phrase['cs']['curr_donate'] = "Aktuální dotace";
 $phrase['cs']['choose'] = "Vyberte typ zařízení";
+$phrase['cs']['actual_donate'] = "Aktuálně používané dotace:";
 
 //==============================================================================================
 
@@ -140,4 +141,5 @@ $phrase['en']['edit_b_tab'] = "Edit benefit";
 $phrase['en']['cancel'] = "Cancel";
 $phrase['en']['curr_donate'] = "Current donate";
 $phrase['en']['choose'] = "Choose type of device";
+$phrase['en']['actual_donate'] = "Used donate:";
 ?>

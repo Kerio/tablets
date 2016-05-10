@@ -85,6 +85,19 @@ html,body{
     float: left;
 }
 
+#div-table_donates{
+    margin-top: 15px;
+}
+
+.th-table{
+    border: none;
+    padding-top: 6px;
+}
+.td-table{
+    border: none;
+    padding-top: 6px;
+    padding-left: 20px;
+}
 
 /*===================*/
 /* margin for safari */

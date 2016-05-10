@@ -168,7 +168,21 @@ echo '                  </tbody>
                                 </div>
                                 <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-ok"></span></button>
                             </form>
-                        </div>   
+                            <div id="div-table_donates">';
+                        $donates = $user->getNewestGrant();
+echo'                           <table id="table_donates">
+                                    <tr>
+                                        <th class="th-table">'.$phrase[$locale]['actual_donate'].'</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="th-table">'.$phrase[$locale]['tablet'].'</th><td class="td-table">'.$donates[0].',-</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="th-table">'.$phrase[$locale]['mobile'].'</th><td class="td-table">'.$donates[1].',-</td>
+                                    </tr>
+                                </table>
+                            </div>
+                         </div>   
                     </div>
                 </div>  
             </div>'

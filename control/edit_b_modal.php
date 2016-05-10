@@ -30,15 +30,15 @@ $edit_b_modal = '
                                     </tr>
                                     <tr>
                                         <th class="th-form"><label>'.$phrase[$locale]['col_name'].':</label></th>
-                                        <td class="td-form"><input type="text" class="form-control" name="b_e-name"></td>
+                                        <td class="td-form"><input type="text" class="form-control" name="b_e-name" disabled></td>
                                     </tr>
                                     <tr>
                                         <th class="th-form"><label>'.$phrase[$locale]['col_lastname'].':</label></th>
-                                        <td class="td-form"><input type="text" class="form-control" name="b_e-lastname"></td>
+                                        <td class="td-form"><input type="text" class="form-control" name="b_e-lastname" disabled></td>
                                     </tr>
                                     <tr>
                                         <th class="th-form"><label>'.$phrase[$locale]['col_donate'].':</label></th>
-                                        <td class="td-form"><input type="number" min="0" class="form-control" name="b_e-grant"></td>
+                                        <td class="td-form"><input type="number" min="0" class="form-control" name="b_e-grant" disabled></td>
                                     </tr>
                                     <tr>
                                         <th class="th-form"><label>'.$phrase[$locale]['col_device'].':</label></th>

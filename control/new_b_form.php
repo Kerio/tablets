@@ -22,10 +22,9 @@ $new_b_form = '
                                             <th class="th-form"><label>'.$phrase[$locale]['login_mail'].':</label></th>
                                             <td class="td-form"><input type="email" class="form-control" name="b-email" title="Please fill out this field." required></td>
                                         </tr>
-                                        <tr>
-                                            <th class="th-form"><label>'.$phrase[$locale]['col_donate'].':</label></th>
-                                            <td class="td-form"><input type="number" min="0" class="form-control" name="b-grant"></td>
-                                        </tr>
+                                        
+                                        <input type="number" min="0" class="form-control hidden" name="b-grant">
+                                        
                                         <tr>
                                             <th class="th-form"><label>'.$phrase[$locale]['col_device'].':</label></th>
                                             <td class="td-form"><input type="text" class="form-control" name="b-device" title="Please fill out this field." required></td>
