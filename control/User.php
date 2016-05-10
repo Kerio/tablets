@@ -94,21 +94,32 @@ class USER{
     public function createBenefit($input)
     {
         $zadID = $_SESSION['user_session'];
-        //kontrola uzivatele
+        //kontrola uzivatele ci pridani uzivatele "Neznamy" do databaze
         $stmt = $this->db->prepare('SELECT id_uzi FROM uzivatele WHERE email LIKE "'.$input[0].'";');
         $stmt->execute();
         $userId = $stmt->fetch(PDO::FETCH_ASSOC);
         $usID = $userId['id_uzi'];
         if($userId == null)
         {
-            echo "Zadany uzivatele neexistuje!";
-            sleep(3);
-            $this->redirect("../page/admin_gui.php");
+            $stmt = $this->db->prepare('INSERT INTO UZIVATELE (jmeno, prijmeni, prava, email) VALUES ("Neznámý", "Neznámý", "user", "'.$input[0].'");');
+            $stmt->execute();
+            $usID = $this->db->lastInsertId();
         }
+
         //kontrola dotace, ci pridani dotace
-        $stmt = $this->db->prepare('SELECT id_dotace FROM dotace ORDER by datum_zapsani DESC, presny_cas DESC LIMIT 1;');
-        $stmt->execute();
-        $dotaceId = $stmt->fetch(PDO::FETCH_ASSOC);
+        $dotaceId;
+        if(strcmp($_POST['choose-device'],"smartphone") == 0)
+        {
+            $stmt = $this->db->prepare('SELECT id_dotace FROM dotace WHERE typ_produktu = "smartphone" ORDER by datum_zapsani DESC, presny_cas DESC LIMIT 1;');
+            $stmt->execute();
+            $dotaceId = $stmt->fetch(PDO::FETCH_ASSOC);
+        }
+        else
+        {
+            $stmt = $this->db->prepare('SELECT id_dotace FROM dotace WHERE typ_produktu = "tablet" ORDER by datum_zapsani DESC, presny_cas DESC LIMIT 1;');
+            $stmt->execute();
+            $dotaceId = $stmt->fetch(PDO::FETCH_ASSOC);
+        }
         if($dotaceId == null)
         {
             $stmt = $this->db->prepare('INSERT INTO dotace (hodnota, datum_zapsani, presny_cas, typ_produktu, id_uzi) VALUES
@@ -285,6 +296,28 @@ class USER{
         }
         //presmerovani na administratorskou stranku
         $this->redirect("../page/admin_gui.php");
+    }
+
+    /**
+     * funkce, ktera vrati pole naplnena konkretni dotaci
+     * k danmu datumu pro mobily a tablety.
+     *
+     * @return      pole hodnot dotaci.
+     */
+    public function getNewestGrant()
+    {
+        //dotace tabletu
+        $stmt = $this->db->prepare('SELECT hodnota FROM dotace WHERE typ_produktu = "tablet" ORDER by datum_zapsani DESC, presny_cas DESC LIMIT 1;');
+        $stmt->execute();
+        $tmp= $stmt->fetch(PDO::FETCH_ASSOC);
+        $hodnotaT = $tmp['hodnota'];
+        //dotace mobilu
+        $stmt = $this->db->prepare('SELECT hodnota FROM dotace WHERE typ_produktu = "smartphone" ORDER by datum_zapsani DESC, presny_cas DESC LIMIT 1;');
+        $stmt->execute();
+        $tmp= $stmt->fetch(PDO::FETCH_ASSOC);
+        $hodnotaS = $tmp['hodnota'];
+        $poleHodnot = array($hodnotaT, $hodnotaS);
+        return $poleHodnot;
     }
 
     /**
