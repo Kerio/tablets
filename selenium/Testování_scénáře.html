@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:85/zswi/" />
+<title>Testování_scénáře</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Testování_scénáře</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/zswi/index.php</td>
+	<td></td>
+</tr>
+<!--test vytvoření benefitu-->
+<tr>
+	<td>type</td>
+	<td>id=input-email</td>
+	<td>jirnoh@seznam.cz</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=input-psw</td>
+	<td>adminjnohac</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=button-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Administrátor</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Nový benefit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=choose-device</td>
+	<td>label=Tablet</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=input-mail</td>
+	<td>michstr@seznam.cz</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=input-device</td>
+	<td>IPad mini 2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=input-price</td>
+	<td>16000</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=n-form-date1</td>
+	<td>10. 8. 2014</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=input-sn</td>
+	<td>286568</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=input-emei</td>
+	<td>fsf</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=input-payment</td>
+	<td>kartou</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=input-supplier</td>
+	<td>Apple</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=n-form-date2</td>
+	<td>12. 8. 2014</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=new-b-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//tr[@id='10']/td[2]</td>
+	<td>Michal</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//tr[@id='10']/td[3]</td>
+	<td>Strunc</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//tr[@id='10']/td[4]</td>
+	<td>michstr@seznam.cz</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//tr[@id='10']/td[10]</td>
+	<td>fsf</td>
+</tr>
+<!--edit benefitu-->
+<tr>
+	<td>click</td>
+	<td>//tr[@id='1']/td[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=e-input-device</td>
+	<td>nexustab</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=e-input-imei</td>
+	<td>uuds</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=e-input-sn</td>
+	<td>kfhjp656df</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=btn-edit_b</td>
+	<td></td>
+</tr>
+<!--nastavení dotace-->
+<tr>
+	<td>click</td>
+	<td>link=Nastavení</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=settings_choose-device</td>
+	<td>label=Tablet</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=i-donate-settings</td>
+	<td>500</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=b-donate-settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Nastavení</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-show-tablet_donate</td>
+	<td>500,-</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Moje benefity</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Tablet</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//table[@id='table-progress-tablet']/tbody/tr[2]/td</td>
+	<td>500kč</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Administrátor</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Nastavení</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=settings_choose-device</td>
+	<td>label=Tablet</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=i-donate-settings</td>
+	<td>1000</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=b-donate-settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Odhlášení</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>
