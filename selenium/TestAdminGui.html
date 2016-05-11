@@ -1,0 +1,2068 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:85/zswi/" />
+<title>New Test</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">New Test</td></tr>
+</thead><tbody>
+<!--test komponent-->
+<tr>
+	<td>type</td>
+	<td>id=input-email</td>
+	<td>michstr@seznam.cz</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=input-psw</td>
+	<td>adminmstrunc</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=button-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Administrátor</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertLocation</td>
+	<td>http://localhost:85/zswi/page/admin_gui.php?locale=cs</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=label-brand</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=label-brand</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-brand</td>
+	<td>Kerio benefity</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=label-gui-switch</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=label-gui-switch</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-gui-switch</td>
+	<td>Moje benefity</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=label-name</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=label-name</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-name</td>
+	<td>*Michal Strunc*</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=language</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=language</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=language</td>
+	<td>*Jazyk*</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=czech</td>
+	<td>Čeština</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=english</td>
+	<td>Angličtina</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=input-search</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=input-search</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyEditable</td>
+	<td>id=input-search</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyAttribute</td>
+	<td>id=input-search@placeholder</td>
+	<td>Vyhledat</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=tab-tablets</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=tab-tablets</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=tab-tablets</td>
+	<td>Tablety</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=tab-phones</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=tab-phones</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=tab-phones</td>
+	<td>Chytré telefony</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=tab-new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=tab-new</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=tab-new</td>
+	<td>Nový benefit</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=tab-settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=tab-settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=tab-settings</td>
+	<td>Nastavení</td>
+</tr>
+<!--tab tablet-->
+<tr>
+	<td>click</td>
+	<td>link=Tablety</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=tablet-id</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=tablet-id</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=tablet-id</td>
+	<td>ID</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=tablet-name</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=tablet-name</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=tablet-name</td>
+	<td>Jméno</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=tablet-lastname</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=tablet-lastname</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=tablet-lastname</td>
+	<td>Příjmení</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=tablet-mail</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=tablet-mail</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=tablet-mail</td>
+	<td>E-mail</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=tablet-donate</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=tablet-donate</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=tablet-donate</td>
+	<td>Dotace</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=tablet-device</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=tablet-device</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=tablet-device</td>
+	<td>Zařízení</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=tablet-price</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=tablet-price</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=tablet-price</td>
+	<td>Cena</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=tablet-bought</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=tablet-bought</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=tablet-bought</td>
+	<td>Zakoupeno</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=tablet-sn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=tablet-sn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=tablet-sn</td>
+	<td>Sériové číslo</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=tablet-imei</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=tablet-imei</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=tablet-imei</td>
+	<td>IMEI</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=tablet-payment</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=tablet-payment</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=tablet-payment</td>
+	<td>Typ platby</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=tablet-supplier</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=tablet-supplier</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=tablet-supplier</td>
+	<td>Dodavatel</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=tablet-claim</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=tablet-claim</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=tablet-claim</td>
+	<td>Datum nároku</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=tablet-took</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=tablet-took</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=tablet-took</td>
+	<td>Datum převzetí</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=tablet-notes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=tablet-notes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=tablet-notes</td>
+	<td>Poznámky</td>
+</tr>
+<!--tap telefon-->
+<tr>
+	<td>click</td>
+	<td>link=Chytré telefony</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=phone-id</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=phone-id</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=phone-id</td>
+	<td>ID</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=phone-name</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=phone-name</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=phone-name</td>
+	<td>Jméno</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=phone-lastname</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=phone-lastname</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=phone-lastname</td>
+	<td>Příjmení</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=phone-mail</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=phone-mail</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=phone-mail</td>
+	<td>E-mail</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=phone-donate</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=phone-donate</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=phone-donate</td>
+	<td>Dotace</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=phone-device</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=phone-device</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=phone-device</td>
+	<td>Zařízení</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=phone-price</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=phone-price</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=phone-price</td>
+	<td>Cena</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=phone-bought</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=phone-bought</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=phone-bought</td>
+	<td>Zakoupeno</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=phone-sn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=phone-sn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=phone-sn</td>
+	<td>Sériové číslo</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=phone-imei</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=phone-imei</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=phone-imei</td>
+	<td>IMEI</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=phone-payment</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=phone-payment</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=phone-payment</td>
+	<td>Typ platby</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=phone-supplier</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=phone-supplier</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=phone-supplier</td>
+	<td>Dodavatel</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=phone-claim</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=phone-claim</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=phone-claim</td>
+	<td>Datum nároku</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=phone-took</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=phone-took</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=phone-took</td>
+	<td>Datum převzetí</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=phone-notes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=phone-notes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=phone-notes</td>
+	<td>Poznámky</td>
+</tr>
+<!--tab nový benefit-->
+<tr>
+	<td>click</td>
+	<td>link=Nový benefit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=choose-device</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=choose-device</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=choose-select</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=choose-select</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=choose-tablet</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=choose-tablet</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=choose-phone</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=choose-phone</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=label-mail</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=label-mail</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-mail</td>
+	<td>E-mail:</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=input-mail</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=input-mail</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyEditable</td>
+	<td>id=input-mail</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=label-device</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=label-device</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-device</td>
+	<td>Zařízení:</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=input-device</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=input-device</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyEditable</td>
+	<td>id=input-device</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=label-price</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=label-price</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-price</td>
+	<td>Cena:</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=input-price</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=input-price</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyEditable</td>
+	<td>id=input-price</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=label-bought</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=label-bought</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-bought</td>
+	<td>Zakoupeno:</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=n-form-date1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=n-form-date1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyEditable</td>
+	<td>id=n-form-date1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=label-sn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=label-sn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-sn</td>
+	<td>Sériové číslo:</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=input-sn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=input-sn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyEditable</td>
+	<td>id=input-sn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=label-emei</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=label-emei</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-emei</td>
+	<td>IMEI:</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=input-emei</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=input-emei</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyEditable</td>
+	<td>id=input-emei</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=label-payment</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=label-payment</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-payment</td>
+	<td>Typ platby:</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=input-payment</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=input-payment</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyEditable</td>
+	<td>id=input-payment</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=label-supplier</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=label-supplier</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-supplier</td>
+	<td>Dodavatel:</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=input-supplier</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=input-supplier</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyEditable</td>
+	<td>id=input-supplier</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=label-claim</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=label-claim</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-claim</td>
+	<td>Datum nároku:</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=n-form-date2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=n-form-date2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyEditable</td>
+	<td>id=n-form-date2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=label-notes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=label-notes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-notes</td>
+	<td>Poznámky:</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=input-notes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=input-notes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyEditable</td>
+	<td>id=input-notes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=new-b-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=new-b-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=new-b-submit</td>
+	<td>Odešli</td>
+</tr>
+<!--tab nastavení-->
+<tr>
+	<td>click</td>
+	<td>link=Nastavení</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=settings_choose-device</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=settings_choose-device</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=settings_choose-select</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=settings_choose-select</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=settings_choose-tablet</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=settings_choose-tablet</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=settings_choose-phone</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=settings_choose-phone</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=l-donate-settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=l-donate-settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=l-donate-settings</td>
+	<td>Aktuální dotace:</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=i-donate-settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=i-donate-settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyEditable</td>
+	<td>id=i-donate-settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=b-donate-settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=b-donate-settings</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=label-show-actual_donate</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=label-show-actual_donate</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-show-actual_donate</td>
+	<td>Aktuálně používané dotace:</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=label-show-tablet</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=label-show-tablet</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-show-tablet</td>
+	<td>Tablet</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=label-show-tablet_donate</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=label-show-tablet_donate</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=label-show-phone</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=label-show-phone</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-show-phone</td>
+	<td>Chytrý telefon</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=label-show-phone_donate</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=label-show-phone_donate</td>
+	<td></td>
+</tr>
+<!--editace benefitu-->
+<tr>
+	<td>click</td>
+	<td>link=Tablety</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>doubleClick</td>
+	<td>//tr[@id='0']/td[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=e-label-higline</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=e-label-higline</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=e-label-higline</td>
+	<td>Úprava benefitu</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=b_e-choose-device</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=b_e-choose-device</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=e-choose-select</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=e-choose-select</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=e-choose-tablet</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=e-choose-tablet</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=e-choose-phone</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=e-choose-phone</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=e-label-name</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=e-label-name</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=e-label-name</td>
+	<td>Jméno:</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=e-input-name</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=e-input-name</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyNotEditable</td>
+	<td>id=e-input-name</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=e-label-lastname</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=e-label-lastname</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=e-label-lastname</td>
+	<td>Příjmení:</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=e-input-lastname</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=e-input-lastname</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyNotEditable</td>
+	<td>id=e-input-lastname</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=e-label-donate</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=e-label-donate</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=e-label-donate</td>
+	<td>Dotace:</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=e-input-donate</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=e-input-donate</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyNotEditable</td>
+	<td>id=e-input-donate</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=e-label-device</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=e-label-device</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=e-label-device</td>
+	<td>Zařízení:</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=e-input-device</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=e-input-device</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyEditable</td>
+	<td>id=e-input-device</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=e-label-price</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=e-label-price</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=e-label-price</td>
+	<td>Cena:</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=e-input-price</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=e-input-price</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyEditable</td>
+	<td>id=e-input-price</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=e-label-bought</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=e-label-bought</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=e-label-bought</td>
+	<td>Zakoupeno:</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=e-form-date1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=e-form-date1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyEditable</td>
+	<td>id=e-form-date1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=e-label-sn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=e-label-sn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=e-label-sn</td>
+	<td>Sériové číslo:</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=e-input-sn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=e-input-sn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyEditable</td>
+	<td>id=e-input-sn</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=e-label-imei</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=e-label-imei</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=e-label-imei</td>
+	<td>IMEI:</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=e-input-imei</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=e-input-imei</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyEditable</td>
+	<td>id=e-input-imei</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=e-label-payment</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=e-label-payment</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=e-label-payment</td>
+	<td>Typ platby:</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=e-input-payment</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=e-input-payment</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyEditable</td>
+	<td>id=e-input-payment</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=e-label-supplier</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=e-label-supplier</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=e-label-supplier</td>
+	<td>Dodavatel:</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=e-input-supplier</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=e-input-supplier</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyEditable</td>
+	<td>id=e-input-supplier</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=e-label-claim</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=e-label-claim</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=e-label-claim</td>
+	<td>Datum nároku:</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=e-form-date2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=e-form-date2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyEditable</td>
+	<td>id=e-form-date2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=e-label-took</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=e-label-took</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=e-label-took</td>
+	<td>Datum převzetí:</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=e-form-date3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=e-form-date3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyEditable</td>
+	<td>id=e-form-date3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=e-label-notes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=e-label-notes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=e-label-notes</td>
+	<td>Poznámky:</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=e-input-notes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=e-input-notes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyEditable</td>
+	<td>id=e-input-notes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=btn-edit_b</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=btn-edit_b</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=btn-edit_b</td>
+	<td>Odešli</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=btn-storno_edit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>id=btn-storno_edit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=btn-storno_edit</td>
+	<td>Storno</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=btn-storno_edit</td>
+	<td></td>
+</tr>
+<!--anglické popisky-->
+<tr>
+	<td>click</td>
+	<td>css=span.caret</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Angličtina</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-brand</td>
+	<td>Kerio benefits</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-gui-switch</td>
+	<td>My benefits</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=language</td>
+	<td>*Language*</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=czech</td>
+	<td>Czech</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=english</td>
+	<td>English</td>
+</tr>
+<tr>
+	<td>verifyAttribute</td>
+	<td>id=input-search@placeholder</td>
+	<td>Search</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=tab-tablets</td>
+	<td>Tablets</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=tab-phones</td>
+	<td>Smartphones</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=tab-new</td>
+	<td>New benefit</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=tab-settings</td>
+	<td>Settings</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=tablet-id</td>
+	<td>ID</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=tablet-name</td>
+	<td>Name</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=tablet-lastname</td>
+	<td>Lastname</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=tablet-mail</td>
+	<td>E-mail</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=tablet-donate</td>
+	<td>Donate</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=tablet-device</td>
+	<td>Device</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=tablet-price</td>
+	<td>Price</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=tablet-bought</td>
+	<td>Bought</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=tablet-sn</td>
+	<td>Serial number</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=tablet-imei</td>
+	<td>IMEI</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=tablet-payment</td>
+	<td>Payment</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=tablet-supplier</td>
+	<td>Supplier</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=tablet-claim</td>
+	<td>Claim</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=tablet-took</td>
+	<td>Took</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=tablet-notes</td>
+	<td>Notes</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=phone-id</td>
+	<td>ID</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=phone-name</td>
+	<td>Name</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=phone-lastname</td>
+	<td>Lastname</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=phone-mail</td>
+	<td>E-mail</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=phone-donate</td>
+	<td>Donate</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=phone-device</td>
+	<td>Device</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=phone-price</td>
+	<td>Price</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=phone-bought</td>
+	<td>Bought</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=phone-sn</td>
+	<td>Serial number</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=phone-imei</td>
+	<td>IMEI</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=phone-payment</td>
+	<td>Payment</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=phone-supplier</td>
+	<td>Supplier</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=phone-claim</td>
+	<td>Claim</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=phone-took</td>
+	<td>Took</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=phone-notes</td>
+	<td>Notes</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-mail</td>
+	<td>E-mail:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-device</td>
+	<td>Device:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-price</td>
+	<td>Price:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-bought</td>
+	<td>Bought:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-sn</td>
+	<td>Serial number:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-emei</td>
+	<td>IMEI:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-payment</td>
+	<td>Payment:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-supplier</td>
+	<td>Supplier:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-claim</td>
+	<td>Claim:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-notes</td>
+	<td>Notes:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=new-b-submit</td>
+	<td>Send</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=l-donate-settings</td>
+	<td>Current donate:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-show-actual_donate</td>
+	<td>Used donate:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-show-tablet</td>
+	<td>Tablet</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-show-phone</td>
+	<td>Smartphone</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=e-label-higline</td>
+	<td>Edit benefit</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=e-label-name</td>
+	<td>Name:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=e-label-lastname</td>
+	<td>Lastname:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=e-label-donate</td>
+	<td>Donate:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=e-label-device</td>
+	<td>Device:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=e-label-price</td>
+	<td>Price:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=e-label-bought</td>
+	<td>Bought:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=e-label-sn</td>
+	<td>Serial number:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=e-label-imei</td>
+	<td>IMEI:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=e-label-supplier</td>
+	<td>Supplier:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=e-label-claim</td>
+	<td>Claim:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=e-label-took</td>
+	<td>Took:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=e-label-notes</td>
+	<td>Notes:</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=btn-edit_b</td>
+	<td>Send</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=btn-storno_edit</td>
+	<td>Cancel</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Log out</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

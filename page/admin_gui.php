@@ -22,19 +22,19 @@ echo $head.
             <nav class="navbar navbar-inverse">  
                 <div class="container">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="../index.php?locale='.$locale.'">'.$phrase[$locale]['kerio_b'].'</a>
+                        <a class="navbar-brand" id="label-brand" href="../index.php?locale='.$locale.'">'.$phrase[$locale]['kerio_b'].'</a>
                     </div>
                     <ul class="nav navbar-nav">
-                        <li><a href="user_gui.php?locale='.$locale.'">'.$phrase[$locale]['to_user_gui'].'</a></li>
+                        <li id="label-gui-switch"><a href="user_gui.php?locale='.$locale.'">'.$phrase[$locale]['to_user_gui'].'</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a id="label-data"><span class="glyphicon glyphicon-user"></span> '.$_SESSION['name_session'].' '.$_SESSION['last_session'].'</a></li>
-                        <li><a href="../control/logout.php"><i class="glyphicon glyphicon-log-out"></i> '.$phrase[$locale]['logout'].'</a></li>
+                        <li id="label-name"><a id="label-data"><span class="glyphicon glyphicon-user"></span> '.$_SESSION['name_session'].' '.$_SESSION['last_session'].'</a></li>
+                        <li id="logout"><a href="../control/logout.php"><i class="glyphicon glyphicon-log-out"></i> '.$phrase[$locale]['logout'].'</a></li>
         <!-- exchange language -->
-                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-globe"></span>   '.$phrase[$locale]['nav_lang'].'<span class="caret"></span></a>
+                        <li class="dropdown" id="language"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-globe"></span>   '.$phrase[$locale]['nav_lang'].'<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="?locale=cs">'.$phrase[$locale]['nav_lang_cz'].'</a></li>
-                                <li><a href="?locale=en">'.$phrase[$locale]['nav_lang_eng'].'</a></li>
+                                <li id="czech"><a href="?locale=cs">'.$phrase[$locale]['nav_lang_cz'].'</a></li>
+                                <li id="english"><a href="?locale=en">'.$phrase[$locale]['nav_lang_eng'].'</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -45,7 +45,7 @@ echo $head.
             <div id="div-center" class="container">
         <!-- search -->
                 <div id="div-search" class="form-group pull-right">
-                    <input type="text" class="search form-control" placeholder="'.$phrase[$locale]['search'].'">
+                    <input id="input-search" type="text" class="search form-control" placeholder="'.$phrase[$locale]['search'].'">
                 </div>  
         <!-- tabs -->
                 <div class="col-xs-12">
@@ -53,8 +53,8 @@ echo $head.
                         <li id="tab-tablets" class = "active">
                             <a data-toggle="tab" href="#div-tablets">'.$phrase[$locale]['table_tablets'].'</a></li>
                         <li id="tab-phones"><a data-toggle="tab" href="#div-phones">'.$phrase[$locale]['table_phones'].'</a></li>
-                        <li><a data-toggle="tab" href="#div-new_b">'.$phrase[$locale]['new_b_tab'].'</a></li>
-                        <li><a data-toggle="tab" href="#div-settings_tab">'.$phrase[$locale]['settings'].'</a></li>
+                        <li id="tab-new"><a data-toggle="tab" href="#div-new_b">'.$phrase[$locale]['new_b_tab'].'</a></li>
+                        <li id="tab-settings"><a data-toggle="tab" href="#div-settings_tab">'.$phrase[$locale]['settings'].'</a></li>
                     </ul>
                 </div>
                 <div class="tab-content">
@@ -62,21 +62,21 @@ echo $head.
                     <table id="div-tablets" class="table table-responsive table-striped tab-pane results fade active in">
                         <thead>
                             <tr>
-                                <th class="admin-th">'.$phrase[$locale]['col_id'].'</th>
-                                <th class="admin-th">'.$phrase[$locale]['col_name'].'</th>
-                                <th class="admin-th">'.$phrase[$locale]['col_lastname'].'</th>
-                                <th class="admin-th">'.$phrase[$locale]['login_mail'].'</th>
-                                <th class="admin-th">'.$phrase[$locale]['col_donate'].'</th>
-                                <th class="admin-th">'.$phrase[$locale]['col_device'].'</th>
-                                <th class="admin-th">'.$phrase[$locale]['col_price'].'</th>
-                                <th class="admin-th">'.$phrase[$locale]['col_bought'].'</th>
-                                <th class="admin-th">'.$phrase[$locale]['col_sn'].'</th>
-                                <th class="admin-th">'.$phrase[$locale]['col_imei'].'</th>
-                                <th class="admin-th">'.$phrase[$locale]['col_payment'].'</th>
-                                <th class="admin-th">'.$phrase[$locale]['col_supplier'].'</th>
-                                <th class="admin-th">'.$phrase[$locale]['col_claim'].'</th>
-                                <th class="admin-th">'.$phrase[$locale]['col_took'].'</th>
-                                <th class="admin-th">'.$phrase[$locale]['col_notes'].'</th>
+                                <th class="admin-th" id="tablet-id">'.$phrase[$locale]['col_id'].'</th>
+                                <th class="admin-th" id="tablet-name">'.$phrase[$locale]['col_name'].'</th>
+                                <th class="admin-th" id="tablet-lastname">'.$phrase[$locale]['col_lastname'].'</th>
+                                <th class="admin-th" id="tablet-mail">'.$phrase[$locale]['login_mail'].'</th>
+                                <th class="admin-th" id="tablet-donate">'.$phrase[$locale]['col_donate'].'</th>
+                                <th class="admin-th" id="tablet-device">'.$phrase[$locale]['col_device'].'</th>
+                                <th class="admin-th" id="tablet-price">'.$phrase[$locale]['col_price'].'</th>
+                                <th class="admin-th" id="tablet-bought">'.$phrase[$locale]['col_bought'].'</th>
+                                <th class="admin-th" id="tablet-sn">'.$phrase[$locale]['col_sn'].'</th>
+                                <th class="admin-th" id="tablet-imei">'.$phrase[$locale]['col_imei'].'</th>
+                                <th class="admin-th" id="tablet-payment">'.$phrase[$locale]['col_payment'].'</th>
+                                <th class="admin-th" id="tablet-supplier">'.$phrase[$locale]['col_supplier'].'</th>
+                                <th class="admin-th" id="tablet-claim">'.$phrase[$locale]['col_claim'].'</th>
+                                <th class="admin-th" id="tablet-took">'.$phrase[$locale]['col_took'].'</th>
+                                <th class="admin-th" id="tablet-notes">'.$phrase[$locale]['col_notes'].'</th>
                             </tr>
                             <tr class="warning no-result">
                                 <td colspan="15"><i class="fa fa-warning"></i> No result</td>
@@ -107,21 +107,21 @@ echo '                  </tbody>
                     <table id="div-phones" class="table table-responsive table-striped tab-pane fade results">
                         <thead>
                             <tr>
-                                <th class="admin-th">'.$phrase[$locale]['col_id'].'</th>
-                                <th class="admin-th">'.$phrase[$locale]['col_name'].'</th>
-                                <th class="admin-th">'.$phrase[$locale]['col_lastname'].'</th>
-                                <th class="admin-th">'.$phrase[$locale]['login_mail'].'</th>
-                                <th class="admin-th">'.$phrase[$locale]['col_donate'].'</th>
-                                <th class="admin-th">'.$phrase[$locale]['col_device'].'</th>
-                                <th class="admin-th">'.$phrase[$locale]['col_price'].'</th>
-                                <th class="admin-th">'.$phrase[$locale]['col_bought'].'</th>
-                                <th class="admin-th">'.$phrase[$locale]['col_sn'].'</th>
-                                <th class="admin-th">'.$phrase[$locale]['col_imei'].'</th>
-                                <th class="admin-th">'.$phrase[$locale]['col_payment'].'</th>
-                                <th class="admin-th">'.$phrase[$locale]['col_supplier'].'</th>
-                                <th class="admin-th">'.$phrase[$locale]['col_claim'].'</th>
-                                <th class="admin-th">'.$phrase[$locale]['col_took'].'</th>
-                                <th class="admin-th">'.$phrase[$locale]['col_notes'].'</th>
+                                <th class="admin-th" id="phone-id">'.$phrase[$locale]['col_id'].'</th>
+                                <th class="admin-th" id="phone-name">'.$phrase[$locale]['col_name'].'</th>
+                                <th class="admin-th" id="phone-lastname">'.$phrase[$locale]['col_lastname'].'</th>
+                                <th class="admin-th" id="phone-mail">'.$phrase[$locale]['login_mail'].'</th>
+                                <th class="admin-th" id="phone-donate">'.$phrase[$locale]['col_donate'].'</th>
+                                <th class="admin-th" id="phone-device">'.$phrase[$locale]['col_device'].'</th>
+                                <th class="admin-th" id="phone-price">'.$phrase[$locale]['col_price'].'</th>
+                                <th class="admin-th" id="phone-bought">'.$phrase[$locale]['col_bought'].'</th>
+                                <th class="admin-th" id="phone-sn">'.$phrase[$locale]['col_sn'].'</th>
+                                <th class="admin-th" id="phone-imei">'.$phrase[$locale]['col_imei'].'</th>
+                                <th class="admin-th" id="phone-payment">'.$phrase[$locale]['col_payment'].'</th>
+                                <th class="admin-th" id="phone-supplier">'.$phrase[$locale]['col_supplier'].'</th>
+                                <th class="admin-th" id="phone-claim">'.$phrase[$locale]['col_claim'].'</th>
+                                <th class="admin-th" id="phone-took">'.$phrase[$locale]['col_took'].'</th>
+                                <th class="admin-th" id="phone-notes">'.$phrase[$locale]['col_notes'].'</th>
                             </tr>
                             <tr class="warning no-result">
                                 <td colspan="15"><i class="fa fa-warning"></i> No result</td>
@@ -157,28 +157,28 @@ echo '                  </tbody>
                             <form class="form-inline" method="post" action="../control/dotaceCreate.php">
                                 <div class="form-group">
                                     <select class="form-control" name="settings_choose-device" id="settings_choose-device" title="Please select option in the list."required>
-                                        <option disabled selected value>'.$phrase[$locale]['choose'].'</option>
-                                        <option value="tablet">'.$phrase[$locale]['tablet'].'</option>
-                                        <option value="smartphone">'.$phrase[$locale]['mobile'].'</option>
+                                        <option id="settings_choose-select" disabled selected value>'.$phrase[$locale]['choose'].'</option>
+                                        <option id="settings_choose-tablet" value="tablet">'.$phrase[$locale]['tablet'].'</option>
+                                        <option id="settings_choose-phone" value="smartphone">'.$phrase[$locale]['mobile'].'</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label id="l-search" for="search">'.$phrase[$locale]['curr_donate'].':</label>
-                                    <input type="number" min="0" class="form-control" id="search" name="settings_grant" title="Please fill out this field." required>
+                                    <label id="l-donate-settings" for="search">'.$phrase[$locale]['curr_donate'].':</label>
+                                    <input type="number" min="0" class="form-control" id="i-donate-settings" name="settings_grant" title="Please fill out this field." required>
                                 </div>
-                                <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-ok"></span></button>
+                                <button id="b-donate-settings"type="submit" class="btn btn-default"><span class="glyphicon glyphicon-ok"></span></button>
                             </form>
                             <div id="div-table_donates">';
                         $donates = $user->getNewestGrant();
 echo'                           <table id="table_donates">
                                     <tr>
-                                        <th class="th-table">'.$phrase[$locale]['actual_donate'].'</th>
+                                        <th id="label-show-actual_donate" class="th-table">'.$phrase[$locale]['actual_donate'].'</th>
                                     </tr>
                                     <tr>
-                                        <td class="th-table">'.$phrase[$locale]['tablet'].'</th><td class="td-table">'.$donates[0].',-</td>
+                                        <td id="label-show-tablet" class="th-table">'.$phrase[$locale]['tablet'].'</th><td id="label-show-tablet_donate" class="td-table">'.$donates[0].',-</td>
                                     </tr>
                                     <tr>
-                                        <td class="th-table">'.$phrase[$locale]['mobile'].'</th><td class="td-table">'.$donates[1].',-</td>
+                                        <td id="label-show-phone" class="th-table">'.$phrase[$locale]['mobile'].'</th><td id="label-show-phone_donate" class="td-table">'.$donates[1].',-</td>
                                     </tr>
                                 </table>
                             </div>
