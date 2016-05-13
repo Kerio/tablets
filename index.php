@@ -54,7 +54,7 @@ echo '<!DOCTYPE html>
                         <div id="form" class="col-lg-3">
                             <h2 id="label-highline">'.$phrase[$locale]['login'].'</h2>
                             <br>
-                            <form name="loginform" method="POST" action="single-sign-on/idp.php">
+                            <form name="loginform" method="POST" action="single-sign-on/sp.php">
                                 <div class="form-group">
                                     <label id="label-email">'.$phrase[$locale]['login_mail'].':</label>
                                         <input id="input-email" type="email" class="form-control" name="usr" placeholder="'.$phrase[$locale]['login_mail_text'].'">

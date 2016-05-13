@@ -15,14 +15,14 @@ class USER{
 
     /**
      * Prihlasovaci funkce
-     * @param $user pole dat o uzivateli
-     * @param $umail email uzivatele
+     * @param $data pole dat o uzivateli
      */
-    function login($user, $umail){
+    function login($data){
         /* predani hodnot z pole do promennych */
-        $jmeno = $user['jmeno'];
-        $prijmeni = $user['prijmeni'];
-        $prava = $user['prava'];
+        $jmeno = $data->claims['name'];
+        $prijmeni = $data->claims['lastname'];
+        $prava = $data->claims['rights'];
+        $umail = $data->claims['email'];
         
         try {
             $old = $this->db->prepare("SELECT id_uzi, jmeno, prijmeni, prava FROM uzivatele WHERE uzivatele.email = '$umail';");
@@ -41,13 +41,17 @@ class USER{
             else{
                 $update = $this->db->prepare("UPDATE uzivatele SET jmeno = '$jmeno', prijmeni = '$prijmeni', prava = '$prava' WHERE uzivatele.email = '$umail';");
                 $update->execute();
+
+                $update = $this->db->prepare("SELECT id_uzi, jmeno, prijmeni, prava FROM uzivatele WHERE uzivatele.email = '$umail';");
+                $update->execute();
+                $user_db = $update->fetch(PDO::FETCH_ASSOC);
             }
             
             /* predani dat o uzivateli do session */
             $_SESSION['user_session'] = $user_db['id_uzi'];
-            $_SESSION['name_session'] = $user['jmeno'];
-            $_SESSION['last_session'] = $user['prijmeni'];
-            $_SESSION['prava_session'] = $user['prava'];
+            $_SESSION['name_session'] = $user_db['jmeno'];
+            $_SESSION['last_session'] = $user_db['prijmeni'];
+            $_SESSION['prava_session'] = $user_db['prava'];
         }
 
         catch (PDOException $e) {
@@ -107,7 +111,6 @@ class USER{
         }
 
         //kontrola dotace, ci pridani dotace
-        $dotaceId;
         if(strcmp($_POST['choose-device'],"smartphone") == 0)
         {
             $stmt = $this->db->prepare('SELECT id_dotace FROM dotace WHERE typ_produktu = "smartphone" ORDER by datum_zapsani DESC, presny_cas DESC LIMIT 1;');

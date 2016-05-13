@@ -34,7 +34,7 @@
 </tr>
 <tr>
 	<td>pause</td>
-	<td>2000</td>
+	<td>20000</td>
 	<td></td>
 </tr>
 <tr>
@@ -139,7 +139,7 @@
 </tr>
 <!--edit benefitu-->
 <tr>
-	<td>click</td>
+	<td>doubleClick</td>
 	<td>//tr[@id='1']/td[3]</td>
 	<td></td>
 </tr>
@@ -162,6 +162,21 @@
 	<td>clickAndWait</td>
 	<td>id=btn-edit_b</td>
 	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//tr[@id='9']/td[10]</td>
+	<td>uuds</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//tr[@id='9']/td[9]</td>
+	<td>kfhjp656df</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//tr[@id='9']/td[6]</td>
+	<td>nexustab</td>
 </tr>
 <!--nastavení dotace-->
 <tr>
@@ -252,7 +267,7 @@
 <tr>
 	<td>select</td>
 	<td>id=settings_choose-device</td>
-	<td>label=Tablet</td>
+	<td>label=Chytrý telefon</td>
 </tr>
 <tr>
 	<td>type</td>
@@ -265,9 +280,225 @@
 	<td></td>
 </tr>
 <tr>
+	<td>click</td>
+	<td>link=Nastavení</td>
+	<td></td>
+</tr>
+<tr>
 	<td>pause</td>
 	<td>2000</td>
 	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>id=label-show-phone_donate</td>
+	<td>1000,-</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Odhlášení</td>
+	<td></td>
+</tr>
+<!--zadání benefitu neexistujícímu uživateli a následné spárování po prvním přihlášením-->
+<tr>
+	<td>type</td>
+	<td>id=input-email</td>
+	<td>zdezie@seznam.cz</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=input-psw</td>
+	<td>adminzziegler</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=button-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>20000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Administrátor</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Nový benefit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=choose-device</td>
+	<td>label=Tablet</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=input-mail</td>
+	<td>jakvav@seznam.cz</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=input-device</td>
+	<td>nexus7</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=input-price</td>
+	<td>20103</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=n-form-date1</td>
+	<td>2016-04-03</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=input-sn</td>
+	<td>5dgrb6</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=input-emei</td>
+	<td>jbjk56</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=input-payment</td>
+	<td>kartou</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=input-supplier</td>
+	<td>alza</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=n-form-date2</td>
+	<td>2016-01-02</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=new-b-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//tr[@id='11']/td[2]</td>
+	<td>Neznámý</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//tr[@id='11']/td[3]</td>
+	<td>Neznámý</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//tr[@id='11']/td[4]</td>
+	<td>jakvav@seznam.cz</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//tr[@id='11']/td[6]</td>
+	<td>nexus7</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Odhlášení</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=input-email</td>
+	<td>jakvav@seznam.cz</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=input-psw</td>
+	<td>adminjvaverka</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=button-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>20000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Tablet</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=#table-current-tablet &gt; tbody &gt; tr &gt; td.td-user</td>
+	<td>nexus7</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Administrátor</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>2000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//tr[@id='11']/td[2]</td>
+	<td>Jakub</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//tr[@id='11']/td[3]</td>
+	<td>Váverka</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//tr[@id='11']/td[4]</td>
+	<td>jakvav@seznam.cz</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//tr[@id='11']/td[6]</td>
+	<td>nexus7</td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
